@@ -1,49 +1,144 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="ru">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+  <title>Расписание СУНЦ</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+  <link rel="stylesheet" type="text/css" href="css/icons.css">
+  <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper green">
+        <ul id="slide-out" class="side-nav">
+          <li>
+            <div class="userView">
+              <div class="background green darken-2">
+              </div>
+              <a href="#!name"><span class="white-text name">Лев Челядинов</span></a>
+              <a href="#!email"><span class="white-text email">10Е</span></a>
             </div>
+          </li>
+          <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Главная</a></li>
+          <li><a class="btn-flat disabled waves-effect" href="changes.html"><i class="material-icons">new_releases</i>Изменения</a></li>
+          <li><a class="btn-flat waves-effect" href="classes.html"><i class="material-icons">people</i>Классы</a></li>
+          <li><a class="btn-flat waves-effect" href="teachers.html"><i class="material-icons">school</i>Преподаватели</a></li>
+          <li><a class="btn-flat waves-effect" href="rooms.html"><i class="material-icons">beenhere</i>Свободные кабинеты</a></li>
+          <li>
+            <div class="divider"></div>
+          </li>
+          <li><a class="btn-flat waves-effect" href="settings.html"><i class="material-icons">settings</i>Настройки</a></li>
+          <li><a class="btn-flat waves-effect" href="help.html"><i class="material-icons">info</i>Справка</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse left"><i class="material-icons">menu</i></a>
+        <a class="brand-logo">Расписание</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="card-content green-text text-darken-3">
+          <span class="card-title">Сегодня, чт 27.02</span>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Гейн Нина Ароновна</li>
+                      <li><i class="material-icons">access_time</i> 9:00-9:40</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Саночкин Вячеслав Афанасьевич</li>
+                      <li><i class="material-icons">access_time</i> 9:50-10:30</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Физкультура</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Синдимирова Марина Витальевна</li>
+                      <li><i class="material-icons">access_time</i> 10:45-11:25</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+      </div>
+
+      <div class="card">
+        <div class="card-content green-text text-darken-3">
+          <span class="card-title">Завтра, пт 28.02</span>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Гейн Нина Ароновна</li>
+                      <li><i class="material-icons">access_time</i> 9:00-9:40</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Саночкин Вячеслав Афанасьевич</li>
+                      <li><i class="material-icons">access_time</i> 9:50-10:30</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Физкультура</div>
+              <div class="collapsible-body">
+                <span>
+                    <ul class="lesson-info">
+                      <li><i class="material-icons">school</i> Синдимирова Марина Витальевна</li>
+                      <li><i class="material-icons">access_time</i> 10:45-11:25</li>
+                    </ul>
+                  </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card-action">
+          <a href="#">Напомнить вечером</a><br />
+          <a href="#">Напомнить утром</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+    $(".button-collapse").sideNav({
+      draggable: true
+    });
+  </script>
+</body>
+
 </html>
