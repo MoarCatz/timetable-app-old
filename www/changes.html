@@ -28,7 +28,7 @@
             </div>
           </li>
           <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Главная</a></li>
-          <li><a class="btn-flat disabled waves-effect" href="changes.html"><i class="material-icons">new_releases</i>Изменения</a></li>
+          <li><a class="btn-flat waves-effect" href="changes.html"><i class="material-icons">new_releases</i>Изменения</a></li>
           <li><a class="btn-flat waves-effect" href="classes.html"><i class="material-icons">people</i>Классы</a></li>
           <li><a class="btn-flat waves-effect" href="teachers.html"><i class="material-icons">school</i>Преподаватели</a></li>
           <li><a class="btn-flat waves-effect" href="rooms.html"><i class="material-icons">beenhere</i>Свободные кабинеты</a></li>
@@ -39,20 +39,31 @@
           <li><a class="btn-flat waves-effect" href="help.html"><i class="material-icons">info</i>Справка</a></li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse left"><i class="material-icons">menu</i></a>
-        <a class="brand-logo">Расписание</a>
+        <a class="brand-logo">Изменения</a>
       </div>
     </nav>
   </header>
   <main>
-    
+    <div class="row green-text text-darken-3">
+      <div class="day">Суббота, 03.05</div>
+      <div class="col s12 m6">
+        <ul class="collection">
+          <li class="collection-item"><h6 class="m0 center">8А</h6></li>
+          <li class="collection-item">5, 6 уроков нет</li>
+          <li class="collection-item">1 урок - обязательная встреча с администрацией</li>
+        </ul>
+      </div>
+      <div class="col s12 m6">
+        <ul class="collection">
+          <li class="collection-item"><h6 class="m0 center">9А</h6></li>
+          <li class="collection-item">Уроков нет</li>
+        </ul>
+      </div>
+    </div>
   </main>
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
-  <script>
-    $(".button-collapse").sideNav({
-      draggable: true
-    });
-  </script>
+  <script src="js/common.js"></script>
 </body>
 
 </html>

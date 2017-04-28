@@ -1,0 +1,28 @@
+.input-field label.active {
+  color: #4CAF50;
+}
+
+.input-field label {
+ color: #43A047;
+}
+
+.input-field input[type=text]:focus + label {
+ color: #43A047;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #43A047;
+ box-shadow: 0 1px 0 0 #43A047;
+}
+
+.input-field .prefix.active {
+ color: #43A047;
+}
+
+ul.autocomplete-content.dropdown-content li span:not(.highlight) {
+  color: #43A047 !important;
+}
+
+.row .col.m6 {
+  height: 100%;
+}

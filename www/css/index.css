@@ -4,6 +4,7 @@ a.brand-logo {
 
 a.btn-flat {
   margin: 0 !important;
+
   text-transform: none;
 }
 
@@ -21,5 +22,37 @@ span.new.badge::after {
 }
 
 .lesson-info {
-    list-style-type: none;
+  list-style: none;
+}
+
+.mr-5 {
+  margin-right: .5rem;
+}
+
+.switch.valign-wrapper {
+  justify-content: space-between;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #81c784;
+}
+
+.switch label input[type="checkbox"]:checked + .lever::after {
+  background-color: #43A047;
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.day {
+  margin-top: 1rem;
+
+  text-align: center;
+
+  font-size: 14pt;
+}
+
+.dropdown-button {
+  width: 100%;
 }

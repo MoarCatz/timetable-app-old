@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.moarcatz.timetable" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Timetable</name>
+<widget id="com.moarcatz.timetable" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Расписание</name>
     <description>
-        A simple application for SESC timetable.
+        Приложение для просмотра расписания и изменений в нём.
     </description>
-    <author email="timteble@alexfox.co" href="https://moarcatz.github.io">
+    <author email="timetable@alexfox.co" href="https://moarcatz.github.io">
         MoarCatz
     </author>
+    <icon src="www/img/icon.png" />
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
