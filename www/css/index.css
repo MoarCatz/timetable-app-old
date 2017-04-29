@@ -1,3 +1,7 @@
+main {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 a.brand-logo {
   font-size: 14pt;
 }
@@ -30,7 +34,9 @@ span.new.badge::after {
 }
 
 .switch.valign-wrapper {
-  justify-content: space-between;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .switch label input[type="checkbox"]:checked + .lever {
