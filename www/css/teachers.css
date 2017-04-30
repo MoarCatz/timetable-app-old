@@ -10,7 +10,8 @@
  color: #43A047;
 }
 
-.input-field input[type=text]:focus {
+.input-field input[type=text]:focus,
+.chips.chips-autocomplete.focus {
  border-bottom: 1px solid #43A047;
  box-shadow: 0 1px 0 0 #43A047;
 }
@@ -26,3 +27,4 @@ ul.autocomplete-content.dropdown-content li span:not(.highlight) {
 .row .col.m6 {
   height: 100%;
 }
+
