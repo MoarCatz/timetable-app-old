@@ -3,6 +3,6 @@ $('.collapsible-header').click(function(event) {
   $(this).parents('.collapsible').collapsible('open', $(this).parent().index());
 });
 
-$('li.collection-item').click(function() {
-  $('a.dropdown-button').text($(this).text())
-})
+$('li a.btn-flat').click(function() {
+  $('a.dropdown-button.change-text').text($(this).text());
+});

@@ -40,11 +40,25 @@ $(function() {
     }
   });
 
+  var allowedTags = new Set(["8А", "9А", "9Б", "9В", "9Е", "10А", "10Б", "10В",
+  "10Г", "10Д", "10Е", "10З", "10К", "11А", "11Б", "11В", "11Г", "11Д", "11Е",
+  "11З", "11К", "8Л", "8С", "9Л", "9С", "10Л", "10М", "10С", "11Л", "11М", "11С"]);
+
   var chipCount = 0;
   var usedChips = [];
   var $table = $('table');
 
   $('.chips-autocomplete').on('chip.add', function(e, chip) {
+    // Validate the chip
+    chip.tag = chip.tag.toUpperCase();
+    if (!allowedTags.has(chip.tag) || usedChips.indexOf(chip.tag) !== -1) {
+      $('.chip').last().remove();
+      return;
+    }
+
+    // Correct the case of the chip tag
+    $('.chip').last().text(chip.tag).append($('<i class="material-icons close">close</i>'));
+
     // Remember the chip
     usedChips.push(chip.tag);
     $table.removeClass('hide');
@@ -87,17 +101,12 @@ $(function() {
   });
 
   $('.collapsible-body .btn-flat').click(function() {
-    // Add a chip from the dropdown
-    if (usedChips.indexOf($(this).text()) !== -1) {
-      return;
-    }
     // Simulate entering the class into the textfield
     $('.chips input').val($(this).text()).focusin().trigger({
       type: 'keydown',
       which: 13
     });
   });
-
 
   function genSubjects(cls) {
     /**
