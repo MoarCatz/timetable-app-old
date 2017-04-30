@@ -59,10 +59,13 @@ $(function() {
     // Correct the case of the chip tag
     $('.chip').last().text(chip.tag).append($('<i class="material-icons close">close</i>'));
 
+    // Turn off the corresponding button in the dropdown
+    $('a.btn-flat:contains(' + chip.tag + ')').addClass('disabled');
+
     // Remember the chip
     usedChips.push(chip.tag);
-    $table.removeClass('hide');
-    $table.prev().addClass('hide');
+    $table.parents('.row').removeClass('hide');
+    $('.empty').addClass('hide');
 
     // If there's 3 chips, disable the inputs
     if (chipCount == 2) {
@@ -79,15 +82,18 @@ $(function() {
     });
   });
 
-  $('.chips').on('chip.delete', function(e, chip) {
+  $('.chips-autocomplete').on('chip.delete', function(e, chip) {
     --chipCount;
     // Forget the chip
     var idx = usedChips.indexOf(chip.tag);
     usedChips.splice(idx, 1);
     if (!usedChips.length) {
-      $table.addClass('hide');
-      $table.prev().removeClass('hide');
+      $table.parents('.row').addClass('hide');
+      $('.empty').removeClass('hide');
     }
+
+    // Turn on the corresponding button in the dropdown
+    $('a.btn-flat:contains(' + chip.tag + ')').removeClass('disabled');
 
     // If there's less than 3 chips, allow input again
     if (chipCount == 2) {

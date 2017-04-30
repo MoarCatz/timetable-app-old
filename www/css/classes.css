@@ -25,8 +25,8 @@
   font-size: 13pt;
 }
 
-.dropdown-content .collapsible-body li a {
-  color: #2E7D32 !important;
+.dropdown-content .collapsible-body li a.btn-flat {
+  color: #2E7D32;
 }
 
 .dropdown-button {
