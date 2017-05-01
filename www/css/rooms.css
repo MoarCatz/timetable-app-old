@@ -7,18 +7,27 @@
 }
 
 input + label {
-  padding-left: 30px !important;
+  font-size: 9pt !important;
 }
 
 .modal .modal-content {
   padding: 1rem 1.5rem;
 }
 
-label::before,
+label:not(.checkbox-label)::before,
 label::after {
   border-color: #388e3c !important;
 }
 
-label::after {
+input:checked + label::after {
   background-color: #388e3c !important;
+}
+
+form p {
+  margin-top: .5rem !important;
+}
+
+div.valign-wrapper {
+  height: 35px;
+  justify-content: space-between;
 }

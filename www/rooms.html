@@ -55,10 +55,10 @@
                 <div class="modal-content">
                   <h5></h5>
                   <h6></h6>
-                  <label>Причина:</label>
-                  <p class="grey-text text-darken-2" id="reason"></p>
                   <label>Занят:</label>
                   <p class="grey-text text-darken-2" id="until"></p>
+                  <label>Причина:</label>
+                  <p class="grey-text text-darken-2" id="reason"></p>
                 </div>
                 <div class="modal-footer">
                   <a href="#" class="modal-action modal-close btn-flat">Закрыть</a>
@@ -67,8 +67,10 @@
 
               <div id="occupy" class="modal">
                 <div class="modal-content">
-                  <h5></h5>
-                  <h6>Свободно</h6>
+                  <div class="valign-wrapper">
+                    <h5></h5>
+                    <h6>Свободно</h6>
+                  </div>
                     <div class="input-field">
                       <textarea id="textarea1" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
                       <label for="textarea1">Укажите причину занятия</label>
@@ -92,6 +94,11 @@
                     <label for="less7">7</label>
                     <input class="with-gap" name="lesson" type="radio" id="less8"  />
                     <label for="less8">Позже</label>
+
+                    <p>
+                      <input type="checkbox" class="filled-in" id="filled-in-box" />
+                      <label class="checkbox-label" for="filled-in-box">Занимать еженедельно?</label>
+                    </p>
                   </form>
 
                 </div>
