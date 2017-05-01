@@ -1,0 +1,24 @@
+.divider {
+  margin-bottom: .5rem;
+}
+
+.chip:not(.taken) {
+  background-color: #c8e6c9;
+}
+
+input + label {
+  padding-left: 30px !important;
+}
+
+.modal .modal-content {
+  padding: 1rem 1.5rem;
+}
+
+label::before,
+label::after {
+  border-color: #388e3c !important;
+}
+
+label::after {
+  background-color: #388e3c !important;
+}

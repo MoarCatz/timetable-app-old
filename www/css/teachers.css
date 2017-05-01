@@ -2,7 +2,8 @@
   color: #4CAF50;
 }
 
-.input-field label {
+.input-field label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
  color: #43A047;
 }
 
@@ -11,7 +12,8 @@
 }
 
 .input-field input[type=text]:focus,
-.chips.chips-autocomplete.focus {
+.chips.chips-autocomplete.focus,
+textarea.materialize-textarea:focus:not([readonly]) {
  border-bottom: 1px solid #43A047;
  box-shadow: 0 1px 0 0 #43A047;
 }
