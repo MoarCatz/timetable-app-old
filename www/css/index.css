@@ -1,0 +1,103 @@
+/* --- Common --- */
+.collapsible {
+  counter-reset: item
+}
+
+.collapsible:not(.no-count) div.collapsible-header::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+}
+
+.collapsible-body {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 0;
+  border-bottom-width: 0;
+}
+
+.collapsible-body > span ul,
+.card-reveal > div {
+  padding: 20px;
+}
+
+.mr-5 {
+  margin-right: .5rem;
+}
+
+.center.toolbar__center {
+  font-size: 14pt;
+}
+
+.toolbar-button--material:active {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button.button--material--flat,
+button.button--material--flat:focus {
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  color: #343434;
+  font-weight: 500 !important;
+  outline-color: #343434;
+  padding: 0 32px !important;
+}
+
+.button--material--flat:active {
+  color: #343434;
+}
+
+ons-splitter ons-list-item i {
+  margin-right: 32px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+div.center.list-item__center.list-item--material__center {
+  padding: 0;
+  background-image: none;
+}
+
+ons-splitter ons-list-item {
+  padding: 0 !important;
+}
+
+.sidenav-top {
+  padding: 32px 16px 16px 16px !important;
+  background-color: #388E3C;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: .5rem;
+}
+
+.sidenav-top .list-item__title {
+  font-weight: 500 !important;
+}
+
+div.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin-top: .5rem;
+}
+
+ons-splitter-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Index --- */
+.card-reveal .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-reveal .row::after {
+  display: none;
+}
+
+/* --- Changes --- */
+.day {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 14pt;
+}
