@@ -85,6 +85,10 @@ ons-splitter-mask {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+ons-button.button--large:not(.button--material--flat) {
+  background-color: #43A047;
+}
+
 /* --- Index --- */
 .card-reveal .row {
   display: flex;
@@ -100,4 +104,53 @@ ons-splitter-mask {
   margin-top: 1rem;
   text-align: center;
   font-size: 14pt;
+}
+
+/* --- Classes --- */
+.right .valign-wrapper {
+  justify-content: right;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  top: 24px;
+  left: 24px;
+  width: 100%;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+ons-button.active + .dropdown-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-content li {
+  min-height: 36px;
+}
+
+.dropdown-content li:hover,
+.dropdown-content li.active {
+  background-color: #fff;
+}
+
+.dropdown-content .collapsible-body,
+.dropdown-content li.collection-item {
+  padding: 0;
+}
+
+.dropdown-content .collapsible-header {
+  text-align: center;
+}
+
+.dropdown-content .collapsible-header {
+  font-size: 13pt;
+}
+
+.collapsible ons-button.button--material--flat {
+  width: 100%;
+  color: #2E7D32;
+  height: 100%;
 }

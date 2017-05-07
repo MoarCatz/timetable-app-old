@@ -200,11 +200,9 @@
     <ons-page>
       <ons-toolbar>
         <div class="left">
-          <ons-if orientation="portrait">
-            <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
-              <i class="material-icons">menu</i>
-            </ons-toolbar-button>
-          </ons-if>
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
         </div>
         <div class="center">
           Изменения
@@ -233,16 +231,318 @@
     <ons-page>
       <ons-toolbar>
         <div class="left">
-          <ons-if orientation="portrait">
-            <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
-              <i class="material-icons">menu</i>
-            </ons-toolbar-button>
-          </ons-if>
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
         </div>
         <div class="center">
           Классы
         </div>
+        <div class="right">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('compare.html')">
+            <i class="material-icons">compare_arrows</i>
+          </ons-toolbar-button>
+        </div>
       </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+              <ul id="drop" class="collapsible dropdown-content no-count">
+                <li>
+                  <div class="collapsible-header">8</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">9</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">10</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">11</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Понедельник</span>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Физкультура</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Вторник</span>
+                <p class="grey-text">Уроков нет</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Среда</span>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Физкультура</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Четверг</span>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Физкультура</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Пятница</span>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Физкультура</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <span class="card-title">Суббота</span>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Физкультура</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <ul class="lesson-info">
+                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
+                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
+                      </ul>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </ons-page>
   </ons-template>
 
@@ -250,14 +550,12 @@
     <ons-page>
       <ons-toolbar>
         <div class="left">
-          <ons-if orientation="portrait">
-            <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
-              <i class="material-icons">menu</i>
-            </ons-toolbar-button>
-          </ons-if>
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
         </div>
         <div class="center">
-          Учителя
+          Преподаватели
         </div>
       </ons-toolbar>
     </ons-page>
@@ -267,14 +565,12 @@
     <ons-page>
       <ons-toolbar>
         <div class="left">
-          <ons-if orientation="portrait">
-            <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
-              <i class="material-icons">menu</i>
-            </ons-toolbar-button>
-          </ons-if>
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
         </div>
         <div class="center">
-          Кабинеты
+          Свободные кабинеты
         </div>
       </ons-toolbar>
     </ons-page>
@@ -283,10 +579,17 @@
   <ons-template id="settings.html">
     <ons-page>
       <ons-toolbar>
-        <div class="center">Input</div>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Настройки
+        </div>
       </ons-toolbar>
 
-      <div style="text-align: center; margin-top: 30px;">
+      <div>
         <p>
           <ons-input id="username"  placeholder="Username" float></ons-input>
         </p>
@@ -344,11 +647,9 @@
     <ons-page>
       <ons-toolbar>
         <div class="left">
-          <ons-if orientation="portrait">
-            <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
-              <i class="material-icons">menu</i>
-            </ons-toolbar-button>
-          </ons-if>
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
         </div>
         <div class="center">
           Справка
