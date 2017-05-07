@@ -12,6 +12,7 @@
   display: block;
   max-height: 0;
   overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
   padding: 0;
   border-bottom-width: 0;
@@ -37,8 +38,12 @@
 button.button--material--flat,
 button.button--material--flat:focus {
   text-transform: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #343434;
   font-weight: 500 !important;
   outline-color: #343434;
@@ -59,7 +64,7 @@ div.center.list-item__center.list-item--material__center {
   background-image: none;
 }
 
-ons-splitter ons-list-item {
+ons-splitter-side ons-list-item {
   padding: 0 !important;
 }
 
@@ -91,8 +96,12 @@ ons-button.button--large:not(.button--material--flat) {
 
 /* --- Index --- */
 .card-reveal .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .card-reveal .row::after {
@@ -108,14 +117,15 @@ ons-button.button--large:not(.button--material--flat) {
 
 /* --- Classes --- */
 .right .valign-wrapper {
-  justify-content: right;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
 .dropdown-content {
   display: block;
   opacity: 0;
   pointer-events: none;
-  top: 24px;
   left: 24px;
   width: 100%;
   -webkit-transition: opacity .3s;
@@ -153,4 +163,70 @@ ons-button.active + .dropdown-content {
   width: 100%;
   color: #2E7D32;
   height: 100%;
+}
+
+/* --- Compare --- */
+.chip {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 5px;
+}
+
+.chip .close {
+  height: 1.5rem !important;
+  width: 1.2rem !important;
+  line-height: 1.5rem;
+  padding-left: 0;
+  text-align: center;
+}
+
+.chips {
+  min-height: 30px;
+}
+
+input:disabled {
+  border-bottom-width: 0 !important;
+}
+
+.chip,
+.chip.selected {
+  background-color: #388e3c !important;
+  color: #fff;
+}
+
+.card h6 {
+  padding-top: 1rem;
+}
+
+/* --- Teachers --- */
+.text-input__label {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.text-input__container {
+  padding:  0 .5rem .5rem;
+}
+
+.text-input {
+  padding-bottom: .5rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+ons-input {
+  width: 100%;
+}
+
+.help-text {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.help-title {
+  color: #2E7D32;
+}
+
+blockquote {
+  border-left: 5px solid #4CAF50;
 }

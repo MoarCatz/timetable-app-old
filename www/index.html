@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="css/onsen-css-components.css">
   <link rel="stylesheet" type="text/css" href="css/materialize.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
+
   <script>
     ons.platform.select('android');
   </script>
@@ -161,7 +162,7 @@
             <div class="card-reveal">
               <div>
                 <div class="row">
-                  <span class="card-title">Напомнить мне<i class="material-icons right valign-wrapper">close</i></span>
+                  <span class="card-title">Напомнить мне<i id="reveal-close" class="material-icons right valign-wrapper">close</i></span>
                 </div>
                 <form action="#">
                   <div class="row">
@@ -249,7 +250,7 @@
           <div class="card">
             <div class="card-content green-text text-darken-3">
               <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
-              <ul id="drop" class="collapsible dropdown-content no-count">
+              <ul id="drop" class="collapsible dropdown-content no-count set-text">
                 <li>
                   <div class="collapsible-header">8</div>
                   <div class="collapsible-body">
@@ -546,6 +547,157 @@
     </ons-page>
   </ons-template>
 
+  <ons-template id="compare.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Классы
+        </div>
+        <div class="right">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('classes.html')">
+            <i class="material-icons">people</i>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <div class="row">
+                <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+                <ul class="collapsible dropdown-content no-count">
+                  <li>
+                    <div class="collapsible-header">8</div>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                        <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                        <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">9</div>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                        <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                        <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                        <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                        <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                        <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">10</div>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                        <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">11</div>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                        <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="chips"></div>
+              <div class="row">
+                <ons-button class="dropdown-act" modifier="large">Выберите день недели</ons-button>
+                <ul class="collapsible dropdown-content no-count set-text">
+                  <li><ons-button modifier="large--quiet">Понедельник</ons-button></li>
+                  <li><ons-button modifier="large--quiet">Вторник</ons-button></li>
+                  <li><ons-button modifier="large--quiet">Среда</ons-button></li>
+                  <li><ons-button modifier="large--quiet">Четверг</ons-button></li>
+                  <li><ons-button modifier="large--quiet">Пятница</ons-button></li>
+                  <li><ons-button modifier="large--quiet">Суббота</ons-button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row empty">
+        <div class="col s12 m12">
+          <div class="card grey-text center">
+            <div class="card-content grey-text">
+              <h6 class="center">Выберите классы для сравнения<br />(не больше пяти)</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row hide" id="comparison-table">
+        <div class="col s12 m12">
+          <div class="card">
+            <table class="responsive-table centered">
+              <thead>
+                <tr>
+                  <th>№</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 <small>(9:00 - 9:40)</small></td>
+                </tr>
+                <tr>
+                  <td>2 <small>(9:50 - 10:30)</small></td>
+                </tr>
+                <tr>
+                  <td>3 <small>(10:45 - 11:25)</small></td>
+                </tr>
+                <tr>
+                  <td>4 <small>(11:40 - 12:20)</small></td>
+                </tr>
+                <tr>
+                  <td>5 <small>(12:35 - 13:15)</small></td>
+                </tr>
+                <tr>
+                  <td>6 <small>(13:35 - 14:15)</small></td>
+                </tr>
+                <tr>
+                  <td>7 <small>(14:35 - 15:15)</small></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </ons-page>
+  </ons-template>
+
   <ons-template id="teachers.html">
     <ons-page>
       <ons-toolbar>
@@ -655,6 +807,452 @@
           Справка
         </div>
       </ons-toolbar>
+
+      <ons-list>
+        <ons-list-header>Приложение</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-common.html')">
+          <div class="left">
+            <i class="material-icons">done</i>
+          </div>
+          <div class="center">
+            Общее
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-notifications.html')">
+          <div class="left">
+            <i class="material-icons">notifications</i>
+          </div>
+          <div class="center">
+            Уведомления
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Разделы</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-home.html')">
+          <div class="left">
+            <i class="material-icons">home</i>
+          </div>
+          <div class="center">
+            Главный экран
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-classes.html')">
+          <div class="left">
+            <i class="material-icons">people</i>
+          </div>
+          <div class="center">
+            Расписание по классам
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-teachers.html')">
+          <div class="left">
+            <i class="material-icons">school</i>
+          </div>
+          <div class="center">
+            Расписание по преподавателям
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-rooms.html')">
+          <div class="left">
+            <i class="material-icons">beenhere</i>
+          </div>
+          <div class="center">
+            Свободные кабинеты
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-settings.html')">
+          <div class="left">
+            <i class="material-icons">settings</i>
+          </div>
+          <div class="center">
+            Настройки приложения
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Дополнительно</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-faq.html')">
+          <div class="left">
+            <i class="material-icons">replay</i>
+          </div>
+          <div class="center">
+            Часто задаваемые вопросы
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-about.html')">
+          <div class="left">
+            <i class="material-icons">help</i>
+          </div>
+          <div class="center">
+            О программе
+          </div>
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-common.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">Общее</h4>
+        <p>
+          Данное приложение предназначено для оперативного получения изменений в
+          расписании занятий СУНЦ УрФУ, а также для возможности удобно
+          просматривать всю необходимую для учёбы информацию.
+        </p>
+        <p>
+          <blockquote>
+            Внимание: приложение предоставляется "как есть" и может работать со
+            сбоями. Не следует полагаться на него в случае принятия важных решений.
+            Все данные предоставляются в исключительно информативных целях.
+          </blockquote>
+        </p>
+
+        <h5 class="help-title">Ограничения</h5>
+        <p>
+          Для полноценной работы программы необходим доступ к интернету. Тем не
+          менее, просмотр последних полученных данных, а также постоянного расписания,
+          возможен без доступа к сети.
+        </p>
+        <p>Все данные получаются по мере поступления и доступе к сети.</p>
+
+        <h5 class="help-title">Системные требования</h5>
+        <p>
+          Мы постарались сделать так, чтобы наибольшее число устройств смогли
+          поддерживать наше приложение. На данный момент оно доступно для операционных
+          систем <b>Android</b> и <b>iOS</b>.
+        </p>
+        <p>
+          Если Вы столкнулись с неисправностью во время работы или ошибкой,
+          пожалуйста, отправьте об этом сообщение по адресу <code>timetable@alexfox.co</code>.</p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-notifications.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Уведомления
+        </h4>
+        <p>
+          По умолчанию программа будет отправлять push-уведомления при каждом
+          изменении расписания для класса пользователя.
+        </p>
+        <p>
+          Данную функцию можно отключить в настройках приложения
+          <i class="material-icons" style="color: #2E7D32;">settings</i>.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Главный экран
+        </h4>
+        <p>
+          При открытии программы показывается расписание на текущий и
+          следующий учебные дни.
+        </p>
+        <p>
+          Нажатие на каждый из представленных уроков предоставляет следующую
+          информацию: время урока <i class="material-icons" style="color: #2E7D32;">access_time</i>
+          и учителя, проводящего занятие <i class="material-icons" style="color: #2E7D32;">school</i>.
+        </p>
+
+        <img class="responsive-img" src="img/card.png" />
+
+        <p>
+          При нажатии на иконку с колокольчиком <i class="material-icons" style="color: #2E7D32;">notifications</i>
+          , отображаемую в карточке следующего дня, открывается меню установки напоминания
+          о предстоящих уроках. Отключение установленного оповещения происходит
+          в этом же разделе. Время утренних и вечерних оповещений можно
+          изменить на странице настроек
+          <i class="material-icons" style="color: #2E7D32;">settings</i>.
+        </p>
+
+        <img class="responsive-img" src="img/reminder.png" />
+
+        <p>
+          Изменения в расписании отображаются в конце страницы. Данный пункт
+          можно поднять выше остальных путем установки соответствующего
+          параметра на странице настроек <i class="material-icons" style="color: #2E7D32;">settings</i>.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-classes.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Расписание по классам
+        </h4>
+        <p>
+          На странице Классы <i class="material-icons" style="color: #2E7D32;">people</i>
+          отображается постоянное расписание для класса пользователя на всю неделю.
+        </p>
+        <p>
+          Изменить отображаемый в данный момент класс можно с помощью зелёной кнопки в начале раздела.
+        </p>
+        <p>
+          Правый верхний угол содержит ссылку на страницу сравнения расписаний
+          классов: <i class="material-icons" style="color: #2E7D32;">compare_arrows</i>.
+        </p>
+        <p>
+          В этом разделе допускается выбрать не более трёх классов любым из двух
+          доступных способов, после чего их расписания будут представлены в таблице сравнения.
+        </p>
+
+        <img class="responsive-img" src="img/compare.png" />
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-teachers.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Расписание по преподавателям
+        </h4>
+        <p>
+          Данный раздел позволяет узнать, по каким дням и в какое время
+          преподаватель ведёт свои занятия.
+        </p>
+        <p>
+          Выбор делается в начале страницы: достаточно начать писать фамилию
+          интересующего преподавателя и выбрать его в выпадающем списке.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-rooms.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <p>
+          <s>
+            Страница в стадии разработки.
+          </s>
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-settings.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Настройки приложения
+        </h4>
+        <p>
+          В данном разделе можно задать наиболее удобный режим поведения программы.
+        </p>
+        <p>
+          Доступны следующие параметры:
+        </p>
+        <ol>
+          <li>
+            <p>
+              <i>Имя</i> - значение данного поля будет отображаться в разделе
+              занятости кабинетов. Настоятельно рекомендуется заполнить поле
+              реальными данными во избежание недопониманий;
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Класс</i> - влияет на отображение меню главной страницы, а
+              также страницы Классы;
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Получать уведомления</i> - в случае установки данного флажка
+              пользователь будет получать push-уведомления при появлении
+              изменений в расписании;
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Время вечерних и утренних напоминаний</i> - в указанное время
+              программа будет присылать расписание на следующий день;
+            </p>
+          </li>
+          <li>
+            <i>Регулярное получение напоминаний</i> - программа будет присылать
+            расписание на следующий день каждое утро и/или каждый вечер
+            в зависимости от установленных флажков;
+          </li>
+          <li>
+            <i>Отображать изменения перед расписанием</i> - установка флажка поднимает
+            карточку с изменениями над основным расписанием занятий.
+          </li>
+        </ol>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-faq.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Частые вопросы
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">Часто задаваемые вопросы</h4>
+
+        <h6 class="help-title">Где находится кнопка обновления информации?</h6>
+        <blockquote>
+          Данной кнопки нет, так как приложение автоматически узнает о
+          происходящих изменениях в расписании.
+        </blockquote>
+
+        <h6 class="help-title">Как быстро приходят изменения?</h6>
+        <blockquote>
+          Проверка сайта происходит каждые 15 минут. Мы стараемся, чтобы при
+          появлении новой информации она была доставлена каждому пользователю как можно скорее.
+        </blockquote>
+
+        <h6 class="help-title">Могу ли я выбрать больше классов для сравнения?</h6>
+        <blockquote>
+          На данный момент такая возможность не предусмотрена.
+        </blockquote>
+
+        <h6 class="help-title">Каким образом приложение получает необходимую информацию?</h6>
+        <blockquote>
+          Мы работаем с помощью сервиса OneSignal, посылающим уведомления в наши программы с сервера.
+        </blockquote>
+
+        <h6 class="help-title">Я нашёл ошибку!</h6>
+        <blockquote>
+          Будем признательны, если вы отправите о ней письмо по адресу <code>timetable@alexfox.co</code>.
+        </blockquote>
+
+        <h6 class="help-title">Знаю супер-пупер-крутую функцию, которой все ещё нет.</h6>
+        <blockquote>
+          Отлично! Просто отправьте нам письмо на электронную почту.
+        </blockquote>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">О программе</h4>
+        <img class="responsive-img" src="img/moarcatz.png" style="float: left; margin-left: 10px; margin-right: 10px;" />
+
+        <p>
+          Данное приложение было разработано командой <b>MoarCatz</b>.
+        </p>
+
+        <p>
+          Пожалуйста, оцените его в магазине приложений и напишите своё мнение
+          - будем рады слышать.
+        </p>
+        <p>
+          Программа распространяется свободно и с открытым исходным кодом. Добро
+          пожаловать в наш <a href="https://github.com/MoarCatz/timetable-app" color="#2E7D32">репозиторий</a>
+          на GitHub.
+        </p>
+      </div>
     </ons-page>
   </ons-template>
 
