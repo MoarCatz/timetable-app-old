@@ -50,11 +50,12 @@ button.button--material--flat:focus {
   padding: 0 32px !important;
 }
 
-.button--material--flat:active {
+ons-splitter-side .button--material--flat:active,
+.dark-text {
   color: #343434;
 }
 
-ons-splitter ons-list-item i {
+ons-splitter-side ons-list-item i {
   margin-right: 32px;
   color: rgba(0, 0, 0, 0.54);
 }
@@ -166,13 +167,13 @@ ons-button.active + .dropdown-content {
 }
 
 /* --- Compare --- */
-.chip {
+.chips .chip {
   height: 1.5rem;
   line-height: 1.5rem;
   padding: 0 5px;
 }
 
-.chip .close {
+.chips .chip .close {
   height: 1.5rem !important;
   width: 1.2rem !important;
   line-height: 1.5rem;
@@ -188,13 +189,13 @@ input:disabled {
   border-bottom-width: 0 !important;
 }
 
-.chip,
-.chip.selected {
+.chips .chip,
+.chips .chip.selected {
   background-color: #388e3c !important;
   color: #fff;
 }
 
-.card h6 {
+.chips .card h6 {
   padding-top: 1rem;
 }
 
@@ -229,4 +230,65 @@ ons-input {
 
 blockquote {
   border-left: 5px solid #4CAF50;
+}
+
+/* --- Rooms --- */
+.collapsible-body .divider {
+  margin-bottom: .5rem;
+}
+
+.collapsible-body .chip:not(.taken) {
+  background-color: #c8e6c9;
+}
+
+ons-navigator[page="rooms.html"] .collapsible-body > div {
+  padding: 1rem;
+}
+
+.alert-dialog .alert-dialog-title--material {
+  color: #2E7D32;
+}
+
+ons-alert-dialog .valign-wrapper {
+  height: 35px;
+  justify-content: space-between;
+}
+
+.alert-dialog-footer {
+  padding-bottom: 1rem;
+}
+
+.alert-dialog-footer ons-button {
+  float: right;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.block {
+  display: block;
+  margin-bottom: .3rem;
+}
+
+ons-input[type=radio],
+ons-input[type=checkbox] {
+  display: inline;
+}
+
+ons-input[type=radio] + label {
+  margin-right: .5rem;
+}
+
+ons-input[type=checkbox] span.checkbox__checkmark::after {
+  top: 25%;
+  left: 20%;
+}
+
+ons-input[type=radio] + label,
+ons-input[type=checkbox] + label {
+  font-size: 9pt;
+}
+
+#occupied p {
+  margin: 0;
+  font-size: 14px;
 }

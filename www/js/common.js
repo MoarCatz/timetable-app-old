@@ -8,7 +8,6 @@ window.fn.open = function() {
 window.fn.load = function(page) {
   var menu = document.getElementById('menu');
   var navi = document.getElementById('navi');
-
   menu.close();
   navi.resetToPage(page, {animation: 'none'});
 };

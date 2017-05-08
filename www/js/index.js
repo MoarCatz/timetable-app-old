@@ -15,6 +15,14 @@ function genSubjects(cls) {
   return selected;
 }
 
+function closeDialog(id) {
+  /**
+   * Closes the dialog with the given ID.
+   * @param  {String} id    Dialog's ID.
+   */
+  document.getElementById(id).hide();
+}
+
 document.addEventListener('show', function(event) {
   // Set up card-reveal
   var act = document.getElementsByClassName('activator');
@@ -154,29 +162,90 @@ document.addEventListener('show', function(event) {
   // Prevent SideNav from opening when the table gets scrolled
   var isTouchDown = false;
   var table = document.getElementById('comparison-table');
-  table.ontouchstart = function() { isTouchDown = true  };
-  table.ontouchend = function() { isTouchDown = false };
-  table.ontouchmove = function(event) {
-    if (isTouchDown) {
-      event.stopPropagation();
-    }
-  };
+  if (table) {
+    table.ontouchstart = function() { isTouchDown = true  };
+    table.ontouchend = function() { isTouchDown = false };
+    table.ontouchmove = function(event) {
+      if (isTouchDown) {
+        event.stopPropagation();
+      }
+    };
 
-  var isMouseDown = false;
-  table.onmousedown = function(event) {
-    event.preventDefault();
-    isMouseDown = true;
-  };
-  table.onmouseup = function() {
-    event.preventDefault();
-    isMouseDown = false;
-  };
-  table.onmousemove = function(event) {
-    event.preventDefault();
-    if (isMouseDown) {
-      event.stopPropagation();
-    }
-  };
+    var isMouseDown = false;
+    table.onmousedown = function(event) {
+      event.preventDefault();
+      isMouseDown = true;
+    };
+    table.onmouseup = function() {
+      event.preventDefault();
+      isMouseDown = false;
+    };
+    table.onmousemove = function(event) {
+      event.preventDefault();
+      if (isMouseDown) {
+        event.stopPropagation();
+      }
+    };
+  }
+
+
+  var available = document.querySelectorAll(':not(.chips) .chip:not(.taken)');
+  var taken = document.querySelectorAll(':not(.chips) .chip.taken');
+
+  function showOccupy() {
+    var modal = document.getElementById('occupy');
+    modal.querySelector('h5').innerHTML = this.innerHTML;
+    modal.show();
+  }
+
+  function showOccupied() {
+    var modal = document.getElementById('occupied');
+    modal.querySelector('h5').innerHTML = this.innerHTML;
+    modal.getElementsByTagName('h6')[0].innerHTML = 'Лев Челядинов, 10Е';
+    modal.querySelector('#until').innerHTML = 'С 6 по 7 урок';
+    modal.querySelector('#reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
+    modal.show();
+  }
+
+
+  for (var i = 0; i < available.length; ++i) {
+    available[i].onmousedown = showOccupy;
+  }
+
+  for (var i = 0; i < taken.length; ++i) {
+    taken[i].onmousedown = showOccupied;
+  }
+
+  var occupyReason = document.querySelector('textarea');
+  if (occupyReason) {
+    // Activate the textarea's label on focus
+    occupyReason.onfocus = occupyReason.onblur = function() {
+      if (!this.value.length) {
+        this.nextElementSibling.classList.toggle('active');
+      }
+      if (this.charCount.innerHTML === '') {
+        this.charCount.innerHTML = this.value.length + '/80';
+      }
+      else {
+        this.charCount.innerHTML = '';
+      }
+    };
+
+    // Add a character counter
+    occupyReason.charCount = document.createElement('span');
+    occupyReason.charCount.style.float = 'right';
+    occupyReason.charCount.style.height = '1px';
+    occupyReason.charCount.style.fontSize = '12px';
+    occupyReason.onkeyup = function() {
+      this.charCount.innerHTML = this.value.length + '/80';
+    };
+    occupyReason.parentElement.appendChild(occupyReason.charCount);
+  }
 
 });
 
+  var showDialog = function(id) {
+    document
+      .getElementById(id)
+      .show();
+  };

@@ -60,7 +60,7 @@
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content>
-      <ons-navigator id="navi" page="home.html"></ons-navigator>
+      <ons-navigator id="navi" page="rooms.html"></ons-navigator>
     </ons-splitter-content>
   </ons-splitter>
 
@@ -725,6 +725,151 @@
           Свободные кабинеты
         </div>
       </ons-toolbar>
+      <div class="row">
+        <ons-alert-dialog id="occupied">
+          <div class="alert-dialog-title">
+            <h5></h5>
+            <h6></h6>
+          </div>
+          <div class="alert-dialog-content">
+            <label>Занят:</label>
+            <p class="grey-text text-darken-2" id="until"></p>
+            <label>Причина:</label>
+            <p class="grey-text text-darken-2" id="reason"></p>
+          </div>
+          <div class="alert-dialog-footer">
+            <ons-button onclick="closeDialog('occupied')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+          </div>
+        </ons-alert-dialog>
+
+        <ons-alert-dialog id="occupy">
+          <div class="alert-dialog-title">
+            <div class="valign-wrapper">
+              <h5></h5>
+              <h6>Свободно</h6>
+            </div>
+          </div>
+
+          <div class="alert-dialog-content">
+            <div class="input-field">
+              <textarea id="textarea1" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
+              <label for="textarea1">Укажите причину занятия</label>
+            </div>
+            <div>
+              <label class="block">До какого урока (включительно)?</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>1</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>2</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>3</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>4</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>5</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>6</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>7</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>Позже</label>
+              <br />
+              <ons-input type="checkbox"></ons-input>
+              <label>Занимать еженедельно?</label>
+            </div>
+          </div>
+          <div class="alert-dialog-footer">
+            <ons-button onclick="closeDialog('occupy')" modifier="quiet">Сохранить</ons-button>
+            <ons-button onclick="closeDialog('occupy')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+          </div>
+        </ons-alert-dialog>
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content green-text text-darken-3">
+              <ul class="collapsible no-count" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header">1 урок</div>
+                  <div class="collapsible-body">
+                    <div>
+                      <h6>1 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">102</div>
+                      <div class="chip">103</div>
+                      <div class="chip taken">104</div>
+                      <div class="chip">105</div>
+                      <div class="chip">106</div>
+                      <div class="chip taken">107</div>
+                      <h6>2 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">201</div>
+                      <div class="chip">202</div>
+                      <div class="chip">203</div>
+                      <div class="chip taken">204</div>
+                      <div class="chip">205</div>
+                      <div class="chip taken">206</div>
+                      <div class="chip taken">207</div>
+                      <div class="chip">208</div>
+                      <div class="chip">209</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">2 урок</div>
+                  <div class="collapsible-body">
+                    <div>
+                      <h6>1 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">102</div>
+                      <div class="chip">103</div>
+                      <div class="chip taken">104</div>
+                      <div class="chip">105</div>
+                      <div class="chip">106</div>
+                      <div class="chip taken">107</div>
+                      <h6>2 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">201</div>
+                      <div class="chip">202</div>
+                      <div class="chip">203</div>
+                      <div class="chip taken">204</div>
+                      <div class="chip">205</div>
+                      <div class="chip taken">206</div>
+                      <div class="chip taken">207</div>
+                      <div class="chip">208</div>
+                      <div class="chip">209</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">3 урок</div>
+                  <div class="collapsible-body">
+                    <div>
+                      <h6>1 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">102</div>
+                      <div class="chip">103</div>
+                      <div class="chip taken">104</div>
+                      <div class="chip">105</div>
+                      <div class="chip">106</div>
+                      <div class="chip taken">107</div>
+                      <h6>2 этаж</h6>
+                      <div class="divider"></div>
+                      <div class="chip">201</div>
+                      <div class="chip">202</div>
+                      <div class="chip">203</div>
+                      <div class="chip taken">204</div>
+                      <div class="chip">205</div>
+                      <div class="chip taken">206</div>
+                      <div class="chip taken">207</div>
+                      <div class="chip">208</div>
+                      <div class="chip">209</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </ons-page>
   </ons-template>
 
