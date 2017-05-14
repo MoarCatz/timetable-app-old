@@ -6,20 +6,17 @@ document.addEventListener('show', function(event) {
     acc[i].onmousedown = function() {
       if (lastActive !== undefined && lastActive !== this) {
         lastActive.classList.toggle('active');
-        lastActive.nextElementSibling.style.maxHeight = null;
+        TweenLite.to(lastActive.nextElementSibling, .2, {maxHeight: 0});
         lastActive.nextElementSibling.style.borderBottomWidth = '0';
       }
 
-      this.classList.toggle('active');
-
-      /* Set max-height to animate the dropdown
-      Source: https://www.w3schools.com/howto/howto_js_accordion.asp */
       var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
+
+      if (!this.classList.toggle('active')) {
+        TweenLite.to(panel, .2, {maxHeight: 0});
         panel.style.borderBottomWidth = '0';
       } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
+        TweenLite.to(panel, .2, {maxHeight: panel.scrollHeight});
         panel.style.borderBottomWidth = '1px';
       }
       lastActive = this;

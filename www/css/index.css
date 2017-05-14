@@ -1,6 +1,7 @@
 /* --- Common --- */
 .collapsible {
   counter-reset: item
+  transform: translate3d(0, 0, 0);
 }
 
 .collapsible:not(.no-count) div.collapsible-header::before {
@@ -12,8 +13,7 @@
   display: block;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
+  will-change: max-height;
   padding: 0;
   border-bottom-width: 0;
 }
@@ -129,6 +129,7 @@ ons-button.button--large:not(.button--material--flat) {
   pointer-events: none;
   left: 24px;
   width: 100%;
+  will-change: opacity;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
 }

@@ -30,13 +30,13 @@ document.addEventListener('show', function(event) {
   function revealCard() {
     // Display the card-reveal with a slide animation
     var reveal = this.parentElement.nextElementSibling;
-    reveal.style.height = '100%';
+    TweenLite.to(reveal, .2, {height: '100%'});
   }
 
   function hideCard() {
     // Hide the card-reveal with a slide animation
     var reveal = this.parentElement.parentElement.parentElement.parentElement;
-    reveal.style.height = null;
+    TweenLite.to(reveal, .2, {height: '0'});
   }
 
   for (var i = 0; i < act.length; ++i) {
@@ -243,9 +243,3 @@ document.addEventListener('show', function(event) {
   }
 
 });
-
-  var showDialog = function(id) {
-    document
-      .getElementById(id)
-      .show();
-  };
