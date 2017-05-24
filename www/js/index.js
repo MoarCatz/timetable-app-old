@@ -23,58 +23,65 @@ function closeDialog(id) {
   document.getElementById(id).hide();
 }
 
+function removeChip() {
+  // Action to take on a chip's removal
+  var idx = usedTags.indexOf(this.tag);
+
+  if (usedTags.length === chipThreshold) {
+    // If the limit is not exceeded, allow selection
+    this.dropdownButton.removeAttribute('disabled');
+  }
+
+  // Delete the corresponding row from the table
+  var rowHead = document.querySelector('thead th:nth-child(' + (idx + 2) + ')');
+  var rowBody = document.querySelectorAll('tbody td:nth-child(' + (idx + 2) + ')');
+  rowHead.parentElement.removeChild(rowHead);
+  for (var i = 0; i < rowBody.length; ++i) {
+    rowBody[i].parentElement.removeChild(rowBody[i]);
+  }
+
+  usedTags.splice(idx, 1);
+  this.parentElement.removeChild(this);
+  this.selectButton.removeAttribute('disabled');
+
+  // If there's no more chips, hide the table
+  if (!usedTags.length) {
+    document.getElementById('comparison-table').classList.add('hide');
+    document.querySelector('div.row.empty').classList.remove('hide');
+  }
+
+}
+
+function showOccupy() {
+  var modal = document.getElementById('occupy');
+  modal.querySelector('h5').innerHTML = this.innerHTML;
+  modal.show();
+}
+
+function showOccupied() {
+  var modal = document.getElementById('occupied');
+  modal.querySelector('h5').innerHTML = this.innerHTML;
+  modal.getElementsByTagName('h6')[0].innerHTML = 'Лев Челядинов, 10Е';
+  modal.querySelector('#until').innerHTML = 'С 6 по 7 урок';
+  modal.querySelector('#reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
+  modal.show();
+}
+
+function toggleSwitch(event) {
+  if (event.target.matches('.switch__touch, .switch__toggle')) {
+    return;
+  }
+  var switch_ = this.querySelector('ons-switch');
+  if (!switch_.getAttribute('checked')) {
+    switch_.setAttribute('checked', 'true');
+  }
+  else {
+    switch_.removeAttribute('checked');
+  }
+}
+
+
 document.addEventListener('show', function(event) {
-  // Set up card-reveal
-  var act = document.getElementsByClassName('activator');
-
-  function revealCard() {
-    // Display the card-reveal with a slide animation
-    var reveal = this.parentElement.nextElementSibling;
-    TweenLite.to(reveal, .2, {height: '100%'});
-  }
-
-  function hideCard() {
-    // Hide the card-reveal with a slide animation
-    var reveal = this.parentElement.parentElement.parentElement.parentElement;
-    TweenLite.to(reveal, .2, {height: '0'});
-  }
-
-  for (var i = 0; i < act.length; ++i) {
-    act[i].onmousedown = revealCard;
-
-    var closeBt = document.getElementById('reveal-close');
-    closeBt.onmousedown = hideCard;
-  }
-
-  function removeChip() {
-    // Action to take on a chip's removal
-    var idx = usedTags.indexOf(this.tag);
-
-    if (usedTags.length === chipThreshold) {
-      // If the limit is not exceeded, allow selection
-      this.dropdownButton.removeAttribute('disabled');
-    }
-
-    // Delete the corresponding row from the table
-    var rowHead = document.querySelector('thead th:nth-child(' + (idx + 2) + ')');
-    var rowBody = document.querySelectorAll('tbody td:nth-child(' + (idx + 2) + ')');
-    rowHead.parentElement.removeChild(rowHead);
-    for (var i = 0; i < rowBody.length; ++i) {
-      rowBody[i].parentElement.removeChild(rowBody[i]);
-    }
-
-    usedTags.splice(idx, 1);
-    this.parentElement.removeChild(this);
-    this.selectButton.removeAttribute('disabled');
-
-    // If there's no more chips, hide the table
-    if (!usedTags.length) {
-      document.getElementById('comparison-table').classList.add('hide');
-      document.querySelector('div.row.empty').classList.remove('hide');
-    }
-
-  }
-
   // Set up dropdowns with selectable content
   var drop = document.getElementsByClassName('dropdown-content');
   var usedTags = [];
@@ -192,22 +199,6 @@ document.addEventListener('show', function(event) {
   var available = document.querySelectorAll(':not(.chips) .chip:not(.taken)');
   var taken = document.querySelectorAll(':not(.chips) .chip.taken');
 
-  function showOccupy() {
-    var modal = document.getElementById('occupy');
-    modal.querySelector('h5').innerHTML = this.innerHTML;
-    modal.show();
-  }
-
-  function showOccupied() {
-    var modal = document.getElementById('occupied');
-    modal.querySelector('h5').innerHTML = this.innerHTML;
-    modal.getElementsByTagName('h6')[0].innerHTML = 'Лев Челядинов, 10Е';
-    modal.querySelector('#until').innerHTML = 'С 6 по 7 урок';
-    modal.querySelector('#reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
-    modal.show();
-  }
-
-
   for (var i = 0; i < available.length; ++i) {
     available[i].onmousedown = showOccupy;
   }
@@ -242,4 +233,40 @@ document.addEventListener('show', function(event) {
     occupyReason.parentElement.appendChild(occupyReason.charCount);
   }
 
+  var act = document.querySelector('.activator');
+  if (act) {
+    var sheet = document.getElementById('sheet');
+    var sheetBtns = sheet.getElementsByTagName('ons-action-sheet-button');
+
+    for (var i = 0; i < sheetBtns.length; ++i) {
+      sheetBtns[i].onclick = toggleSwitch;
+    }
+
+    sheetBtns[sheetBtns.length - 1].onclick = function() {
+      sheet.hide();
+    };
+
+    act.onclick = function() {
+      sheet.show();
+    };
+  }
+
+  var lists = document.querySelectorAll('ons-card ons-list');
+  var toast = document.querySelector('ons-toast');
+  if (toast) {
+    toast.querySelector('button').onclick = function() {
+      toast.hide();
+    };
+    
+    for (var i = 0; i < lists.length; ++i) {
+      var btns = lists[i].getElementsByTagName('ons-list-item');
+      for (var j = 0; j < btns.length; ++j) {
+        btns[j].onclick = function() {
+          toast.show().then(function() {
+            setTimeout(function() {toast.hide()}, 2000);
+          });
+        };
+      }
+    }
+  }
 });

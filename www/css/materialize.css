@@ -3280,7 +3280,7 @@ span.badge {
   font-size: 1rem;
   line-height: 22px;
   height: 22px;
-  color: #757575;
+  color: #2E7D32;
   float: right;
   box-sizing: border-box;
 }
@@ -3289,7 +3289,7 @@ span.badge.new {
   font-weight: 300;
   font-size: 0.8rem;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #2E7D32;
   border-radius: 2px;
 }
 
@@ -4887,7 +4887,7 @@ small {
   }
 }
 
-.toast {
+/*.toast {
   border-radius: 2px;
   top: 35px;
   width: auto;
@@ -4941,7 +4941,7 @@ small {
   .toast {
     float: right;
   }
-}
+}*/
 
 .tabs {
   position: relative;

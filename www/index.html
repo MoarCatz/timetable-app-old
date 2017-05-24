@@ -78,110 +78,39 @@
       </ons-toolbar>
       <div class="row">
         <div class="col s12 m6">
-          <div class="card">
-            <div class="card-content green-text text-darken-3">
-              <span class="card-title">Сегодня, чт 27.02</span>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header">Физкультура</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-              </ul>
+          <ons-card>
+            <span class="title">Сегодня, чт 27.02</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
             </div>
-          </div>
+          </ons-card>
         </div>
         <div class="col s12 m6">
-          <div class="card green-text text-darken-3">
-            <div class="card-content">
-              <span class="card-title activator">Завтра, пт 28.02 <i class="material-icons right">notifications</i></span>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50 - 10:30</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header">Физкультура</div>
-                  <div class="collapsible-body">
-                    <span>
-                      <ul class="lesson-info">
-                        <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
-                        <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45 - 11:25</li>
-                      </ul>
-                    </span>
-                  </div>
-                </li>
-              </ul>
+          <ons-card>
+            <span class="title">Завтра, пт 28.02 <i class="material-icons right activator">notifications</i></span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
             </div>
-            <div class="card-reveal">
-              <div>
-                <div class="row">
-                  <span class="card-title">Напомнить мне<i id="reveal-close" class="material-icons right valign-wrapper">close</i></span>
-                </div>
-                <form action="#">
-                  <div class="row">
-                    Сегодня вечером
-                    <ons-switch></ons-switch>
-                  </div>
-                  <div class="row">
-                    Завтра утром
-                    <ons-switch></ons-switch>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+            </ons-card>
         </div>
+        <ons-action-sheet cancelable id="sheet">
+          <div class="action-sheet-title action-sheet-title--material valign-wrapper"><i class="material-icons">notifications</i> Напомнить мне</div>
+          <ons-action-sheet-button>Сегодня вечером <ons-switch></ons-switch></ons-action-sheet-button>
+          <ons-action-sheet-button>Завтра утром <ons-switch></ons-switch></ons-action-sheet-button>
+          <ons-action-sheet-button class="close-btn"><i class="material-icons">close</i> Закрыть</ons-action-sheet-button>
+        </ons-action-sheet>
         <div class="col s12 m6">
-          <div class="card">
-            <div class="card-content green-text text-darken-3">
-              <span class="card-title">Изменения</span>
+          <ons-card>
+            <span class="title">Изменения</span>
+            <div class="content card-offset">
               <ul>
                 <b>На 04.09</b>
                 <li>
@@ -190,10 +119,16 @@
               </ul>
               <p class="grey-text">Изменений нет</p>
             </div>
-          </div>
+          </ons-card>
         </div>
       </div>
-
+      <ons-toast id="toast">
+        <ul>
+          <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+          <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+        </ul>
+        <button class="valign-wrapper"><i class="material-icons">close</i></button>
+      </ons-toast>
     </ons-page>
   </ons-template>
 
@@ -1291,7 +1226,7 @@
           </li>
           <li>
             <p>
-              <i>Получать уведомления</i> - в случае установки данного флажка
+              <i>Получать уведомления</i> - в слу��ае установки данного флажка
               пользователь будет получать push-уведомления при появлении
               изменений в расписании;
             </p>

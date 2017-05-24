@@ -1,12 +1,12 @@
 /* --- Common --- */
-.collapsible {
-  counter-reset: item
-  transform: translate3d(0, 0, 0);
+ons-card ons-list {
+  counter-reset: item;
 }
 
-.collapsible:not(.no-count) div.collapsible-header::before {
+ons-card ons-list:not(.no-count) > ons-list-item::before {
   content: counter(item) ". ";
   counter-increment: item;
+  margin-right: .5rem;
 }
 
 .collapsible-body {
@@ -95,19 +95,45 @@ ons-button.button--large:not(.button--material--flat) {
   background-color: #43A047;
 }
 
-/* --- Index --- */
-.card-reveal .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+ons-toast {
+  position: fixed;
 }
 
-.card-reveal .row::after {
-  display: none;
+ons-toast ul {
+  margin: 0;
+  padding: 10px 0;
 }
+
+/* --- Index --- */
+ons-card > .title,
+ons-action-sheet-button,
+.action-sheet-title {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ons-action-sheet-button.close-btn,
+.action-sheet-title {
+  justify-content: flex-start;
+}
+
+ons-action-sheet i {
+  margin-right: 1rem;
+}
+
+.card-offset {
+  margin: 0 18px;
+}
+
+ons-action-sheet {
+  position: fixed;
+}
+
+div.action-sheet-mask {
+  touch-action: none;
+}
+
 
 /* --- Changes --- */
 .day {
