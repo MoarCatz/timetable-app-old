@@ -136,10 +136,8 @@ div.action-sheet-mask {
 
 
 /* --- Changes --- */
-.day {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 14pt;
+ons-list-item ons-list-header {
+  padding: 12px 8px 0 !important;
 }
 
 /* --- Classes --- */
