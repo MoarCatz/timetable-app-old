@@ -112,16 +112,27 @@ ons-toast ul {
 }
 
 .double-lesson > .list-item__center {
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-left: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 8px 1rem 8px 5px;
 }
 
 .double-lesson .group {
   width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .double-lesson .divider {
@@ -134,14 +145,22 @@ ons-toast ul {
 ons-card > .title,
 ons-action-sheet-button,
 .action-sheet-title {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 ons-action-sheet-button.close-btn,
 .action-sheet-title {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 ons-action-sheet i {
@@ -157,7 +176,8 @@ ons-action-sheet {
 }
 
 div.action-sheet-mask {
-  touch-action: none;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 
@@ -297,7 +317,9 @@ ons-navigator[page="rooms.html"] .collapsible-body > div {
 
 ons-alert-dialog .valign-wrapper {
   height: 35px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .alert-dialog-footer {
