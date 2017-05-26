@@ -1,5 +1,7 @@
 // How many chips to allow
 var chipThreshold = 5;
+// Array of selected chips' tags
+var usedTags = [];
 
 function genSubjects(cls) {
   /**
@@ -53,12 +55,14 @@ function removeChip() {
 }
 
 function showOccupy() {
+  // Show the modal about a free room
   var modal = document.getElementById('occupy');
   modal.querySelector('h5').innerHTML = this.innerHTML;
   modal.show();
 }
 
 function showOccupied() {
+  // Show the modal about an occupied room
   var modal = document.getElementById('occupied');
   modal.querySelector('h5').innerHTML = this.innerHTML;
   modal.getElementsByTagName('h6')[0].innerHTML = 'Лев Челядинов, 10Е';
@@ -68,6 +72,7 @@ function showOccupied() {
 }
 
 function toggleSwitch(event) {
+  // Toggle the switch when its container button gets pressed
   if (event.target.matches('.switch__touch, .switch__toggle')) {
     return;
   }
@@ -82,16 +87,19 @@ function toggleSwitch(event) {
 
 
 document.addEventListener('show', function(event) {
-  // Set up dropdowns with selectable content
+  // Pages: Classes, Compare
+  // Set up dropdowns with header text replacement or chip addition
   var drop = document.getElementsByClassName('dropdown-content');
-  var usedTags = [];
   for (var i = 0; i < drop.length; ++i) {
+    // Position the dropdown
     drop[i].style.width = drop[i].previousElementSibling.offsetWidth + 'px';
     drop[i].style.top = drop[i].previousElementSibling.offsetTop + 'px';
+    // Set up the activating button
     drop[i].previousElementSibling.onmousedown = function() {
       this.classList.toggle('active');
     };
 
+    // Decide on the dropdown button's action
     var bts = drop[i].getElementsByTagName('ons-button');
     if (drop[i].matches('.set-text')) {
       function dropAction() {
@@ -103,17 +111,17 @@ document.addEventListener('show', function(event) {
     else {
       function dropAction() {
         // Add a chip
-        var chips = this.dropdownButton.parentElement.nextElementSibling;
+        var chips = document.getElementById('selected-classes');
 
         var newChip = document.createElement('div');
         // Save the following objects:
-        newChip.selectButton = this;  // the button that was used to select the chip;
-        newChip.tag = this.textContent;  // the chip's tag;
+        newChip.selectButton = this;  // the button that was used to select the chip
+        newChip.tag = this.textContent;  // the chip's tag
         newChip.dropdownButton = this.dropdownButton;  // the button that triggers the dropdown
 
         // Set up the chip node
         newChip.classList.add('chip');
-        newChip.innerHTML = this.textContent + '<i class="material-icons close">close</i>';
+        newChip.innerHTML = newChip.tag + '<i class="material-icons close">close</i>';
         newChip.onmousedown = removeChip;
 
         chips.appendChild(newChip);
@@ -166,6 +174,8 @@ document.addEventListener('show', function(event) {
     };
   }
 
+
+  // Page: Compare
   // Prevent SideNav from opening when the table gets scrolled
   var isTouchDown = false;
   var table = document.getElementById('comparison-table');
@@ -196,17 +206,18 @@ document.addEventListener('show', function(event) {
   }
 
 
-  var available = document.querySelectorAll(':not(.chips) .chip:not(.taken)');
-  var taken = document.querySelectorAll(':not(.chips) .chip.taken');
-
+  // Page: Vacant Rooms
+  // Set up chips to open corresponding modals on click
+  var available = document.querySelectorAll(':not(#selected-classes) .chip:not(.taken)');
+  var taken = document.querySelectorAll(':not(#selected-classes) .chip.taken');
   for (var i = 0; i < available.length; ++i) {
     available[i].onmousedown = showOccupy;
   }
-
   for (var i = 0; i < taken.length; ++i) {
     taken[i].onmousedown = showOccupied;
   }
 
+  // Set up label, character counter on a textarea
   var occupyReason = document.querySelector('textarea');
   if (occupyReason) {
     // Activate the textarea's label on focus
@@ -233,35 +244,44 @@ document.addEventListener('show', function(event) {
     occupyReason.parentElement.appendChild(occupyReason.charCount);
   }
 
+
+  // Page: Index
+  // Set up the action sheet and its activator
   var act = document.querySelector('.activator');
   if (act) {
     var sheet = document.getElementById('sheet');
     var sheetBtns = sheet.getElementsByTagName('ons-action-sheet-button');
 
+    // Make button presses change the switch's state
     for (var i = 0; i < sheetBtns.length; ++i) {
-      sheetBtns[i].onclick = toggleSwitch;
+      sheetBtns[i].onmousedown = toggleSwitch;
     }
 
-    sheetBtns[sheetBtns.length - 1].onclick = function() {
+    // Close the action sheet with the last button
+    sheetBtns[sheetBtns.length - 1].onmousedown = function() {
       sheet.hide();
     };
 
-    act.onclick = function() {
+    // Open the action sheet with an activator
+    act.onmousedown = function() {
       sheet.show();
     };
   }
 
+
+  // Page: Index, Classes
+  // Set up toasts with lesson info
   var lists = document.querySelectorAll('ons-card ons-list');
   var toast = document.querySelector('ons-toast');
   if (toast) {
-    toast.querySelector('button').onclick = function() {
+    toast.querySelector('button').onmousedown = function() {
       toast.hide();
     };
     
     for (var i = 0; i < lists.length; ++i) {
       var btns = lists[i].getElementsByTagName('ons-list-item');
       for (var j = 0; j < btns.length; ++j) {
-        btns[j].onclick = function() {
+        btns[j].onmousedown = function() {
           toast.show().then(function() {
             setTimeout(function() {toast.hide()}, 2000);
           });

@@ -211,13 +211,13 @@ ons-button.active + .dropdown-content {
 }
 
 /* --- Compare --- */
-.chips .chip {
+#selected-classes .chip {
   height: 1.5rem;
   line-height: 1.5rem;
   padding: 0 5px;
 }
 
-.chips .chip .close {
+#selected-classes .chip .close {
   height: 1.5rem !important;
   width: 1.2rem !important;
   line-height: 1.5rem;
@@ -225,21 +225,23 @@ ons-button.active + .dropdown-content {
   text-align: center;
 }
 
-.chips {
+#selected-classes {
   min-height: 30px;
+  border: 0 solid #ddd;
+  border-bottom-width: 1px;
 }
 
 input:disabled {
   border-bottom-width: 0 !important;
 }
 
-.chips .chip,
-.chips .chip.selected {
+#selected-classes .chip,
+#selected-classes .chip.selected {
   background-color: #388e3c !important;
   color: #fff;
 }
 
-.chips .card h6 {
+#selected-classes .card h6 {
   padding-top: 1rem;
 }
 
