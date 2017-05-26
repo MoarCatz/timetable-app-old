@@ -13,7 +13,6 @@ ons-card ons-list:not(.no-count) > ons-list-item::before {
   display: block;
   max-height: 0;
   overflow: hidden;
-  will-change: max-height;
   padding: 0;
   border-bottom-width: 0;
 }
@@ -104,6 +103,10 @@ ons-toast ul {
   padding: 10px 0;
 }
 
+.centered {
+  text-align: center;
+}
+
 /* --- Index --- */
 ons-card > .title,
 ons-action-sheet-button,
@@ -151,9 +154,7 @@ ons-list-item ons-list-header {
   display: block;
   opacity: 0;
   pointer-events: none;
-  left: 24px;
   width: 100%;
-  will-change: opacity;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
 }
@@ -161,15 +162,6 @@ ons-list-item ons-list-header {
 ons-button.active + .dropdown-content {
   opacity: 1;
   pointer-events: auto;
-}
-
-.dropdown-content li {
-  min-height: 36px;
-}
-
-.dropdown-content li:hover,
-.dropdown-content li.active {
-  background-color: #fff;
 }
 
 .dropdown-content .collapsible-body,
@@ -189,6 +181,10 @@ ons-button.active + .dropdown-content {
   width: 100%;
   color: #2E7D32;
   height: 100%;
+}
+
+.col.m12 > ons-button {
+  margin: 8px 0;
 }
 
 /* --- Compare --- */
