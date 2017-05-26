@@ -107,6 +107,29 @@ ons-toast ul {
   text-align: center;
 }
 
+.double-lesson {
+  height: 72px;
+}
+
+.double-lesson > .list-item__center {
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 5px;
+}
+
+.double-lesson .group {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.double-lesson .divider {
+  margin: 0;
+  width: 100%;
+  background-color: #eee;
+}
+
 /* --- Index --- */
 ons-card > .title,
 ons-action-sheet-button,
