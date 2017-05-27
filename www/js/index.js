@@ -85,6 +85,13 @@ function toggleSwitch(event) {
   }
 }
 
+function stripInnerTags(elem) {
+  /**
+   * Removes everything but the text from inside the given node.
+   * @param  {Element} elem   Element to strip the tags from.
+   */
+   elem.innerHTML = elem.textContent;
+}
 
 document.addEventListener('show', function(event) {
   // Pages: Classes, Compare
@@ -98,13 +105,14 @@ document.addEventListener('show', function(event) {
     drop[i].previousElementSibling.onmousedown = function() {
       this.classList.toggle('active');
     };
+    stripInnerTags(drop[i].previousElementSibling);
 
     // Decide on the dropdown button's action
     var bts = drop[i].getElementsByTagName('ons-button');
     if (drop[i].matches('.set-text')) {
       function dropAction() {
         // Simply replace the button's text with the selected item's
-        this.dropdownButton.innerHTML = this.innerHTML;
+        this.dropdownButton.textContent = this.textContent;
         this.dropdownButton.classList.toggle('active');
       }
     }
@@ -159,6 +167,7 @@ document.addEventListener('show', function(event) {
     for (var j = 0; j < bts.length; ++j) {
       bts[j].dropdownButton = drop[i].previousElementSibling;
       bts[j].onmousedown = dropAction;
+      stripInnerTags(bts[j]);
     }
   }
 
@@ -277,7 +286,7 @@ document.addEventListener('show', function(event) {
     toast.querySelector('button').onmousedown = function() {
       toast.hide();
     };
-    
+
     for (var i = 0; i < lists.length; ++i) {
       var btns = lists[i].getElementsByTagName('ons-list-item');
       for (var j = 0; j < btns.length; ++j) {
