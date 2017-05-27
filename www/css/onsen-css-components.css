@@ -131,10 +131,13 @@ h4, h5, h6 {
 .page__content h5 {
   font-family: 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0.6em 0;
   padding: 0;
+}
+.page__content h6 {
+  font-weight: 400;
+  font-size: 1rem;
 }
 .page__content h1 {
   font-size: 28px;
@@ -152,8 +155,7 @@ h4, h5, h6 {
 .page--material__content h5 {
   font-family: 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0.6em 0;
   padding: 0;
 }
@@ -2092,7 +2094,7 @@ h4, h5, h6 {
   color: rgba(0, 0, 0, .38);
 }
 :checked + .segment--material__button {
-  background-color: #c8c8c8;
+  background-color: #c8e6c9;
   color: #353535;
   border-radius: 0;
   border-width: 0;

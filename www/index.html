@@ -60,7 +60,7 @@
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content>
-      <ons-navigator id="navi" page="teachers.html"></ons-navigator>
+      <ons-navigator id="navi" page="rooms.html"></ons-navigator>
     </ons-splitter-content>
   </ons-splitter>
 
@@ -677,90 +677,241 @@
           </div>
         </ons-alert-dialog>
         <div class="col s12 m12">
-          <div class="card">
-            <div class="card-content green-text text-darken-3">
-              <ul class="collapsible no-count" data-collapsible="accordion">
-                <li>
-                  <div class="collapsible-header">1 урок</div>
-                  <div class="collapsible-body">
-                    <div>
-                      <h6>1 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">102</div>
-                      <div class="chip">103</div>
-                      <div class="chip taken">104</div>
-                      <div class="chip">105</div>
-                      <div class="chip">106</div>
-                      <div class="chip taken">107</div>
-                      <h6>2 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">201</div>
-                      <div class="chip">202</div>
-                      <div class="chip">203</div>
-                      <div class="chip taken">204</div>
-                      <div class="chip">205</div>
-                      <div class="chip taken">206</div>
-                      <div class="chip taken">207</div>
-                      <div class="chip">208</div>
-                      <div class="chip">209</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header">2 урок</div>
-                  <div class="collapsible-body">
-                    <div>
-                      <h6>1 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">102</div>
-                      <div class="chip">103</div>
-                      <div class="chip taken">104</div>
-                      <div class="chip">105</div>
-                      <div class="chip">106</div>
-                      <div class="chip taken">107</div>
-                      <h6>2 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">201</div>
-                      <div class="chip">202</div>
-                      <div class="chip">203</div>
-                      <div class="chip taken">204</div>
-                      <div class="chip">205</div>
-                      <div class="chip taken">206</div>
-                      <div class="chip taken">207</div>
-                      <div class="chip">208</div>
-                      <div class="chip">209</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header">3 урок</div>
-                  <div class="collapsible-body">
-                    <div>
-                      <h6>1 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">102</div>
-                      <div class="chip">103</div>
-                      <div class="chip taken">104</div>
-                      <div class="chip">105</div>
-                      <div class="chip">106</div>
-                      <div class="chip taken">107</div>
-                      <h6>2 этаж</h6>
-                      <div class="divider"></div>
-                      <div class="chip">201</div>
-                      <div class="chip">202</div>
-                      <div class="chip">203</div>
-                      <div class="chip taken">204</div>
-                      <div class="chip">205</div>
-                      <div class="chip taken">206</div>
-                      <div class="chip taken">207</div>
-                      <div class="chip">208</div>
-                      <div class="chip">209</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+          <p class="title">Выберите урок</p>
+          <div class="segment segment--material">
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b" checked>
+              <button class="segment__button segment--material__button">0</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">1</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">2</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">3</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">4</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">5</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">6</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">7</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">+</button>
             </div>
           </div>
+        </div>
+        <div class="col s12 m12">
+          <ons-card>
+            <div class="lesson-rooms selected" id="lesson0">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson1">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson2">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson3">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson4">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson5">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson6">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson7">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson+">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+              </div>
+            </div>
+          </ons-card>
         </div>
       </div>
     </ons-page>

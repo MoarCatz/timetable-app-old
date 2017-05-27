@@ -277,19 +277,25 @@ input:disabled {
 }
 
 /* --- Rooms --- */
-.collapsible-body .divider {
+.segment {
+  width: 100%;
+}
+
+p.title {
+  color: #2E7D32;
+  font-size: 16px;
+  text-align: center;
+}
+
+.rooms > .divider {
   margin-bottom: .5rem;
 }
 
-.collapsible-body .chip:not(.taken) {
+.rooms > .chip:not(.taken) {
   background-color: #c8e6c9;
 }
 
-ons-navigator[page="rooms.html"] .collapsible-body > div {
-  padding: 1rem;
-}
-
-.alert-dialog .alert-dialog-title--material {
+ons-alert-dialog .alert-dialog-title--material {
   color: #2E7D32;
 }
 
@@ -329,6 +335,10 @@ ons-input[type=checkbox] span.checkbox__checkmark::after {
   left: 20%;
 }
 
+ons-alert-dialog label {
+  font-size: 8pt;
+}
+
 ons-input[type=radio] + label,
 ons-input[type=checkbox] + label {
   font-size: 9pt;
@@ -337,6 +347,10 @@ ons-input[type=checkbox] + label {
 #occupied p {
   margin: 0;
   font-size: 14px;
+}
+
+.lesson-rooms:not(.selected) {
+  display: none;
 }
 
 /* --- Help --- */
