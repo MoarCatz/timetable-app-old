@@ -276,6 +276,11 @@ input:disabled {
   margin-left: 3%;
 }
 
+.dropdown-content.autocomplete-content > li {
+  display: flex;
+  align-items: center;
+}
+
 /* --- Rooms --- */
 .segment {
   width: 100%;
