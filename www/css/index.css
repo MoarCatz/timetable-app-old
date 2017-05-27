@@ -202,7 +202,8 @@ ons-list-item ons-list-header {
   transition: opacity .3s;
 }
 
-ons-button.active + .dropdown-content {
+ons-button.active + .dropdown-content,
+ons-input .dropdown-content {
   opacity: 1;
   pointer-events: auto;
 }
@@ -266,36 +267,13 @@ input:disabled {
 }
 
 /* --- Teachers --- */
-.text-input__label {
-  font-size: 1rem;
-  padding-left: 1rem;
+.icon-input > i {
+  width: 10%;
 }
 
-.text-input__container {
-  padding:  0 .5rem .5rem;
-}
-
-.text-input {
-  padding-bottom: .5rem;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-ons-input {
-  width: 100%;
-}
-
-.help-text {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.help-title {
-  color: #2E7D32;
-}
-
-blockquote {
-  border-left: 5px solid #4CAF50;
+.icon-input > ons-input {
+  width: 86%;
+  margin-left: 3%;
 }
 
 /* --- Rooms --- */
@@ -359,4 +337,18 @@ ons-input[type=checkbox] + label {
 #occupied p {
   margin: 0;
   font-size: 14px;
+}
+
+/* --- Help --- */
+.help-text {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.help-title {
+  color: #2E7D32;
+}
+
+blockquote {
+  border-left: 5px solid #4CAF50;
 }

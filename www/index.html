@@ -9,8 +9,8 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
   <script src="js/onsenui.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="css/icons.css">
+  <link rel="stylesheet" type="text/css" href="css/awesomplete.css">
   <link rel="stylesheet" type="text/css" href="css/onsenui.css">
   <link rel="stylesheet" type="text/css" href="css/onsen-css-components.css">
   <link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -60,7 +60,7 @@
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content>
-      <ons-navigator id="navi" page="compare.html"></ons-navigator>
+      <ons-navigator id="navi" page="teachers.html"></ons-navigator>
     </ons-splitter-content>
   </ons-splitter>
 
@@ -499,6 +499,110 @@
           Преподаватели
         </div>
       </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <ons-card>
+            <span class="title">Преподаватель</span>
+            <div class="content icon-input">
+              <i class="material-icons">school</i>
+              <ons-input id="auto"></ons-input>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Понедельник</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item class="double-lesson" modifier="longdivider">
+                  <div class="group">
+                    Физика <span class="new badge"><b>204</b></span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="group">
+                    Химия <span class="new badge"><b>301</b></span>
+                  </div>
+                </ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Вторник</span>
+            <div class="content">
+              <p class="grey-text centered">Уроков нет</p>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Среда</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Четверг</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Пятница</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Суббота</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <ons-toast>
+        <ul>
+          <li class="valign-wrapper"><i class="material-icons mr-5">people</i> 10Е</li>
+          <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+        </ul>
+        <button class="valign-wrapper"><i class="material-icons">close</i></button>
+      </ons-toast>
     </ons-page>
   </ons-template>
 
@@ -1194,6 +1298,7 @@
 
 <script src="js/TweenLite.min.js"></script>
 <script src="js/CSSPlugin.min.js"></script>
+<script src="js/awesomplete.min.js"></script>
 <script src="js/collapsible.js"></script>
 <script src="js/index.js"></script>
 

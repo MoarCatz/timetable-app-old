@@ -5725,11 +5725,6 @@ button:focus {
   outline: none;
 }
 
-label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
-}
-
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
