@@ -103,13 +103,14 @@ function openLesson() {
 }
 
 document.addEventListener('show', function(event) {
-  // Pages: Classes, Compare
+  // Pages: Classes, Compare, Settings
   // Set up dropdowns with header text replacement or chip addition
   var drop = document.getElementsByClassName('dropdown-content');
   for (var i = 0; i < drop.length; ++i) {
     // Position the dropdown
     drop[i].style.width = drop[i].previousElementSibling.offsetWidth + 'px';
     drop[i].style.top = drop[i].previousElementSibling.offsetTop + 'px';
+    drop[i].style.left = drop[i].previousElementSibling.offsetLeft + 'px';
     // Set up the activating button
     drop[i].previousElementSibling.onmousedown = function() {
       this.classList.toggle('active');
@@ -197,7 +198,7 @@ document.addEventListener('show', function(event) {
   // Prevent SideNav from opening when the table gets scrolled
   var isTouchDown = false;
   var table = document.getElementById('comparison-table');
-  if (table) {
+  if (table != null) {
     table.ontouchstart = function() { isTouchDown = true  };
     table.ontouchend = function() { isTouchDown = false };
     table.ontouchmove = function(event) {
@@ -237,7 +238,7 @@ document.addEventListener('show', function(event) {
 
   // Set up label, character counter on a textarea
   var occupyReason = document.querySelector('textarea');
-  if (occupyReason) {
+  if (occupyReason != null) {
     // Activate the textarea's label on focus
     occupyReason.onfocus = occupyReason.onblur = function() {
       if (!this.value.length) {
@@ -266,7 +267,7 @@ document.addEventListener('show', function(event) {
   // Page: Index
   // Set up the action sheet and its activator
   var act = document.querySelector('.activator');
-  if (act) {
+  if (act != null) {
     var sheet = document.getElementById('sheet');
     var sheetBtns = sheet.getElementsByTagName('ons-action-sheet-button');
 
@@ -291,8 +292,9 @@ document.addEventListener('show', function(event) {
   // Set up toasts with lesson info
   var lists = document.querySelectorAll('ons-card ons-list');
   var toast = document.querySelector('ons-toast');
-  if (toast) {
+  if (toast != null && lists != null) {
     toast.querySelector('button').onmousedown = function() {
+      clearTimeout(toast.timer);
       toast.hide();
     };
 
@@ -301,7 +303,11 @@ document.addEventListener('show', function(event) {
       for (var j = 0; j < btns.length; ++j) {
         btns[j].onmousedown = function() {
           toast.show().then(function() {
-            setTimeout(function() {toast.hide()}, 2000);
+            toast.timer = setTimeout(function() {
+              if (toast.visible) {
+                toast.hide();
+              }
+            }, 2000);
           });
         };
       }
@@ -312,7 +318,7 @@ document.addEventListener('show', function(event) {
   // Page: Teachers
   // Set up autocomplete
   var auto = document.getElementById('auto');
-  if (auto) {
+  if (auto != null) {
     var autoInput = auto.querySelector('input');
     new Awesomplete(autoInput, {
   	  list: [
@@ -474,13 +480,66 @@ document.addEventListener('show', function(event) {
   // Page: Vacant Rooms
   // Switch cards with a segmented control
   var segment = document.querySelector('.segment');
-  if (segment) {
+  if (segment != null) {
     var segmBtns = segment.getElementsByClassName('segment__item');
     var lessonCards = document.getElementsByClassName('lesson-rooms');
-    console.log(segmBtns);
     for (var i = 0; i < segmBtns.length; ++i) {
       segmBtns[i].lessonCards = lessonCards;
       segmBtns[i].onmousedown = openLesson;
+    }
+  }
+
+
+  // Page: Settings
+  // Set up buttons on occupation rules
+  var reasonToast = document.getElementById('reason-toast');
+  var undoToast = document.getElementById('undo-toast');
+  if (reasonToast != null) {
+    reasonToast.querySelector('button').onmousedown = function() {
+      clearTimeout(reasonToast.timer);
+      reasonToast.hide();
+    };
+
+    undoToast.querySelector('button').onmousedown = function() {
+      clearTimeout(undoToast.timer);
+      // Unhide the list item and prevent its deletion
+      this.parentElement.parentElement.listItem.style.display = 'flex';
+      undoToast.hide();
+    };
+
+    function showReason() {
+      reasonToast.show().then(function() {
+        reasonToast.timer = setTimeout(function() {
+          if (reasonToast.visible) {
+            reasonToast.hide();
+          }
+        }, 2000);
+      });
+    }
+
+    function removeRule() {
+      var listItem = this.parentElement.parentElement;
+      undoToast.listItem = listItem;
+
+      listItem.style.display = 'none';  // Temporarily hide the list item
+      undoToast.show().then(function() {
+        undoToast.timer = setTimeout(function() {
+          if (undoToast.visible) {
+            undoToast.hide();
+          }
+
+          // If the deletion wasn't undone with the toast, remove the list item
+          if (listItem.style.display === 'none') {
+            listItem.parentElement.removeChild(listItem);
+          }
+        }, 2000);
+      });
+    }
+
+    var reasonToggles = document.getElementsByClassName('show-reason');
+    for (var i = 0; i < reasonToggles.length; ++i) {
+      reasonToggles[i].parentElement.onmousedown = showReason;
+      reasonToggles[i].parentElement.nextElementSibling.onmousedown = removeRule;
     }
   }
 });

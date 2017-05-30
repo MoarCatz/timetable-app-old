@@ -3,7 +3,7 @@ ons-card ons-list {
   counter-reset: item;
 }
 
-ons-card ons-list:not(.no-count) > ons-list-item::before {
+ons-card ons-list > ons-list-item::before {
   content: counter(item) ". ";
   counter-increment: item;
   margin-right: .5rem;
@@ -356,6 +356,26 @@ ons-input[type=checkbox] + label {
 
 .lesson-rooms:not(.selected) {
   display: none;
+}
+
+/* --- Settings --- */
+ons-list-item.row {
+  position: static;
+}
+
+.right > a {
+  margin: 0 5px;
+}
+
+#reason-toast .toast__message {
+  display: flex;
+  align-items: center;
+  white-space: normal;
+  padding: 5px 0;
+}
+
+#undo-toast button {
+  color: #66bb6a;
 }
 
 /* --- Help --- */

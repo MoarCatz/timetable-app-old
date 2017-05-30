@@ -60,7 +60,7 @@
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content>
-      <ons-navigator id="navi" page="rooms.html"></ons-navigator>
+      <ons-navigator id="navi" page="settings.html"></ons-navigator>
     </ons-splitter-content>
   </ons-splitter>
 
@@ -185,7 +185,7 @@
       <div class="row">
         <div class="col s12 m12">
             <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
-            <ul id="drop" class="collapsible dropdown-content no-count set-text">
+            <ul class="collapsible dropdown-content set-text">
               <li>
                 <div class="collapsible-header">8</div>
                 <div class="collapsible-body">
@@ -364,7 +364,7 @@
       <div class="row">
         <div class="col s12 m12">
           <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
-          <ul class="collapsible dropdown-content no-count">
+          <ul class="collapsible dropdown-content">
             <li>
               <div class="collapsible-header">8</div>
               <div class="collapsible-body">
@@ -427,7 +427,7 @@
           </ul>
           <div id="selected-classes"></div>
           <ons-button class="dropdown-act" modifier="large">Выберите день недели</ons-button>
-          <ul class="collapsible dropdown-content no-count set-text">
+          <ul class="collapsible dropdown-content set-text">
             <li><ons-button modifier="large--quiet">Понедельник</ons-button></li>
             <li><ons-button modifier="large--quiet">Вторник</ons-button></li>
             <li><ons-button modifier="large--quiet">Среда</ons-button></li>
@@ -645,8 +645,8 @@
 
           <div class="alert-dialog-content">
             <div class="input-field">
-              <textarea id="textarea1" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
-              <label for="textarea1">Укажите причину занятия</label>
+              <textarea id="write-reason" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
+              <label for="write-reason">Укажите причину занятия</label>
             </div>
             <div>
               <label class="block">До какого урока (включительно)?</label>
@@ -929,57 +929,156 @@
           Настройки
         </div>
       </ons-toolbar>
-
-      <div>
-        <p>
-          <ons-input id="username"  placeholder="Username" float></ons-input>
-        </p>
-        <p>
-          <ons-input id="password"  type="password" placeholder="Password" float></ons-input>
-        </p>
-        <p style="margin-top: 30px;">
-          <ons-button onclick="login()">Sign in</ons-button>
-        </p>
-      </div>
-
       <ons-list>
-        <ons-list-header>Checkboxes</ons-list-header>
-        <ons-list-item tappable>
-          <label class="left">
-            <ons-input type="checkbox" input-id="check-1"></ons-input>
-          </label>
-          <label for="check-1" class="center">
-            Apple
-          </label>
+        <ons-list-header>Основные</ons-list-header>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s3">Имя</span>
+          <ons-input class="col s9"></ons-input>
         </ons-list-item>
-        <ons-list-item tappable>
-          <label class="left">
-            <ons-input type="checkbox" input-id="check-2"></ons-input>
-          </label>
-          <label for="check-2" class="center">
-            Banana
-          </label>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Класс</span>
+          <ons-button class="col s3 dropdown-act">10Е</ons-button>
+          <ul class="collapsible dropdown-content set-text">
+            <li>
+              <div class="collapsible-header">8</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">9</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">10</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">11</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </ons-list-item>
-      </ons-list>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Изменения наверх</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
 
-      <ons-list>
-        <ons-list-header>Radio buttons</ons-list-header>
-        <ons-list-item tappable>
-          <label class="left">
-            <ons-input name="color" type="radio" input-id="radio-1" checked></ons-input>
-          </label>
-          <label for="radio-1" class="center">
-            Red
-          </label>
+        <ons-list-header>Уведомления</ons-list-header>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Получать push-уведомления об изменениях?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
         </ons-list-item>
-        <ons-list-item tappable>
-          <label class="left">
-            <ons-input name="color" type="radio" input-id="radio-2"></ons-input>
-          </label>
-          <label for="radio-2" class="center">
-            Blue
-          </label>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Что считать вечером?</span>
+          <ons-button disable-auto-styling modifier="material" class="col s3">21:00</ons-button>
         </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Что считать утром?</span>
+          <ons-button disable-auto-styling modifier="material" class="col s3">07:00</ons-button>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Всегда напоминать расписание вечером?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Всегда напоминать расписание утром?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Занятые кабинеты</ons-list-header>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>307</b> в пт с 7 урока и далее</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>102</b> в ср с 0 урока по 1</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>303</b> в сб с 5 урока и далее</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-toast id="reason-toast">
+          <i class="material-icons mr-5">info_outline</i>
+          <span class="reason">Спецкурс по математике с Масленниковой М. И.</span>
+          <button class="valign-wrapper"><i class="material-icons">close</i></button>
+        </ons-toast>
+        <ons-toast id="undo-toast">
+          Правило удалено <button>Отменить</button>
+        </ons-toast>
       </ons-list>
     </ons-page>
   </ons-template>
