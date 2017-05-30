@@ -384,10 +384,16 @@ ons-list-item.row {
   margin-right: 10px;
 }
 
-.help-title {
+.help-title,
+.help-text i,
+.help-text h5 {
   color: #2E7D32;
 }
 
-blockquote {
-  border-left: 5px solid #4CAF50;
+.help-text i {
+  font-size: 20px;
+  width: 20px !important;
+  height: 20px !important;
+  position: relative;
+  top: 5px;
 }
