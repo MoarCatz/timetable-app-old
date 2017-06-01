@@ -4623,7 +4623,7 @@ h4, h5, h6 {
   color: #afafaf;
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 0;
   font-size: 16px;
   font-weight: 400;
   pointer-events: none;

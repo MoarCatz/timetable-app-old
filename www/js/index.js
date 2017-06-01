@@ -102,6 +102,22 @@ function openLesson() {
   document.getElementById('lesson' + btn.innerHTML).classList.add('selected');
 }
 
+function getNodeIndex(elem) {
+  /**
+   * Gets the index of the element among its siblings.
+   * @param  {Element} elem   Element to get the index of.
+   */
+   return [].indexOf.call(elem.parentElement.children, elem);
+}
+
+function jumpToCarouselPage() {
+  // Jump to the corresponding carousel page when a dot gets pressed
+  this.carousel.setActiveIndex(getNodeIndex(this));
+}
+
+// Set the default page to open
+document.getElementById('navi').setAttribute('page', window.page);
+
 document.addEventListener('show', function(event) {
   // Pages: Classes, Compare, Settings
   // Set up dropdowns with header text replacement or chip addition
@@ -264,7 +280,7 @@ document.addEventListener('show', function(event) {
   }
 
 
-  // Page: Index
+  // Page: Home
   // Set up the action sheet and its activator
   var act = document.querySelector('.activator');
   if (act != null) {
@@ -288,7 +304,7 @@ document.addEventListener('show', function(event) {
   }
 
 
-  // Page: Index, Classes
+  // Page: Home, Classes
   // Set up toasts with lesson info
   var lists = document.querySelectorAll('ons-card ons-list');
   var toast = document.querySelector('ons-toast');
@@ -540,6 +556,30 @@ document.addEventListener('show', function(event) {
     for (var i = 0; i < reasonToggles.length; ++i) {
       reasonToggles[i].parentElement.onmousedown = showReason;
       reasonToggles[i].parentElement.nextElementSibling.onmousedown = removeRule;
+    }
+
+    document.getElementById('clear-storage').onmousedown = function() {
+      window.localStorage.clear();
+    }
+  }
+
+
+  // Page: Intro
+  // Set up pagination dots
+  var carousel = document.querySelector('ons-carousel');
+  if (carousel != null) {
+    var dots = carousel.querySelector('.dots').getElementsByTagName('i');
+    carousel.addEventListener('postchange', function() {
+      var activeIdx = carousel.getActiveIndex();
+      for (var i = 0; i < dots.length; ++i) {
+        dots[i].classList.remove('current');
+      }
+      dots[activeIdx].classList.add('current');
+    });
+
+    for (var i = 0; i < dots.length; ++i) {
+      dots[i].carousel = carousel;
+      dots[i].onmousedown = jumpToCarouselPage;
     }
   }
 });
