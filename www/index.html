@@ -25,7 +25,7 @@
 <body>
 
   <ons-splitter>
-    <ons-splitter-side id="menu" side="left" width="300px" collapse="" swipeable>
+    <ons-splitter-side id="menu" side="left" width="300px" collapse="" swipeable open-threshold=0.1>
       <ons-page>
         <ons-list>
           <ons-list-item class="sidenav-top">
@@ -66,7 +66,7 @@
 
   <ons-template id="intro.html">
     <ons-page>
-      <ons-carousel fullscreen swipeable auto-scroll id="carousel">
+      <ons-carousel fullscreen swipeable auto-scroll auto-scroll-ratio=0.1 id="carousel">
         <ons-carousel-item>
           <div class="row">
             <div class="col s12">
