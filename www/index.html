@@ -8,171 +8,1720 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
+  <script src="js/onsenui.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/icons.css">
-  <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="css/awesomplete.css">
+  <link rel="stylesheet" type="text/css" href="css/onsenui.css">
+  <link rel="stylesheet" type="text/css" href="css/onsen-css-components.css">
+  <link rel="stylesheet" type="text/css" href="css/materialize.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
 
+  <script>
+    ons.platform.select('android');
+  </script>
+  <script src="js/common.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="nav-wrapper green">
-        <ul id="slide-out" class="side-nav">
-          <li>
-            <div class="userView">
-              <div class="background green darken-2">
-              </div>
-              <a href="#!name"><span class="white-text name">Лев Челядинов</span></a>
-              <a href="#!email"><span class="white-text email">10Е</span></a>
+
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="300px" collapse="" swipeable open-threshold=0.1>
+      <ons-page>
+        <ons-list>
+          <ons-list-item class="sidenav-top">
+            <div class="center">
+              <div class="list-item__title">Лев Челядинов</div>
+              <div class="list-item__subtitle">10Е</div>
             </div>
-          </li>
-          <li><a class="btn-flat" href="index.html"><i class="material-icons">home</i>Главная</a></li>
-          <li><a class="btn-flat" href="changes.html"><i class="material-icons">new_releases</i>Изменения</a></li>
-          <li><a class="btn-flat" href="classes.html"><i class="material-icons">people</i>Классы</a></li>
-          <li><a class="btn-flat" href="teachers.html"><i class="material-icons">school</i>Преподаватели</a></li>
-          <li><a class="btn-flat" href="rooms.html"><i class="material-icons">beenhere</i>Свободные кабинеты</a></li>
-          <li>
-            <div class="divider"></div>
-          </li>
-          <li><a class="btn-flat" href="settings.html"><i class="material-icons">settings</i>Настройки</a></li>
-          <li><a class="btn-flat" href="help.html"><i class="material-icons">info</i>Справка</a></li>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('home.html')">
+            <button class="button--material--flat"><i class="material-icons">home</i>Главная</button>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('changes.html')">
+            <button class="button--material--flat"><i class="material-icons">new_releases</i>Изменения</button>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('classes.html')">
+            <button class="button--material--flat"><i class="material-icons">people</i>Классы</button>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('teachers.html')">
+            <button class="button--material--flat"><i class="material-icons">school</i>Преподаватели</button>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('rooms.html')">
+            <button class="button--material--flat"><i class="material-icons">beenhere</i>Свободные кабинеты</button>
+          </ons-list-item>
+          <div class="divider"></div>
+          <ons-list-item onclick="fn.load('settings.html')">
+            <button class="button--material--flat"><i class="material-icons">settings</i>Настройки</button>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('help.html')">
+            <button class="button--material--flat"><i class="material-icons">info</i>Справка</button>
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content>
+      <ons-navigator id="navi"></ons-navigator>
+    </ons-splitter-content>
+  </ons-splitter>
+
+  <ons-template id="intro.html">
+    <ons-page>
+      <ons-carousel fullscreen swipeable auto-scroll auto-scroll-ratio=0.1 id="carousel">
+        <ons-carousel-item>
+          <div class="row">
+            <div class="col s12">
+              <ons-card>
+                <span class="title">Сегодня</span>
+              </ons-card>
+            </div>
+            <div class="col s12">
+              <ons-card>
+                <span class="title">Завтра</span>
+              </ons-card>
+            </div>
+          </div>
+          <div class="intro-desc">
+            <h5>Расписание уроков в вашем кармане</h5>
+            <p>
+              Расписание ближайших дней, свободные кабинеты,
+              уведомления об изменениях и многое другое.
+            </p>
+          </div>
+        </ons-carousel-item>
+        <ons-carousel-item>
+          <div class="row">
+            <img src="img/door.svg" />
+          </div>
+          <div class="intro-desc">
+            <h5>Где свободно?</h5>
+            <p>
+              Узнать, где проходит внеурочное занятие или
+              найти свободный кабинет теперь легко
+              (совместными усилиями учеников <img class="emoji" src="img/smile.png" />)
+            </p>
+          </div>
+        </ons-carousel-item>
+        <ons-carousel-item>
+          <div class="row">
+            <img src="img/checklist.svg" />
+          </div>
+          <div class="intro-desc">
+            <h5>Запоминайте расписание быстрее</h5>
+            <p>
+              Приложение может напомнить расписание на следующий день,
+              облегчая подготовку к нему
+            </p>
+          </div>
+        </ons-carousel-item>
+        <ons-carousel-item>
+          <div class="row">
+            <ons-card id="intro-input">
+              <ons-input placeholder="Имя и фамилия"></ons-input>
+              <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+              <ul class="collapsible dropdown-content set-text">
+                <li>
+                  <div class="collapsible-header">8</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">9</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">10</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                      <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">11</div>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                      <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </ons-card>
+          </div>
+          <div class="intro-desc">
+            <h5>Пожалуйста, представьтесь</h5>
+            <p>
+              Для вашего удобства приложению нужен
+              класс, который вас интересует, а также,
+              опционально, ваше имя и фамилия.<br /><br />
+              <em>Эти данные можно изменить в настройках</em>
+            </p>
+          </div>
+        </ons-carousel-item>
+
+        <div>
+          <ons-button onclick="fn.load('home.html')">Приступить</ons-button>
+        </div>
+        <div class="dots">
+          <i class="material-icons current">lens</i>
+          <i class="material-icons">lens</i>
+          <i class="material-icons">lens</i>
+          <i class="material-icons">lens</i>
+        </div>
+      </ons-carousel>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Расписание
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Сегодня, чт 27.02</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Завтра, пт 28.02 <i class="material-icons right activator">notifications</i></span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+            </ons-card>
+        </div>
+        <ons-action-sheet cancelable id="sheet">
+          <div class="action-sheet-title action-sheet-title--material valign-wrapper"><i class="material-icons">notifications</i> Напомнить мне</div>
+          <ons-action-sheet-button>Сегодня вечером <ons-switch></ons-switch></ons-action-sheet-button>
+          <ons-action-sheet-button>Завтра утром <ons-switch></ons-switch></ons-action-sheet-button>
+          <ons-action-sheet-button class="close-btn"><i class="material-icons">close</i> Закрыть</ons-action-sheet-button>
+        </ons-action-sheet>
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Изменения</span>
+            <div class="content card-offset">
+              <ul>
+                <b>На 04.09</b>
+                <li>
+                  6, 7 уроков не будет
+                </li>
+              </ul>
+              <p class="grey-text">Изменений нет</p>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <ons-toast>
+        <ul>
+          <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+          <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
         </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse left"><i class="material-icons">menu</i></a>
-        <a class="brand-logo">Расписание</a>
+        <button class="valign-wrapper"><i class="material-icons">close</i></button>
+      </ons-toast>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="changes.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Изменения
+        </div>
+      </ons-toolbar>
+      <div class="row green-text text-darken-3">
+        <ons-list modifier="inset" style="margin-top: 10px">
+          <ons-list-header>Суббота, 03.05</ons-list-header>
+          <ons-list-item>
+            <ons-list>
+              <ons-list-header>8А</ons-list-header>
+              <ons-list-item>5, 6 уроков нет</ons-list-item>
+              <ons-list-item>1 урок - обязательная встреча с администрацией</ons-list-item>
+            </ons-list>
+          </ons-list-item>
+          <ons-list-item>
+            <ons-list>
+              <ons-list-header>9А</ons-list-header>
+              <ons-list-item>Уроков нет</ons-list-item>
+            </ons-list>
+          </ons-list-item>
+        </ons-list>
       </div>
-    </nav>
-  </header>
-  <main>
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-content green-text text-darken-3">
-            <span class="card-title">Сегодня, чт 27.02</span>
-            <ul class="collapsible" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00-9:40</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50-10:30</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">Физкультура</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45-11:25</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="classes.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Классы
+        </div>
+        <div class="right">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('compare.html')">
+            <i class="material-icons">compare_arrows</i>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+          <ul class="collapsible dropdown-content set-text">
+            <li>
+              <div class="collapsible-header">8</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">9</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">10</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">11</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col s12 m6">
-        <div class="card green-text text-darken-3">
-          <div class="card-content">
-            <span class="card-title activator">Завтра, пт 28.02 <i class="material-icons right">notifications</i></span>
-            <ul class="collapsible" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header"><span class="new badge green darken-3"><b>206</b></span>Информатика</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00-9:40</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header"><span class="new badge green darken-3"><b>204</b></span>Физика</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Саночкин Вячеслав Афанасьевич</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:50-10:30</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">Физкультура</div>
-                <div class="collapsible-body">
-                  <span>
-                    <ul class="lesson-info">
-                      <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Синдимирова Марина Витальевна</li>
-                      <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 10:45-11:25</li>
-                    </ul>
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="card-reveal">
-            <div class="row">
-              <span class="card-title">Напомнить мне<i class="material-icons right">close</i></span>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Понедельник</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item class="double-lesson" modifier="longdivider">
+                  <div class="group">
+                    Физика <span class="new badge"><b>204</b></span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="group">
+                    Химия <span class="new badge"><b>301</b></span>
+                  </div>
+                </ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
             </div>
-            <form action="#">
-              <div class="row">
-                <div class="switch valign-wrapper">
-                  Сегодня вечером
-                  <label>
-                    <input type="checkbox">
-                    <span class="lever"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="switch valign-wrapper">
-                  Завтра утром
-                  <label>
-                    <input type="checkbox">
-                    <span class="lever"></span>
-                  </label>
-                </div>
-              </div>
-            </form>
-          </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Вторник</span>
+            <div class="content">
+              <p class="grey-text centered">Уроков нет</p>
+            </div>
+          </ons-card>
         </div>
       </div>
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-content green-text text-darken-3">
-            <span class="card-title">Изменения</span>
-            <ul>
-              <b>На 04.09</b>
-              <li>
-                6, 7 уроков не будет
-              </li>
-            </ul>
-            <p class="grey-text">Изменений нет</p>
-          </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Среда</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Четверг</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
         </div>
       </div>
-    </div>
-  </main>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/common.js"></script>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Пятница</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Суббота</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <ons-toast>
+        <ul>
+          <li class="valign-wrapper"><i class="material-icons mr-5">school</i> Гейн Нина Ароновна</li>
+          <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+        </ul>
+        <button class="valign-wrapper"><i class="material-icons">close</i></button>
+      </ons-toast>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="compare.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Классы
+        </div>
+        <div class="right">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('classes.html')">
+            <i class="material-icons">people</i>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+          <ul class="collapsible dropdown-content">
+            <li>
+              <div class="collapsible-header">8</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">9</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">10</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">11</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div id="selected-classes"></div>
+          <ons-button class="dropdown-act" modifier="large">Выберите день недели</ons-button>
+          <ul class="collapsible dropdown-content set-text">
+            <li><ons-button modifier="large--quiet">Понедельник</ons-button></li>
+            <li><ons-button modifier="large--quiet">Вторник</ons-button></li>
+            <li><ons-button modifier="large--quiet">Среда</ons-button></li>
+            <li><ons-button modifier="large--quiet">Четверг</ons-button></li>
+            <li><ons-button modifier="large--quiet">Пятница</ons-button></li>
+            <li><ons-button modifier="large--quiet">Суббота</ons-button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row empty">
+        <div class="col s12 m12">
+          <ons-card>
+            <div class="content">
+              <h6 class="grey-text centered">Выберите классы для сравнения<br />(не больше пяти)</h6>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+
+      <div class="row hide" id="comparison-table">
+        <div class="col s12 m12">
+          <ons-card>
+            <table class="responsive-table centered">
+              <thead>
+                <tr>
+                  <th>№</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 <small>(9:00 - 9:40)</small></td>
+                </tr>
+                <tr>
+                  <td>2 <small>(9:50 - 10:30)</small></td>
+                </tr>
+                <tr>
+                  <td>3 <small>(10:45 - 11:25)</small></td>
+                </tr>
+                <tr>
+                  <td>4 <small>(11:40 - 12:20)</small></td>
+                </tr>
+                <tr>
+                  <td>5 <small>(12:35 - 13:15)</small></td>
+                </tr>
+                <tr>
+                  <td>6 <small>(13:35 - 14:15)</small></td>
+                </tr>
+                <tr>
+                  <td>7 <small>(14:35 - 15:15)</small></td>
+                </tr>
+              </tbody>
+            </table>
+          </ons-card>
+        </div>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="teachers.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Преподаватели
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <div class="col s12 m12">
+          <ons-card>
+            <span class="title">Преподаватель</span>
+            <div class="content icon-input">
+              <i class="material-icons">school</i>
+              <ons-input id="auto"></ons-input>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Понедельник</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item class="double-lesson" modifier="longdivider">
+                  <div class="group">
+                    Физика <span class="new badge"><b>204</b></span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="group">
+                    Химия <span class="new badge"><b>301</b></span>
+                  </div>
+                </ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Вторник</span>
+            <div class="content">
+              <p class="grey-text centered">Уроков нет</p>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Среда</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Четверг</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Пятница</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+
+        <div class="col s12 m6">
+          <ons-card>
+            <span class="title">Суббота</span>
+            <div class="content">
+              <ons-list modifier="inset">
+                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+              </ons-list>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+      <ons-toast>
+        <ul>
+          <li class="valign-wrapper"><i class="material-icons mr-5">people</i> 10Е</li>
+          <li class="valign-wrapper"><i class="material-icons mr-5">access_time</i> 9:00 - 9:40</li>
+        </ul>
+        <button class="valign-wrapper"><i class="material-icons">close</i></button>
+      </ons-toast>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="rooms.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Свободные кабинеты
+        </div>
+      </ons-toolbar>
+      <div class="row">
+        <ons-alert-dialog id="occupied">
+          <div class="alert-dialog-title">
+            <h5></h5>
+            <h6></h6>
+          </div>
+          <div class="alert-dialog-content">
+            <label>Занят:</label>
+            <p class="grey-text text-darken-2" id="until"></p>
+            <label>Причина:</label>
+            <p class="grey-text text-darken-2" id="reason"></p>
+          </div>
+          <div class="alert-dialog-footer">
+            <ons-button onclick="closeDialog('occupied')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+          </div>
+        </ons-alert-dialog>
+
+        <ons-alert-dialog id="occupy">
+          <div class="alert-dialog-title">
+            <div class="valign-wrapper">
+              <h5></h5>
+              <h6>Свободно</h6>
+            </div>
+          </div>
+
+          <div class="alert-dialog-content">
+            <div class="input-field">
+              <textarea id="write-reason" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
+              <label for="write-reason">Укажите причину занятия</label>
+            </div>
+            <div>
+              <label class="block">До какого урока (включительно)?</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>1</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>2</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>3</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>4</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>5</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>6</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>7</label>
+              <ons-input name="lesson" type="radio" checked></ons-input>
+              <label>Позже</label>
+              <br />
+              <ons-input type="checkbox"></ons-input>
+              <label>Занимать еженедельно?</label>
+            </div>
+          </div>
+          <div class="alert-dialog-footer">
+            <ons-button onclick="closeDialog('occupy')" modifier="quiet">Сохранить</ons-button>
+            <ons-button onclick="closeDialog('occupy')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+          </div>
+        </ons-alert-dialog>
+        <div class="col s12 m12">
+          <p class="title">Выберите урок</p>
+          <div class="segment segment--material">
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b" checked>
+              <button class="segment__button segment--material__button">0</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">1</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">2</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">3</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">4</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">5</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">6</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">7</button>
+            </div>
+            <div class="segment__item segment--material__item">
+              <input type="radio" class="segment__input segment--material__input" name="segment-b">
+              <button class="segment__button segment--material__button">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <ons-card>
+            <div class="lesson-rooms selected" id="lesson0">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson1">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson2">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson3">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson4">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson5">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson6">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">202</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson7">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">203</div>
+                <div class="chip taken">204</div>
+                <div class="chip">205</div>
+                <div class="chip taken">206</div>
+                <div class="chip taken">207</div>
+                <div class="chip">208</div>
+                <div class="chip">209</div>
+              </div>
+            </div>
+            <div class="lesson-rooms" id="lesson+">
+              <div class="content rooms">
+                <h6>1 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">102</div>
+                <div class="chip">103</div>
+                <div class="chip taken">104</div>
+                <div class="chip">105</div>
+                <div class="chip">106</div>
+                <div class="chip taken">107</div>
+                <h6>2 этаж</h6>
+                <div class="divider"></div>
+                <div class="chip">201</div>
+                <div class="chip">202</div>
+              </div>
+            </div>
+          </ons-card>
+        </div>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="settings.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Настройки
+        </div>
+      </ons-toolbar>
+      <ons-list>
+        <ons-list-header>Основные</ons-list-header>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s3">Имя</span>
+          <ons-input class="col s9"></ons-input>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Класс</span>
+          <ons-button class="col s3 dropdown-act">10Е</ons-button>
+          <ul class="collapsible dropdown-content set-text">
+            <li>
+              <div class="collapsible-header">8</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">9</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">10</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">11</div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
+                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Clear local storage</span>
+          <ons-button class="col s3 dropdown-act" id="clear-storage">Clear</ons-button>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Изменения наверх</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Уведомления</ons-list-header>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Получать push-уведомления об изменениях?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Что считать вечером?</span>
+          <ons-button disable-auto-styling modifier="material" class="col s3">21:00</ons-button>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <span class="col s9">Что считать утром?</span>
+          <ons-button disable-auto-styling modifier="material" class="col s3">07:00</ons-button>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Всегда напоминать расписание вечером?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="longdivider" class="row">
+          <div class="center">
+            <span class="col s12">Всегда напоминать расписание утром?</span>
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Занятые кабинеты</ons-list-header>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>307</b> в пт с 7 урока и далее</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>102</b> в ср с 0 урока по 1</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="center">
+            <span class="col s12"><b>303</b> в сб с 5 урока и далее</span>
+          </div>
+          <div class="right">
+            <a><i class="material-icons show-reason">info_outline</i></a>
+            <a><i class="material-icons delete-rule">close</i></a>
+          </div>
+        </ons-list-item>
+        <ons-toast id="reason-toast">
+          <i class="material-icons mr-5">info_outline</i>
+          <span class="reason">Спецкурс по математике с Масленниковой М. И.</span>
+          <button class="valign-wrapper"><i class="material-icons">close</i></button>
+        </ons-toast>
+        <ons-toast id="undo-toast">
+          Правило удалено <button>Отменить</button>
+        </ons-toast>
+      </ons-list>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.open()">
+            <i class="material-icons">menu</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <ons-list>
+        <ons-list-header>Приложение</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-common.html')">
+          <div class="left">
+            <i class="material-icons">done</i>
+          </div>
+          <div class="center">
+            Общее
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-notifications.html')">
+          <div class="left">
+            <i class="material-icons">notifications</i>
+          </div>
+          <div class="center">
+            Уведомления
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Разделы</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-home.html')">
+          <div class="left">
+            <i class="material-icons">home</i>
+          </div>
+          <div class="center">
+            Главный экран
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-classes.html')">
+          <div class="left">
+            <i class="material-icons">people</i>
+          </div>
+          <div class="center">
+            Расписание по классам
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-teachers.html')">
+          <div class="left">
+            <i class="material-icons">school</i>
+          </div>
+          <div class="center">
+            Расписание по преподавателям
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-rooms.html')">
+          <div class="left">
+            <i class="material-icons">beenhere</i>
+          </div>
+          <div class="center">
+            Свободные кабинеты
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-settings.html')">
+          <div class="left">
+            <i class="material-icons">settings</i>
+          </div>
+          <div class="center">
+            Настройки приложения
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Дополнительно</ons-list-header>
+        <ons-list-item tappable onclick="fn.load('help-faq.html')">
+          <div class="left">
+            <i class="material-icons">help</i>
+          </div>
+          <div class="center">
+            Часто задаваемые вопросы
+          </div>
+        </ons-list-item>
+        <ons-list-item tappable onclick="fn.load('help-about.html')">
+          <div class="left">
+            <i class="material-icons">info</i>
+          </div>
+          <div class="center">
+            О программе
+          </div>
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-common.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">Общее</h4>
+        <p>
+          Данное приложение предназначено для оперативного получения изменений в
+          расписании занятий СУНЦ УрФУ, а также для возможности удобно
+          просматривать всю необходимую для учёбы информацию.
+        </p>
+        <p>
+          <blockquote>
+            Внимание: приложение предоставляется "как есть" и может работать со
+            сбоями. Не следует полагаться на него в случае принятия важных решений.
+            Все данные предоставляются в исключительно информативных целях.
+          </blockquote>
+        </p>
+
+        <h5 class="help-title">Ограничения</h5>
+        <p>
+          Для полноценной работы программы необходим доступ к интернету. Тем не
+          менее, просмотр последних полученных данных, а также постоянного расписания,
+          возможен без доступа к сети.
+        </p>
+        <p>Все данные получаются по мере поступления при наличии доступа к сети.</p>
+
+        <h5 class="help-title">Системные требования</h5>
+        <p>
+          Мы постарались сделать так, чтобы наибольшее число устройств смогли
+          поддерживать наше приложение. На данный момент оно доступно для операционных
+          систем <b>Android</b> и <b>iOS</b>.
+        </p>
+        <p>
+          Если Вы столкнулись с неисправностью во время работы или ошибкой,
+          пожалуйста, отправьте об этом сообщение по адресу <code>timetable@alexfox.co</code>.</p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-notifications.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Уведомления
+        </h4>
+        <p>
+          По умолчанию программа будет отправлять push-уведомления при каждом
+          изменении расписания для класса пользователя.<br />
+          Данную функцию можно отключить в настройках приложения.
+        </p>
+        <p>
+          Также программа может напомнить расписание сегодня вечером и завтра утром.
+          В настройках можно поставить автоматические напоминания и установить
+          удобное время для этих напоминаний.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Главный экран
+        </h4>
+        <p>
+          При открытии программы показывается расписание на текущий и
+          следующий учебные дни.
+        </p>
+        <p>
+          Нажатие на каждый из представленных уроков предоставляет следующую
+          информацию: время урока <i class="material-icons">access_time</i>
+          и учителя, проводящего занятие <i class="material-icons">school</i>.
+        </p>
+
+        <img class="responsive-img" src="img/lesson-info.png" />
+
+        <p>
+          При нажатии на иконку с колокольчиком <i class="material-icons">notifications</i>
+          , отображаемую в карточке следующего дня, открывается меню установки напоминания
+          о предстоящих уроках. Отключение установленного оповещения происходит
+          в этом же разделе. Время утренних и вечерних оповещений, а также автоматическое
+          напоминание можно изменить на странице настроек.
+        </p>
+
+        <img class="responsive-img" src="img/reminder.png" />
+
+        <p>
+          Изменения в расписании отображаются в конце страницы. Данный пункт
+          можно поднять выше остальных путем установки соответствующего
+          параметра на странице настроек.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-classes.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Расписание по классам
+        </h4>
+        <p>
+          На странице Классы <i class="material-icons">people</i>
+          отображается постоянное расписание для класса пользователя на всю неделю.
+        </p>
+        <p>
+          Изменить отображаемый в данный момент класс можно с помощью зелёной кнопки в начале раздела.
+        </p>
+        <p>
+          При нажатии на иконку со стрелочками <i class="material-icons">compare_arrows</i> откроется страница сравнения
+          расписаний для классов.
+        </p>
+        <p>
+          В этом разделе допускается выбрать не более пяти классов, а также день недели,
+          после чего расписания выбранных классов на этот день будут представлены в таблице сравнения.
+        </p>
+
+        <img class="responsive-img" src="img/compare.png" />
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-teachers.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Расписание по преподавателям
+        </h4>
+        <p>
+          Данный раздел позволяет узнать, по каким дням, в какое время и для какого класса
+          преподаватель ведёт свои занятия.
+        </p>
+        <p>
+          Выбор делается в начале страницы: достаточно начать писать фамилию
+          интересующего преподавателя и выбрать его в выпадающем списке.
+        </p>
+
+        <img class="responsive-img" src="img/teachers.png" />
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-rooms.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Свободные кабинеты
+        </h4>
+        <p>
+          На этой странице можно получить информацию о кабинетах, в которых
+          не запланировано расписанием занятие. Свободные кабинеты можно
+          посмотреть для каждого урока, начиная с нулевого и заканчивая временем
+          после седьмого урока (обозначается +).
+        </p>
+        <p>
+          В этом разделе можно также занять любой из ранее не занятых кабинетов
+          и оставить сообщение о причине занятия (не длиннее 80 символов).
+          При этом можно установить правило еженедельного занятия этого кабинета.
+          Это правило можно убрать в соответствующем разделе настроек.
+        </p>
+
+        <img class="responsive-img" src="img/occupy-room.png" />
+
+        <p>
+          Если кабинет занят кем-то другим, можно посмотреть срок и причину этого занятия.
+          Это может быть полезно, если нужно найти, где будет то или иное занятие вне расписания.
+        </p>
+
+        <img class="responsive-img" src="img/occupied.png" />
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-settings.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">
+          Настройки приложения
+        </h4>
+        <p>
+          В данном разделе можно задать наиболее удобный режим поведения программы.
+        </p>
+        <p>
+          Доступны следующие параметры:
+        </p>
+        <ol>
+          <h5>Основные</h5>
+          <li>
+            <p>
+              <b>Имя</b> - значение данного поля будет отображаться в разделе
+              занятости кабинетов. Настоятельно рекомендуется заполнить поле
+              реальными <u>именем и фамилией</u> во избежание недопониманий;
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Класс</b> - влияет на то, какое расписание будет на главной и какой класс
+              будет выбран изначально на странице Классы. Также указывается при занятии кабинета;
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Отображать изменения перед расписанием</b> - включение этой опции поднимает
+              карточку с изменениями над основным расписанием занятий.
+            </p>
+          </li>
+        </ol>
+        <ol>
+          <h5>Уведомления</h5>
+          <li>
+            <p>
+              <b>Получать уведомления</b> - в случае включения данной опции
+              пользователь будет получать push-уведомления при появлении
+              изменений в расписании для своего класса;
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Время вечерних и утренних напоминаний</b> - в указанное время
+              программа будет присылать расписание на следующий день;
+            </p>
+          </li>
+          <li>
+            <b>Регулярное получение напоминаний</b> - программа будет присылать
+            расписание на следующий день каждое утро и/или каждый вечер;
+          </li>
+        </ol>
+        <h5>Занятые кабинеты</h5>
+        <p>
+          Здесь можно управлять правилами для автоматического занятия кабинетов каждую неделю.
+          Можно просмотреть причину или удалить правило.
+        </p>
+        </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-faq.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">Часто задаваемые вопросы</h4>
+
+        <h6 class="help-title">Где находится кнопка обновления информации?</h6>
+        <blockquote>
+          Данной кнопки нет, так как приложение автоматически узнает о
+          происходящих изменениях в расписании.
+        </blockquote>
+
+        <h6 class="help-title">Как быстро приходят изменения?</h6>
+        <blockquote>
+          Проверка сайта происходит каждые 15 минут. Мы стараемся, чтобы при
+          появлении новой информации она была доставлена каждому пользователю как можно скорее.
+        </blockquote>
+
+        <h6 class="help-title">Каким образом приложение получает необходимую информацию?</h6>
+        <blockquote>
+          Мы работаем с помощью сервиса OneSignal, посылающим уведомления в наши программы с сервера.
+        </blockquote>
+
+        <h6 class="help-title">Я нашёл ошибку!</h6>
+        <blockquote>
+          Будем признательны, если вы отправите о ней письмо по адресу <code>timetable@alexfox.co</code>.
+        </blockquote>
+
+        <h6 class="help-title">Знаю крутую функцию, которой все ещё нет</h6>
+        <blockquote>
+          Отлично! Просто отправьте нам письмо на электронную почту.
+        </blockquote>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="help-about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button class="valign-wrapper" onclick="fn.load('help.html')">
+            <i class="material-icons">arrow_back</i>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Справка
+        </div>
+      </ons-toolbar>
+
+      <div class="help-text">
+        <h4 class="help-title">О программе</h4>
+        <img class="responsive-img" src="img/moarcatz.png" style="float: left; margin-left: 10px; margin-right: 10px;" />
+
+        <p>
+          Данное приложение было разработано командой <b>MoarCatz</b>.
+        </p>
+
+        <p>
+          Пожалуйста, оцените его в магазине приложений и напишите своё мнение
+          - будем рады его услышать.
+        </p>
+        <p>
+          Программа распространяется свободно и с открытым исходным кодом. Добро
+          пожаловать в наш <a href="https://github.com/MoarCatz/timetable-app" color="#2E7D32">репозиторий</a>
+          на GitHub.
+        </p>
+      </div>
+    </ons-page>
+  </ons-template>
+
 </body>
+
+<script src="js/TweenLite.min.js"></script>
+<script src="js/CSSPlugin.min.js"></script>
+<script src="js/awesomplete.min.js"></script>
+<script src="js/collapsible.js"></script>
+<script src="js/index.js"></script>
 
 </html>

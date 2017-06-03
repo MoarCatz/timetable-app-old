@@ -1,0 +1,4426 @@
+/*!
+ * Copyright 2013-2017 ASIAL CORPORATION
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+/*!
+ * Copyright 2012 Adobe Systems Inc.;
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+}
+* { /* stylelint-disable-line selector-no-universal */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input, textarea, select {
+  -webkit-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+  -moz-user-select: text;
+}
+input:active, input:focus, textarea:active, textarea:focus, select:active, select:focus {
+  outline: none;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4, h5, h6 {
+  font-size: 18px;
+}
+:root {
+}
+.page {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: visible;
+  overflow-y: hidden;
+  color: #1f1f21;
+  -ms-overflow-style: none;
+}
+.page::-webkit-scrollbar {
+  display: none;
+}
+.page__content {
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.page__background {
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.page--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+.page--material__content {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-weight: 400;
+}
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5 {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  margin: 0.6em 0;
+  padding: 0;
+}
+.page__content h6 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.page__content h1 {
+  font-size: 28px;
+}
+.page__content h2 {
+  font-size: 24px;
+}
+.page__content h3 {
+  font-size: 20px;
+}
+.page--material__content h1,
+.page--material__content h2,
+.page--material__content h3,
+.page--material__content h4,
+.page--material__content h5 {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  margin: 0.6em 0;
+  padding: 0;
+}
+.page--material__content h1 {
+  font-size: 28px;
+}
+.page--material__content h2 {
+  font-size: 24px;
+}
+.page--material__content h3 {
+  font-size: 20px;
+}
+.page--material__background {
+  background-color: #ffffff;
+}
+:root { /* background color active */
+}
+/*~
+  name: Switch
+  category: Switch
+  elements: ons-switch
+  markup: |
+    <label class="switch">
+      <input type="checkbox" class="switch__input">
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+    <label class="switch">
+      <input type="checkbox" class="switch__input" checked>
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+    <label class="switch">
+      <input type="checkbox" class="switch__input" disabled>
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+*/
+.switch {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  min-width: 51px;
+  font-size: 17px;
+  padding: 0 20px;
+  border: none;
+  overflow: visible;
+  width: 51px;
+  height: 32px;
+  z-index: 0;
+  text-align: left;
+}
+.switch__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  z-index: 0;
+}
+/* switch toggle background */
+.switch__toggle {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-box-shadow: inset 0 0 0 2px #e5e5e5;
+          box-shadow: inset 0 0 0 2px #e5e5e5;
+}
+/* switch toggle circle */
+.switch__handle {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  position: absolute;
+  content: '';
+  border-radius: 28px;
+  height: 28px;
+  width: 28px;
+  background-color: white;
+  left: 1px;
+  top: 2px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(.59, .01, .5, .99);
+          transition-timing-function: cubic-bezier(.59, .01, .5, .99);
+  -webkit-box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0, 0, 0, .25);
+          box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0, 0, 0, .25);
+}
+.switch--active__handle {
+  -webkit-transition: none;
+  transition: none;
+}
+:checked + .switch__toggle {
+  -webkit-box-shadow: inset 0 0 0 2px #5198db;
+          box-shadow: inset 0 0 0 2px #5198db;
+  background-color: #5198db;
+}
+:checked + .switch__toggle > .switch__handle {
+  left: 21px;
+  -webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, .25);
+          box-shadow: 0 3px 2px rgba(0, 0, 0, .25);
+}
+:disabled + .switch__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch__touch {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+}
+/*~
+  name: Material Switch
+  category: Switch
+  elements: ons-switch
+  markup: |
+    <label class="switch switch--material">
+      <input type="checkbox" class="switch__input switch--material__input">
+      <div class="switch__toggle switch--material__toggle">
+        <div class="switch__handle switch--material__handle">
+        </div>
+      </div>
+    </label>
+    <label class="switch switch--material">
+      <input type="checkbox" class="switch__input switch--material__input" checked>
+      <div class="switch__toggle switch--material__toggle">
+        <div class="switch__handle switch--material__handle">
+        </div>
+      </div>
+    </label>
+    <label class="switch switch--material">
+      <input type="checkbox" class="switch__input switch--material__input" disabled>
+      <div class="switch__toggle switch--material__toggle">
+        <div class="switch__handle switch--material__handle">
+        </div>
+      </div>
+    </label>
+*/
+.switch--material {
+  width: 36px;
+  height: 24px;
+  padding: 0 10px;
+  min-width: 36px;
+}
+.switch--material__toggle {
+  background-color: #b0afaf;
+  margin-top: 5px;
+  height: 14px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.switch--material__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  z-index: 0;
+}
+.switch--material__handle {
+  background-color: #f1f1f1;
+  left: 0;
+  margin-top: -5px;
+  width: 20px;
+  height: 20px;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
+      0 1px 10px 0 rgba(0, 0, 0, .12),
+      0 2px 4px -1px rgba(0, 0, 0, .4);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
+      0 1px 10px 0 rgba(0, 0, 0, .12),
+      0 2px 4px -1px rgba(0, 0, 0, .4);
+}
+:checked + .switch--material__toggle {
+  background-color: #81c784;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+:checked + .switch--material__toggle > .switch--material__handle {
+  left: 16px;
+  background-color: #4CAF50;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+}
+:disabled + .switch--material__toggle {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.switch--material__handle:before {
+  background: transparent;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 0;
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .12);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, .12);
+  -webkit-transition: box-shadow 0.1s linear;
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+.switch--material__toggle > .switch--active__handle:before {
+  -webkit-box-shadow: 0 0 0 14px rgba(0, 0, 0, .12);
+          box-shadow: 0 0 0 14px rgba(0, 0, 0, .12);
+}
+:checked + .switch--material__toggle > .switch--active__handle:before {
+  -webkit-box-shadow: 0 0 0 14px alpha(#4CAF50, 0.2);
+          box-shadow: 0 0 0 14px alpha(#4CAF50, 0.2);
+}
+.switch--material__touch {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -15px;
+  right: -15px;
+}
+/*~
+  name: Toolbar
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar">
+      <div class="toolbar__center">Navigation Bar</div>
+    </div>
+*/
+.toolbar {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  white-space: nowrap;
+  overflow: hidden;
+  word-spacing: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 44px;
+  padding-left: 0;
+  padding-right: 0;
+  background: #fff;
+  color: #1f1f21;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-weight: 400;
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#bbb), to(#bbb));
+  background-image: linear-gradient(0deg, #bbb, #bbb 100%);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .toolbar {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#bbb), color-stop(50%, #bbb), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #bbb, #bbb 50%, transparent 50%);
+  }
+}
+.toolbar__bg {
+  background: #fff;
+}
+.toolbar__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  height: 44px;
+  overflow: visible;
+  display: block;
+  vertical-align: middle;
+}
+.toolbar__left {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  max-width: 50%;
+  width: 27%;
+  text-align: left;
+  line-height: 44px;
+}
+.toolbar__right {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  max-width: 50%;
+  width: 27%;
+  text-align: right;
+  line-height: 44px;
+}
+.toolbar__center {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  width: 46%;
+  text-align: center;
+  line-height: 44px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #1f1f21;
+}
+.toolbar__title {
+  line-height: 44px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #1f1f21;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+.toolbar__center:first-child:last-child {
+  width: 100%;
+}
+/*~
+  name: Toolbar with Segment
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar">
+      <div class="toolbar__center">
+        <div class="segment" style="width:200px;margin:7px 50px;">
+          <div class="segment__item">
+            <input type="radio" class="segment__input" name="navi-segment-a" checked>
+            <div class="segment__button">One</div>
+          </div>
+
+          <div class="segment__item">
+            <input type="radio" class="segment__input" name="navi-segment-a">
+            <div class="segment__button">Two</div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/*~
+  name: Material Toolbar
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar toolbar--material">
+      <div class="toolbar__center toolbar--material__center">
+        Title
+      </div>
+    </div>
+*/
+.toolbar--material {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 56px;
+  border-bottom: 0;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+  padding: 0;
+  background-color: #4CAF50;
+  background-size: 0;
+}
+/*~
+  name: No Shadow Toolbar
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar toolbar--noshadow">
+      <div class="toolbar__left">
+        <span class="toolbar-button">
+          <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+        </span>
+      </div>
+      <div class="toolbar__center">
+        Navigation Bar
+      </div>
+      <div class="toolbar__right">
+        <span class="toolbar-button">Label</span>
+      </div>
+    </div>
+*/
+.toolbar--noshadow {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-image: none;
+  border-bottom: none;
+}
+.toolbar--material__left, .toolbar--material__right {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  height: 56px;
+  min-width: 72px;
+  width: auto;
+  line-height: 56px;
+}
+.toolbar--material__center {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  height: 56px;
+  width: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  line-height: 56px;
+}
+.toolbar--material__center:first-child {
+  margin-left: 16px;
+}
+.toolbar--material__center:last-child {
+  margin-right: 16px;
+}
+.toolbar--material__left:empty, .toolbar--material__right:empty {
+  min-width: 16px;
+}
+/*~
+  name: Material Toolbar with Icons
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar toolbar--material">
+      <div class="toolbar__left toolbar--material__left">
+        <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-menu"></i>
+        </span>
+      </div>
+      <div class="toolbar__center toolbar--material__center">
+        Title
+      </div>
+      <div class="toolbar__right toolbar--material__right">
+        <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-search"></i>
+        </span>
+        <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-favorite"></i>
+        </span>
+        <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-more-vert"></i>
+        </span>
+      </div>
+    </div>
+*/
+/*~
+  name: Transparent Toolbar
+  category: Toolbar
+  elements: ons-toolbar
+  markup: |
+    <div class="toolbar toolbar--transparent">
+      <div class="toolbar__left">
+        <span class="toolbar-button">
+          <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+        </span>
+      </div>
+      <div class="toolbar__center">
+        Navigation Bar
+      </div>
+      <div class="toolbar__right">
+        <span class="toolbar-button">Label</span>
+      </div>
+    </div>
+*/
+.toolbar--transparent {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-image: none;
+  border-bottom: none;
+}
+/*~
+  name: Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button">Button</button>
+    <button class="button" disabled>Button</button>
+*/
+.button {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+}
+.button:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button:active {
+  background-color: rgba(24, 103, 194, .81);
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.button:focus {
+  outline: 0;
+}
+.button:disabled, .button[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/*~
+  name: Outline Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button button--outline">Button</button>
+    <button class="button button--outline" disabled>Button</button>
+*/
+.button--outline {
+  background-color: transparent;
+  border: 1px solid rgba(24, 103, 194, .81);
+  color: rgba(24, 103, 194, .81);
+}
+.button--outline:active {
+  background-color: rgba(203, 221, 241, 0.9430000000000001);
+  border: 1px solid rgba(24, 103, 194, .81);
+  color: rgba(24, 103, 194, .81);
+  opacity: 1;
+}
+.button--outline:hover {
+  border: 1px solid rgba(24, 103, 194, .81);
+  -webkit-transition: 0;
+  transition: 0;
+}
+/*~
+  name: Light Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button button--light">Button</button>
+    <button class="button button--light" disabled>Button</button>
+*/
+.button--light {
+  background-color: transparent;
+  color: rgba(0, 0, 0, .4);
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+.button--light:active {
+  background-color: rgba(0, 0, 0, .05);
+  color: rgba(0, 0, 0, .4);
+  border: 1px solid rgba(0, 0, 0, .2);
+  opacity: 1;
+}
+/*~
+  name: Quiet Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button--quiet">Button</button>
+    <button class="button--quiet" disabled>Button</button>
+*/
+.button--quiet {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  background: transparent;
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+  color: rgba(24, 103, 194, .81);
+  border: none;
+}
+.button--quiet:disabled,
+.button--quiet[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+  border: none;
+}
+.button--quiet:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button--quiet:focus {
+  outline: 0;
+}
+.button--quiet:active {
+  background-color: transparent;
+  border: none;
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+  color: rgba(24, 103, 194, .81);
+}
+/*~
+  name: Call To Action Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button--cta">Button</button>
+    <button class="button--cta" disabled>Button</button>
+*/
+.button--cta {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  border: none;
+  background-color: #25a6d9;
+  color: white;
+}
+.button--cta:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button--cta:focus {
+  outline: 0;
+}
+.button--cta:active {
+  color: white;
+  background-color: #25a6d9;
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.button--cta:disabled,
+.button--cta[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/*
+  name: Large Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button button--large" style="width: 95%; margin: 0 auto;">Button</button>
+*/
+.button--large {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 12px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.button--large:active {
+  background-color: rgba(24, 103, 194, .81);
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+  transition: none;
+}
+.button--large:disabled,
+.button--large[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.button--large:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button--large:focus {
+  outline: 0;
+}
+/*~
+  name: Large Quiet Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button--large--quiet" style="width: 95%; margin: 0 auto;">Button</button>
+*/
+.button--large--quiet {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 12px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: rgba(24, 103, 194, .81);
+  text-align: center;
+}
+.button--large--quiet:active {
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+  color: rgba(24, 103, 194, .81);
+  background: transparent;
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.button--large--quiet:disabled,
+.button--large--quiet[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.button--large--quiet:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button--large--quiet:focus {
+  outline: 0;
+}
+/*~
+  name: Large Call To Action Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button--large--cta" style="width: 95%; margin: 0 auto;">Button</button>
+*/
+.button--large--cta {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  border: none;
+  background-color: #25a6d9;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 12px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.button--large--cta:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.button--large--cta:focus {
+  outline: 0;
+}
+.button--large--cta:active {
+  color: white;
+  background-color: #25a6d9;
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.button--large--cta:disabled,
+.button--large--cta[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/*~
+  name: Material Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button button--material">BUTTON</button>
+    <button class="button button--material" disabled>DISABLED</button>
+*/
+.button--material {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  -webkit-transition: box-shadow 0.2s ease;
+  -webkit-transition: -webkit-box-shadow 0.2s ease;
+  transition: -webkit-box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  text-transform: uppercase;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-weight: 500;
+}
+.button--material:active {
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14),
+      0 1px 18px 0 rgba(0, 0, 0, .12),
+      0 3px 5px -1px rgba(0, 0, 0, .4);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14),
+      0 1px 18px 0 rgba(0, 0, 0, .12),
+      0 3px 5px -1px rgba(0, 0, 0, .4);
+  background-color: #4CAF50;
+  opacity: 1;
+}
+.button--material:focus {
+  outline: 0;
+}
+.button--material:disabled,
+.button--material[disabled] {
+  opacity: 0.5;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*~
+  name: Material Flat Button
+  category: Button
+  elements: ons-button
+  markup: |
+    <button class="button button--material--flat">BUTTON</button>
+    <button class="button button--material--flat" disabled>DISABLED</button>
+*/
+.button--material--flat {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: white;
+  vertical-align: middle;
+  background-color: rgba(24, 103, 194, .81);
+  border: 0 solid currentColor;
+  border-radius: 3px;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  -webkit-transition: box-shadow 0.2s ease;
+  -webkit-transition: -webkit-box-shadow 0.2s ease;
+  transition: -webkit-box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  text-transform: uppercase;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-weight: 500;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+  color: #4CAF50;
+}
+.button--material--flat:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+  color: #4CAF50;
+  outline: 0;
+  opacity: 1;
+  border: none;
+}
+.button--material--flat:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+  color: #4CAF50;
+  outline: 0;
+  opacity: 1;
+  border: none;
+}
+.button--material--flat:disabled,
+.button--material--flat[disabled] {
+  opacity: 0.5;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*~
+  name: Segment
+  category: Segment
+  markup: |
+    <div class="segment" style="width: 280px; margin: 0 auto;">
+      <div class="segment__item">
+        <input type="radio" class="segment__input" name="segment-a" checked>
+        <button class="segment__button">One</button>
+      </div>
+      <div class="segment__item">
+        <input type="radio" class="segment__input" name="segment-a">
+        <button class="segment__button">Two</button>
+      </div>
+      <div class="segment__item">
+        <input type="radio" class="segment__input" name="segment-a">
+        <button class="segment__button">Three</button>
+      </div>
+    </div>
+*/
+.segment {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.segment__item {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  border-radius: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.segment__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.segment__button {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  border-radius: 0;
+  background-color: transparent;
+  color: rgba(18, 114, 224, .77);
+  border: 1px solid rgba(18, 114, 224, .77);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-left-width: 0;
+  font-weight: 400;
+  padding: 0;
+  font-size: 13px;
+  height: 29px;
+  line-height: 29px;
+  width: 100%;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.segment__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.segment__button:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.segment__button:focus {
+  outline: 0;
+}
+:active + .segment__button {
+  background-color: rgba(205, 225, 248, 0.931);
+  border: 0 solid rgba(18, 114, 224, .77);
+  border-top: 1px solid rgba(18, 114, 224, .77);
+  border-bottom: 1px solid rgba(18, 114, 224, .77);
+  border-right: 1px solid rgba(18, 114, 224, .77);
+  font-size: 13px;
+  width: 100%;
+  -webkit-transition: none;
+  transition: none;
+}
+:checked + .segment__button {
+  background-color: rgba(18, 114, 224, .77);
+  color: #fff;
+  -webkit-transition: none;
+  transition: none;
+}
+.segment__item:first-child > .segment__button {
+  border-left-width: 1px;
+  border-radius: 4px 0 0 4px;
+}
+.segment__item:last-child > .segment__button {
+  border-right-width: 1px;
+  border-radius: 0 4px 4px 0;
+}
+/*~
+  name: Material Segment
+  category: Segment
+  markup: |
+    <div class="segment segment--material" style="width: 280px; margin: 0 auto;">
+      <div class="segment__item segment--material__item">
+        <input type="radio" class="segment__input segment--material__input" name="segment-b" checked>
+        <button class="segment__button segment--material__button">One</button>
+      </div>
+      <div class="segment__item segment--material__item">
+        <input type="radio" class="segment__input segment--material__input" name="segment-b">
+        <button class="segment__button segment--material__button">Two</button>
+      </div>
+      <div class="segment__item segment--material__item">
+        <input type="radio" class="segment__input segment--material__input" name="segment-b">
+        <button class="segment__button segment--material__button">Three</button>
+      </div>
+    </div>
+*/
+.segment--material {
+  border-radius: 2px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+}
+.segment--material__button {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  border-width: 0;
+  color: rgba(0, 0, 0, .38);
+  border-radius: 0;
+  background-color: #fafafa;
+}
+.segment--material__item:first-child > .segment--material__button,
+.segment--material__item:last-child > .segment--material__button {
+  border-radius: 0;
+  border-width: 0;
+}
+:active + .segment--material__button {
+  background-color: #fafafa;
+  border-radius: 0;
+  border-width: 0;
+  font-size: 14px;
+  -webkit-transition: none;
+  transition: none;
+  color: rgba(0, 0, 0, .38);
+}
+:checked + .segment--material__button {
+  background-color: #c8e6c9;
+  color: #353535;
+  border-radius: 0;
+  border-width: 0;
+}
+:root { /* Text color */ /* Text color active */
+}
+/*~
+  name: Toolbar Button
+  category: Toolbar Button
+  elements: ons-toolbar-button
+  markup: |
+    <!-- Prerequisite=This example use font-awesome(http://fortawesome.github.io/Font-Awesome/) to display icons. -->
+    <button class="toolbar-button">
+      <i class="fa fa-bell" style="font-size:17px"></i> Label
+    </button>
+
+    <button class="toolbar-button toolbar-button--outline">
+      <i class="fa fa-bell" style="font-size:17px"></i> Label
+    </button>
+*/
+.toolbar-button {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  padding: 4px 10px;
+  letter-spacing: 0;
+  color: rgba(38, 100, 171, .81);
+  text-shadow: 0 1px none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-weight: 400;
+  font-size: 17px;
+  -webkit-transition: none;
+  transition: none;
+}
+.toolbar-button:active {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.toolbar-button:disabled,
+.toolbar-button[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.toolbar-button:focus {
+  outline: 0;
+  -webkit-transition: none;
+  transition: none;
+}
+.toolbar-button:hover {
+  -webkit-transition: none;
+  transition: none;
+}
+.toolbar-button--outline {
+  border: 1px solid rgba(38, 100, 171, .81);
+  margin: auto 8px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.toolbar-button--material {
+  font-size: 22px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0 12px;
+  height: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  vertical-align: baseline;
+  vertical-align: initial;
+}
+.toolbar-button--material:first-of-type {
+  margin-left: 4px;
+}
+.toolbar-button--material:last-of-type {
+  margin-right: 4px;
+}
+.toolbar-button--material:active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, .15);
+}
+.back-button {
+  height: 44px;
+  line-height: 44px;
+  padding-left: 8px;
+  color: rgba(38, 100, 171, .81);
+  background-color: rgba(0, 0, 0, 0);
+}
+.back-button:active {
+  opacity: 0.2;
+}
+.back-button__label {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+.back-button__icon {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+  margin-right: 6px;
+}
+.back-button__icon:before {
+  font-family: 'Ionicons';
+  content: '\f3cf';
+  font-size: 32px;
+}
+.back-button--material {
+  font-size: 22px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0 12px;
+  height: 100%;
+  margin: 0 0 0 4px;
+  border: none;
+  border-radius: 0;
+  vertical-align: baseline;
+  vertical-align: initial;
+  line-height: 56px;
+}
+.back-button--material__label {
+  display: none;
+  font-size: 20px;
+}
+.back-button--material__icon:before {
+  font-family: 'Material-Design-Iconic-Font';
+  content: '\f2ea';
+  font-size: 26px;
+}
+.back-button--material:active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, .15);
+}
+:root { /* background color active */ /* indicator color */
+}
+/*~
+  name: Checkbox
+  category: Checkbox
+  elements: ons-input
+  markup: |
+    <label class="checkbox">
+      <input type="checkbox" class="checkbox__input">
+      <div class="checkbox__checkmark"></div>
+      OFF
+    </label>
+
+    <label class="checkbox">
+      <input type="checkbox" class="checkbox__input" checked="checked">
+      <div class="checkbox__checkmark"></div>
+      ON
+    </label>
+
+    <label class="checkbox">
+      <input type="checkbox" class="checkbox__input" disabled>
+      <div class="checkbox__checkmark"></div>
+      Disabled
+    </label>
+*/
+.checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 24px;
+}
+.checkbox__checkmark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: relative;
+  height: 24px;
+  width: 24px;
+  pointer-events: none;
+}
+.checkbox__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.checkbox__input:checked {
+  background: rgba(24, 103, 194, .81);
+}
+.checkbox__checkmark:before {
+  content: '';
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid rgba(24, 103, 194, .81);
+  border-radius: 16px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  left: 0;
+}
+/* checkmark's line */
+.checkbox__checkmark:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 12px;
+  height: 6px;
+  background: transparent;
+  border: 3px solid #fff;
+  border-width: 2px;
+  border-top: none;
+  border-right: none;
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 0;
+}
+:checked + .checkbox__checkmark:before {
+  background: rgba(24, 103, 194, .81);
+  border: 1px solid rgba(24, 103, 194, .81);
+}
+:checked + .checkbox__checkmark:after {
+  opacity: 1;
+}
+:focus + .checkbox__checkmark:before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+:disabled + .checkbox__checkmark {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+:disabled:active + .checkbox__checkmark:before { /* FIXME */
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*~
+  name: No border Checkbox
+  category: Checkbox
+  elements: ons-input
+  markup: |
+    <label class="checkbox--noborder">
+      <input type="checkbox" class="checkbox__input checkbox--noborder__input">
+      <div class="checkbox__checkmark checkbox--noborder__checkmark"></div>
+      OFF
+    </label>
+
+    <label class="checkbox--noborder">
+      <input type="checkbox" class="checkbox__input checkbox--noborder__input" checked="checked">
+      <div class="checkbox__checkmark checkbox--noborder__checkmark"></div>
+      ON
+    </label>
+
+    <label class="checkbox--noborder">
+      <input type="checkbox" class="checkbox__input checkbox--noborder__input" disabled checked="checked">
+      <div class="checkbox__checkmark checkbox--noborder__checkmark"></div>
+      Disabled
+    </label>
+ */
+.checkbox--noborder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
+}
+.checkbox--noborder__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.checkbox--noborder__checkmark {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+}
+.checkbox--noborder__checkmark:before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  left: 0;
+}
+.checkbox--noborder__checkmark:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  opacity: 0;
+  width: 12px;
+  height: 6px;
+  background: transparent;
+  border: 3px solid rgba(24, 103, 194, .81);
+  border-width: 2px;
+  border-top: none;
+  border-right: none;
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+:checked + .checkbox--noborder__checkmark:before {
+  background: transparent;
+  border: none;
+}
+:checked + .checkbox--noborder__checkmark:after {
+  opacity: 1;
+}
+:focus + .checkbox--noborder__checkmark:before {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+:disabled + .checkbox--noborder__checkmark {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+:disabled:active + .checkbox--noborder__checkmark:before {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+/*~
+  name: Material Checkbox
+  category: Checkbox
+  elements: ons-input
+  markup: |
+    <label class="checkbox checkbox--material">
+      <input type="checkbox" class="checkbox__input checkbox--material__input">
+      <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+      OFF
+    </label>
+    <label class="checkbox checkbox--material">
+      <input type="checkbox" class="checkbox__input checkbox--material__input" checked="checked">
+      <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+      ON
+    </label>
+    <label class="checkbox checkbox--material">
+      <input type="checkbox" class="checkbox__input checkbox--material__input" checked="checked" disabled>
+      <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+      ON
+    </label>
+    <label class="checkbox checkbox--material">
+      <input type="checkbox" class="checkbox__input checkbox--material__input" disabled>
+      <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+      Disabled
+    </label>
+*/
+.checkbox--material {
+  line-height: 18px;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+.checkbox--material__checkmark {
+  width: 18px;
+  height: 18px;
+}
+.checkbox--material__checkmark:before {
+  border-radius: 2px;
+  height: 18px;
+  width: 18px;
+  border: 2px solid #717171;
+}
+:checked + .checkbox--material__checkmark:before {
+  background-color: #4CAF50;
+  border: none;
+}
+.checkbox--material__checkmark:after {
+  border-color: #ffffff;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  width: 10px;
+  height: 5px;
+  top: 4px;
+  left: 3px;
+  -webkit-transform: scale(0) rotate(-45deg);
+          transform: scale(0) rotate(-45deg);
+}
+:checked + .checkbox--material__checkmark:after {
+  top: 4px;
+  left: 3px;
+  -webkit-transform: scale(1) rotate(-45deg);
+          transform: scale(1) rotate(-45deg);
+}
+:disabled + .checkbox--material__checkmark {
+  opacity: 1;
+}
+:disabled + .checkbox--material__checkmark:before {
+  border-color: #afafaf;
+}
+:disabled:checked + .checkbox--material__checkmark:before {
+  background-color: #afafaf;
+}
+:disabled:checked + .checkbox--material__checkmark:after {
+  border-color: #ffffff;
+}
+/*~
+  name: Radio Button
+  category: Radio Button
+  elements: ons-input
+  markup: |
+    <label class="radio-button">
+      <input type="radio" class="radio-button__input" name="r" checked="checked">
+      <div class="radio-button__checkmark"></div>
+      Label
+    </label>
+
+    <label class="radio-button">
+      <input type="radio" class="radio-button__input" name="r">
+      <div class="radio-button__checkmark"></div>
+      Label
+    </label>
+
+    <label class="radio-button">
+      <input type="radio" class="radio-button__input" name="r">
+      <div class="radio-button__checkmark"></div>
+      Label
+    </label>
+*/
+.radio-button__input {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.radio-button__input:active,
+.radio-button__input:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.radio-button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  line-height: 24px;
+  text-align: left;
+}
+.radio-button__checkmark:before {
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  left: 0;
+}
+.radio-button__checkmark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: relative;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  pointer-events: none;
+}
+.radio-button__checkmark:after {
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 6px;
+  left: 5px;
+  opacity: 0;
+  width: 12px;
+  height: 6px;
+  background: transparent;
+  border: 3px solid rgba(24, 103, 194, .81);
+  border-width: 2px;
+  border-top: none;
+  border-right: none;
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+:checked + .radio-button__checkmark {
+  background: rgba(0, 0, 0, 0);
+}
+:checked + .radio-button__checkmark:after {
+  opacity: 1;
+}
+:checked + .radio-button__checkmark:before {
+  background: transparent;
+  border: none;
+}
+:disabled + .radio-button__checkmark {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/*~
+  name: Material Radio Button
+  category: Radio Button
+  elements: ons-input
+  markup: |
+    <label class="radio-button radio-button--material">
+      <input type="radio" class="radio-button__input radio-button--material__input" name="r" checked="checked">
+      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+      Label
+    </label>
+    <label class="radio-button radio-button--material">
+      <input type="radio" class="radio-button__input radio-button--material__input" name="r">
+      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+      Label
+    </label>
+    <label class="radio-button radio-button--material">
+      <input type="radio" class="radio-button__input radio-button--material__input" name="s" disabled checked>
+      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+      Label
+    </label>
+    <label class="radio-button radio-button--material">
+      <input type="radio" class="radio-button__input radio-button--material__input" name="s" disabled>
+      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+      Label
+    </label>
+*/
+.radio-button--material {
+  line-height: 20px + 2px;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+.radio-button--material__checkmark {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}
+.radio-button--material__checkmark:before {
+  background: transparent;
+  border: 2px solid #717171;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+}
+.radio-button--material__checkmark:after {
+  -webkit-transition: background 0.2s ease, -webkit-transform 0.2s ease;
+  transition: background 0.2s ease, -webkit-transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+:checked + .radio-button--material__checkmark:before {
+  background: transparent;
+  border: 2px solid #4CAF50;
+}
+.radio-button--material__input + .radio-button__checkmark:after {
+  background: #717171;
+  opacity: 1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+:checked + .radio-button--material__checkmark:after {
+  opacity: 1;
+  background: #4CAF50;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+:disabled + .radio-button--material__checkmark {
+  opacity: 1;
+}
+:disabled + .radio-button--material__checkmark:after {
+  background-color: #afafaf;
+  border-color: #afafaf;
+}
+:disabled + .radio-button--material__checkmark:before {
+  border-color: #afafaf;
+}
+/*~
+  name: List
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">Dog</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Cat</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Hamster</div>
+      </li>
+    </ul>
+*/
+.list {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  list-style-type: none;
+  text-align: left;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#ccc)),
+    -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#ccc));
+  background-image: linear-gradient(#ccc, #ccc),
+    linear-gradient(#ccc, #ccc);
+  background-size: 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom, top;
+  border: none;
+  background-color: #fff
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent)),
+      -webkit-gradient(linear, left top, left bottom, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%),
+      linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
+  }
+  }
+.list-item {
+  width: 100%;
+  position: relative;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 0 14px;
+  margin: 0 0 -1px 0;
+  color: #2E7D32;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+.list-item__left {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 14px 12px 0;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  line-height: 1.2em;
+  min-height: 44px;
+}
+.list-item__left:empty {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+.list-item__center {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-right: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 0;
+  margin-right: 1rem;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#ccc));
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
+  padding: 12px 6px 12px 0;
+  line-height: 1.2em;
+  min-height: 44px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item__center {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
+  }
+}
+.list-item__right {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  padding: 12px 12px 12px 0;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#ccc));
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
+  line-height: 1.2em;
+  min-height: 44px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item__right {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
+  }
+}
+.list-header {
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0 0 15px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1f1f21;
+  min-height: 24px;
+  line-height: 25px;
+  text-transform: uppercase;
+  position: relative;
+  background-color: #eee;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#ccc));
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%)
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
+  }
+  }
+/*~
+  name: Noborder List
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list list--noborder">
+      <li class="list-item list-item--noborder">
+        <div class="list-item__center">Item</div>
+      </li>
+      <li class="list-item list-item--noborder">
+        <div class="list-item__center">Item</div>
+      </li>
+    </ul>
+ */
+.list--noborder {
+  border-top: none;
+  border-bottom: none;
+  background-image: none;
+}
+/*~
+  name: Category List Header
+  category: List
+  elements: ons-list ons-list-header ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-header">
+        Header
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Item</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Item</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Item</div>
+      </li>
+    </ul>
+ */
+/*~
+  name: Tappable List
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--tappable">
+        <div class="list-item__center">Tappable Item</div>
+      </li>
+      <li class="list-item list-item--tappable">
+        <div class="list-item__center">Tappable Item</div>
+      </li>
+      <li class="list-item list-item--tappable">
+        <div class="list-item__center">Tappable Item</div>
+      </li>
+    </ul>
+ */
+.list-item--tappable:active {
+  -webkit-transition: none;
+  transition: none;
+  background-color: #d9d9d9;
+}
+/*~
+  name: Switch in List Item
+  category: List
+  elements: ons-list ons-list-item ons-switch
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">
+          Label
+        </div>
+        <div class="list-item__right">
+          <label class="switch">
+            <input type="checkbox" class="switch__input" checked>
+            <div class="switch__toggle">
+              <div class="switch__handle"></div>
+            </div>
+          </label>
+        </div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">
+          Label
+        </div>
+        <div class="list-item__right">
+          <label class="switch">
+            <input type="checkbox" class="switch__input">
+            <div class="switch__toggle">
+              <div class="switch__handle"></div>
+            </div>
+          </label>
+        </div>
+      </li>
+    </ul>
+*/
+/*~
+  name: List Item with Chevron
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--chevron">
+        <div class="list-item__center">Item A</div>
+      </li>
+      <li class="list-item list-item--chevron">
+        <div class="list-item__center">Item B</div>
+      </li>
+    </ul>
+ */
+.list-item--chevron {
+  overflow: hidden;
+}
+.list-item--chevron:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ccc;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  font-size: 28px;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 200;
+  content: '\f105';
+  margin-left: auto;
+  text-align: right;
+  border-bottom: 1px solid #ccc;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#ccc));
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
+  width: 10px;
+  padding-right: 8px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item--chevron:before {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
+  }
+}
+/*~
+  name: Inset List
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list list--inset">
+      <li class="list-item list--inset__item list-item--chevron list-item--tappable">
+        <div class="list-item__center">List Item with Chevron</div>
+      </li>
+      <li class="list-item list--inset__item list-item--chevron list-item--tappable">
+        <div class="list-item__center">List Item with Chevron</div>
+      </li>
+    </ul>
+ */
+.list--inset {
+  margin: 0 8px;
+  border: 1px solid #a5d6a7;
+  border-radius: 4px;
+  background-image: none;
+}
+/*~
+  name: Radio Button in List Item
+  category: List
+  elements: ons-list ons-list-item ons-input
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="radio-button">
+            <input type="radio" id="r1" class="radio-button__input" name="r" checked="checked">
+            <div class="radio-button__checkmark"></div>
+          </label>
+        </div>
+        <label for="r1" class="list-item__center">
+          Radio Button
+        </label>
+      </li>
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="radio-button">
+            <input type="radio" id="r2" class="radio-button__input" name="r">
+            <div class="radio-button__checkmark"></div>
+          </label>
+        </div>
+        <label for="r2" class="list-item__center">
+          Radio Button
+        </label>
+      </li>
+    </ul>
+*/
+/*~
+  name: Checkbox in List Item
+  category: List
+  elements: ons-list ons-list-item ons-input
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="checkbox">
+            <input type="checkbox" id="checkbox1" class="checkbox__input" name="c" checked="checked">
+            <div class="checkbox__checkmark"></div>
+          </label>
+        </div>
+        <label for="checkbox1" class="list-item__center">
+          Checkbox
+        </label>
+      </li>
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="checkbox">
+            <input type="checkbox" id="checkbox2" class="checkbox__input" name="c">
+            <div class="checkbox__checkmark"></div>
+          </label>
+        </div>
+        <label for="checkbox2" class="list-item__center">
+          Checkbox
+        </label>
+      </li>
+    </ul>
+*/
+/*~
+  name: No border Checkbox in List Item
+  category: List
+  elements: ons-list ons-list-item ons-input
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="checkbox checkbox--noborder">
+            <input id="s1" type="checkbox" class="checkbox__input checkbox--noborder__input">
+            <div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+          </label>
+        </div>
+        <label for="s1" class="list-item__center">
+          Checkbox
+        </label>
+      </li>
+      <li class="list-item list-item--tappable">
+        <div class="list-item__left">
+          <label class="checkbox checkbox--noborder">
+            <input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+            <div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+          </label>
+        </div>
+        <label for="s2" class="list-item__center">
+          Checkbox
+        </label>
+      </li>
+    </ul>
+*/
+/*~
+  name: Text Input in List Item
+  category: List
+  elements: ons-list ons-list-item ons-input
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">
+          <input type="text" class="text-input" placeholder="Name">
+        </div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">
+          <input type="text" class="text-input" placeholder="Email">
+        </div>
+      </li>
+    </ul>
+*/
+/*~
+  name: Textarea in List Item
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">
+          <textarea class="textarea textarea--transparent" placeholder="Text message"></textarea>
+        </div>
+      </li>
+    </ul>
+*/
+/*~
+  name: Right Label in List Item
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">
+          Title
+        </div>
+        <div class="list-item__right">
+          <div class="list-item__label">Label</div>
+        </div>
+      </li>
+    </ul>
+*/
+.list-item__label {
+  font-size: 14px;
+  padding: 0 4px;
+  opacity: 0.6;
+}
+/*~
+  name: List Item with Subtitle
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">
+          <div class="list-item__title">
+            Title
+          </div>
+          <div class="list-item__subtitle">
+            Subtitle
+          </div>
+        </div>
+      </li>
+    </ul>
+*/
+.list-item__title {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+.list-item__subtitle {
+  opacity: 0.75;
+  font-size: 14px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+/*~
+  name: List Item with Thumbnail
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__left">
+          <img class="list-item__thumbnail" src="http://placekitten.com/g/40/40" alt="Cute kitten">
+        </div>
+
+        <div class="list-item__center">
+          <div class="list-item__title">Lily</div>
+          <div class="list-item__subtitle">Very friendly cat</div>
+        </div>
+      </li>
+
+      <li class="list-item">
+        <div class="list-item__left">
+          <img class="list-item__thumbnail" src="http://placekitten.com/g/40/40" alt="Cute kitten">
+        </div>
+
+        <div class="list-item__center">
+          <div class="list-item__title">Molly</div>
+          <div class="list-item__subtitle">Loves tuna!</div>
+        </div>
+      </li>
+    </ul>
+*/
+.list-item__thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: block;
+  margin: 0;
+}
+/*~
+  name: List Item with Icon
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__left">
+          <img class="list-item__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
+        </div>
+
+        <div class="list-item__center">
+          <div class="list-item__title">Alice</div>
+          <div class="list-item__subtitle">Description</div>
+        </div>
+
+        <div class="list-item__right">
+          <i class="ion-ios-information list-item__icon"></i>
+        </div>
+      </li>
+
+      <li class="list-item">
+        <div class="list-item__left">
+          <img class="list-item__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
+        </div>
+
+        <div class="list-item__center">
+          <div class="list-item__title">Bob</div>
+          <div class="list-item__subtitle">Description</div>
+        </div>
+
+        <div class="list-item__right">
+          <i class="ion-ios-information list-item__icon"></i>
+        </div>
+      </li>
+    </ul>
+*/
+.list-item__icon {
+  font-size: 22px;
+  padding: 0 6px;
+}
+/*~
+  name: Material List
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list list--material">
+      <li class="list-item list-item--material">
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Orange</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Sweet fruit that grows on trees.</div>
+        </div>
+      </li>
+      <li class="list-item list-item--material">
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Pear</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Funny-shaped fruit.</div>
+        </div>
+      </li>
+    </ul>
+*/
+.list--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  background-image: none;
+}
+.list-item--material {
+  border: 0;
+  padding: 0 0 0 16px;
+  line-height: normal;
+}
+.list-item--material__subtitle {
+  margin-top: 4px;
+}
+.list-item--material:first-child {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.list-item--material__left {
+  padding: 14px 0;
+  min-width: 56px;
+  line-height: 1;
+  min-height: 48px;
+}
+.list-item--material__left:empty,
+.list-item--material__center {
+  padding: 14px 6px 14px 0;
+  border-color: #eee;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eee));
+  background-image: linear-gradient(0deg, #eee, #eee 100%);
+  min-height: 48px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item--material__left:empty,
+.list-item--material__center {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), color-stop(50%, #eee), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #eee, #eee 50%, transparent 50%);
+  }
+}
+.list-item--material__right {
+  padding: 14px 16px 14px 0;
+  line-height: 1;
+  border-color: #eee;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eee));
+  background-image: linear-gradient(0deg, #eee, #eee 100%);
+  min-height: 48px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item--material__right {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), color-stop(50%, #eee), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #eee, #eee 50%, transparent 50%);
+  }
+}
+.list-item--material.list-item--longdivider {
+  border-bottom: 1px solid #eee;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eee));
+  background-image: linear-gradient(0deg, #eee, #eee 100%);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item--material.list-item--longdivider {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#eee), color-stop(50%, #eee), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #eee, #eee 50%, transparent 50%);
+  }
+}
+/*~
+  name: Material List with Header
+  category: List
+  elements: ons-list ons-list-item
+  markup: |
+    <ul class="list list--material">
+      <li class="list-header list-header--material">
+        Fruits
+      </li>
+      <li class="list-item list-item--material">
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Orange</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Sweet fruit that grows on trees.</div>
+        </div>
+      </li>
+    </ul>
+*/
+.list-header--material {
+  background: #fff;
+  border: none;
+  font-size: 14px;
+  text-transform: none;
+  margin: -1px 0 0 0;
+  color: #757575;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+.list-header--material:not(:first-of-type) {
+  border-top: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background-image: linear-gradient(180deg, #eee, #eee 100%);
+  padding-top: 16px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-header--material:not(:first-of-type) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), color-stop(50%, #eee), color-stop(50%, transparent));
+    background-image: linear-gradient(180deg, #eee, #eee 50%, transparent 50%);
+  }
+  }
+/*~
+  name: Material List with Checkboxes
+  category: List
+  elements: ons-list ons-list-item ons-input
+  markup: |
+    <ul class="list list--material">
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <label class="checkbox checkbox--material">
+            <input type="checkbox" id="checkbox3" class="checkbox__input checkbox--material__input">
+            <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+          </label>
+        </div>
+
+        <label for="checkbox3" class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Notifications</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Allow notifications</div>
+        </label>
+      </li>
+
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <label class="checkbox checkbox--material">
+            <input type="checkbox" id="checkbox4" class="checkbox__input checkbox--material__input" checked="checked">
+            <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+          </label>
+        </div>
+
+        <label for="checkbox4" class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Sound</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Hangouts message</div>
+        </label>
+      </li>
+
+    </ul>
+*/
+/*~
+  name: Material List with Thumbnails
+  category: List
+  markup: |
+    <ul class="list list--material">
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <img class="list-item__thumbnail list-item--material__thumbnail" src="http://placekitten.com/g/42/41" alt="Cute kitten">
+        </div>
+
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Lily</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Very friendly cat</div>
+        </div>
+      </li>
+
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <img class="list-item__thumbnail list-item--material__thumbnail" src="http://placekitten.com/g/40/40" alt="Cute kitten">
+        </div>
+
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Molly</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Loves tuna!</div>
+        </div>
+      </li>
+
+    </ul>
+*/
+.list-item--material__thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+/*~
+  name: Material List with Icons
+  category: List
+  markup: |
+    <ul class="list list--material">
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <img class="list-item__thumbnail list-item--material__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
+        </div>
+
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Alice</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Description</div>
+        </div>
+
+        <div class="list-item__right list-item--material__right">
+          <i style="color:#4db6ac" class="list-item__icon list-item--material__icon zmdi zmdi-comment"></i>
+        </div>
+      </li>
+
+      <li class="list-item list-item--material">
+        <div class="list-item__left list-item--material__left">
+          <img class="list-item__thumbnail list-item--material__thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAIAAAADnC86AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwJCB8v/9zErgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAvSURBVFjD7c0BDQAACAMgtX+KJzWGm4MCdJK6MHVELBaLxWKxWCwWi8VisVj8MV7qBgI2A8rYpgAAAABJRU5ErkJggg==">
+        </div>
+
+        <div class="list-item__center list-item--material__center">
+          <div class="list-item__title list-item--material__title">Bob</div>
+          <div class="list-item__subtitle list-item--material__subtitle">Description</div>
+        </div>
+
+        <div class="list-item__right list-item--material__right">
+          <i style="color:#4db6ac" class="list-item__icon list-item--material__icon zmdi zmdi-comment"></i>
+        </div>
+      </li>
+    </ul>
+*/
+.list-item--material__icon {
+  font-size: 20px;
+  padding: 0 4px;
+}
+/*~
+  name: List item without divider
+  category: List
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--nodivider">
+        <div class="list-item__center list-item--nodivider__center">Item</div>
+      </li>
+      <li class="list-item list-item--nodivider">
+        <div class="list-item__center list-item--nodivider__center">Item</div>
+      </li>
+    </ul>
+ */
+.list-item--nodivider__center,
+.list-item--nodivider__right,
+.list-item--nodivider:before {
+  border: none;
+  background-image: none;
+}
+/*~
+  name: List item with long divider
+  category: List
+  markup: |
+    <ul class="list">
+      <li class="list-item list-item--longdivider">
+        <div class="list-item__center list-item--longdivider__center">Item</div>
+      </li>
+      <li class="list-item list-item--longdivider">
+        <div class="list-item__center list-item--longdivider__center">Item</div>
+      </li>
+    </ul>
+ */
+.list-item--longdivider {
+  border-bottom: 1px solid #ccc;
+  border-bottom: none;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#ccc));
+  background-image: linear-gradient(0deg, #ccc, #ccc 100%);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .list-item--longdivider {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
+  }
+}
+.list-item--longdivider:last-of-type {
+  border: none;
+  background-image: none;
+}
+.list-item--longdivider__center {
+  border: none;
+  background-image: none;
+}
+.list-item--longdivider__right {
+  border: none;
+  background-image: none;
+}
+.list-item--longdivider.list-item--chevron:before { /* FIXME */
+  border: none;
+  background-image: none;
+}
+/*~
+  name: List title
+  category: List
+  markup: |
+    <div class="list-title">LIST TITLE</div>
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item__center">Item</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item__center">Item</div>
+      </li>
+    </ul>
+ */
+.list-title {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  display: block;
+  color: #6d6d72;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0 0 16px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+}
+/*~
+  name: Material List Title
+  category: List
+  markup: |
+    <h3 class="list-title list-title--material">LIST TITLE</h3>
+    <ul class="list list--material">
+      <li class="list-item list-item--material">
+        <div class="list-item__center list-item--material__center">Item</div>
+      </li>
+      <li class="list-item list-item--material">
+        <div class="list-item__center list-item--material__center">Item</div>
+      </li>
+    </ul>
+ */
+.list-title--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  color: #757575;
+  font-size: 14px;
+  margin: 0;
+  padding: 12px 0 12px 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+/*~
+  name: Text Input
+  category: Text Input
+  elements: ons-input
+  markup: |
+    <div><input type="text" class="text-input" placeholder="text" value=""></div>
+    <div><input type="text" class="text-input" placeholder="text" value="" disabled></div>
+*/
+.text-input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  border: none;
+  background-color: transparent;
+  letter-spacing: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #1f1f21;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  font-size: 15px;
+  height: 31px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+.text-input::-ms-clear {
+  display: none;
+}
+.text-input:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.text-input::-webkit-input-placeholder {
+  color: #999;
+}
+.text-input:-ms-input-placeholder {
+  color: #999;
+}
+.text-input::placeholder {
+  color: #999;
+}
+.text-input:disabled::-webkit-input-placeholder {
+  border: none;
+  background-color: transparent;
+  color: #999;
+}
+.text-input:disabled:-ms-input-placeholder {
+  border: none;
+  background-color: transparent;
+  color: #999;
+}
+.text-input:disabled::placeholder {
+  border: none;
+  background-color: transparent;
+  color: #999;
+}
+.text-input:invalid {
+  border: none;
+  background-color: transparent;
+  color: #1f1f21;
+}
+/*~
+  name: Material Input
+  category: Text Input
+  elements: ons-input
+  markup: |
+    <span>
+      <div><input class="text-input text-input--material" placeholder="Username" type="text" required></div>
+      <br />
+      <div><input class="text-input text-input--material" placeholder="Password" type="password" required></div>
+    </span>
+*/
+.text-input--material {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  line-height: 1;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  color: #212121;
+  background-image: linear-gradient(to top, transparent 1px, #afafaf 1px);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  padding-bottom: 2px;
+  border-radius: 0;
+  height: 24px;
+  vertical-align: middle;
+  -webkit-transform: translate3d(0, 0, 0); /* FIXME: prevent ios flicker */
+}
+.text-input--material__label {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  color: #afafaf;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  pointer-events: none;
+}
+.text-input--material__label--active {
+  color: #4CAF50;
+  -webkit-transform: translate(0, -75%) scale(0.75);
+          transform: translate(0, -75%) scale(0.75);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: color 0.1s ease-in, -webkit-transform 0.1s ease-in;
+  transition: color 0.1s ease-in, -webkit-transform 0.1s ease-in;
+  transition: transform 0.1s ease-in, color 0.1s ease-in;
+  transition: transform 0.1s ease-in, color 0.1s ease-in, -webkit-transform 0.1s ease-in;
+}
+.text-input--material:focus {
+  background-image: linear-gradient(#4CAF50, #4CAF50),
+    linear-gradient(to top, transparent 1px, #afafaf 1px);
+  -webkit-animation: material-text-input-animate 0.3s forwards;
+          animation: material-text-input-animate 0.3s forwards;
+}
+.text-input--material::-webkit-input-placeholder {
+  color: #afafaf;
+  line-height: 20px;
+}
+.text-input--material:-ms-input-placeholder {
+  color: #afafaf;
+  line-height: 20px;
+}
+.text-input--material::placeholder {
+  color: #afafaf;
+  line-height: 20px;
+}
+@-webkit-keyframes material-text-input-animate {
+  0% {
+    background-size: 0% 2px, 100% 2px;
+  }
+
+  100% {
+    background-size: 100% 2px, 100% 2px;
+  }
+}
+@keyframes material-text-input-animate {
+  0% {
+    background-size: 0% 2px, 100% 2px;
+  }
+
+  100% {
+    background-size: 100% 2px, 100% 2px;
+  }
+}
+/*~
+  name: Dialog
+  category: Dialog
+  elements: ons-dialog
+  markup: |
+    <div class="dialog-mask"></div>
+    <div class="dialog">
+      <div class="dialog-container">
+        <div class="page">
+          <p style="text-align:center;margin-top:40px;opacity:0.4;">Content</p>
+        </div>
+      </div>
+    </div>
+*/
+.dialog {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: auto auto;
+  overflow: hidden;
+  min-width: 270px;
+  min-height: 100px;
+  text-align: left;
+}
+.dialog-container {
+  height: inherit;
+  min-height: inherit;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC');
+}
+.dialog-mask {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*~
+  name: Material Dialog
+  category: Dialog
+  elements: ons-dialog
+  markup: |
+    <div class="dialog-mask dialog-mask--material"></div>
+    <div class="dialog dialog--material">
+      <div class="dialog dialog-container--material">
+        <p style="margin-left:24px;margin-right:24px">The quick brown fox jumps over the lazy dog.</p>
+      </div>
+    </div>
+*/
+.dialog--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-align: left;
+  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+}
+.dialog-container--material {
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+.dialog-mask--material {
+  background-color: rgba(0, 0, 0, .3);
+}
+/*~
+  name: Alert Dialog
+  category: Alert Dialog
+  elements: ons-alert-dialog
+  markup: |
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog">
+      <div class="alert-dialog-container">
+        <div class="alert-dialog-title">Alert</div>
+
+        <div class="alert-dialog-content">
+          Hello World!
+        </div>
+
+        <div class="alert-dialog-footer">
+          <button class="alert-dialog-button alert-dialog-button--primal">OK</button>
+        </div>
+      </div>
+    </div>
+*/
+.alert-dialog {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 270px;
+  margin: auto;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: visible;
+  max-width: 95%;
+  color: #1f1f21;
+}
+.alert-dialog-container {
+  height: inherit;
+  padding-top: 16px;
+  overflow: hidden;
+}
+.alert-dialog-title {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 0 8px;
+  text-align: center;
+  color: #1f1f21;
+}
+.alert-dialog-content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 4px 12px 8px;
+  font-size: 14px;
+  min-height: 36px;
+  text-align: center;
+  color: #1f1f21;
+}
+.alert-dialog-footer {
+  width: 100%;
+}
+.alert-dialog-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  letter-spacing: 0;
+  vertical-align: middle;
+  border: none;
+  border-top: 1px solid #ddd;
+  font-size: 16px;
+  padding: 0 8px;
+  margin: 0;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+  height: 44px;
+  line-height: 44px;
+  outline: none;
+  color: rgba(24, 103, 194, .81);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button {
+    border-top: none;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ddd), color-stop(50%, #ddd), color-stop(50%, transparent));
+    background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
+  }
+}
+.alert-dialog-button:active {
+  background-color: rgba(0, 0, 0, .05);
+}
+.alert-dialog-button--primal {
+  font-weight: 500;
+}
+.alert-dialog-footer--rowfooter {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.alert-dialog-button--rowfooter {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  width: 100%;
+  border-left: 1px solid #ddd
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button--rowfooter {
+    border-top: none;
+    border-left: none;
+    background-size: 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: top, left;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #ddd)),
+      -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #ddd));
+    background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%),
+      linear-gradient(90deg, transparent, transparent 50%, #ddd 50%);
+  }
+  }
+.alert-dialog-button--rowfooter:first-child {
+  border-left: none
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button--rowfooter:first-child {
+    border-top: none;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top, left;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #ddd));
+    background-image: linear-gradient(0deg, transparent, transparent 50%, #ddd 50%);
+  }
+  }
+.alert-dialog-mask {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .2);
+}
+/*~
+  name: Alert Dialog without Title
+  category: Alert Dialog
+  elements: ons-alert-dialog
+  markup: |
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog">
+      <div class="alert-dialog-container">
+        <div class="alert-dialog-content">
+          Hello World!
+        </div>
+
+        <div class="alert-dialog-footer">
+          <button class="alert-dialog-button alert-dialog-button--primal">OK</button>
+        </div>
+      </div>
+    </div>
+*/
+/*~
+  name: Alert Dialog with Multiple Buttons
+  category: Alert Dialog
+  elements: ons-alert-dialog
+  markup: |
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog">
+      <div class="alert-dialog-container">
+        <div class="alert-dialog-content">
+          Hello World!
+        </div>
+
+        <div class="alert-dialog-footer">
+          <button class="alert-dialog-button">Cancel</button>
+          <button class="alert-dialog-button alert-dialog-button--primal">OK</button>
+        </div>
+      </div>
+    </div>
+*/
+/*~
+  name: Alert Dialog with Multiple Buttons 2
+  category: Alert Dialog
+  elements: ons-alert-dialog
+  markup: |
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog">
+      <div class="alert-dialog-container">
+        <div class="alert-dialog-title">Alert</div>
+
+        <div class="alert-dialog-content">
+          Hello World!
+        </div>
+
+        <div class="alert-dialog-footer alert-dialog-footer--rowfooter">
+          <button class="alert-dialog-button alert-dialog-button--rowfooter">Left</button>
+          <button class="alert-dialog-button alert-dialog-button--primal alert-dialog-button--rowfooter">Center</button>
+          <button class="alert-dialog-button alert-dialog-button--rowfooter">Right</button>
+        </div>
+      </div>
+    </div>
+*/
+/*~
+  name: Material Alert Dialog
+  category: Alert Dialog
+  elements: ons-alert-dialog
+  markup: |
+    <div class="alert-dialog-mask alert-dialog-mask--material"></div>
+    <div class="alert-dialog alert-dialog--material">
+      <div class="alert-dialog-container alert-dialog-container--material">
+        <div class="alert-dialog-title alert-dialog-title--material">
+          Dialog title
+        </div>
+        <div class="alert-dialog-content alert-dialog-content--material">
+          Some dialog content.
+        </div>
+        <div class="alert-dialog-footer alert-dialog-footer--material">
+          <button class="alert-dialog-button alert-dialog-button--material">OK</button>
+          <button class="alert-dialog-button alert-dialog-button--material">CANCEL</button>
+        </div>
+      </div>
+    </div>
+*/
+.alert-dialog--material {
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+.alert-dialog-container--material {
+  padding-top: 22px;
+  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+}
+.alert-dialog-title--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 24px;
+  color: #212121;
+}
+.alert-dialog-content--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0 24px;
+  margin: 24px 0 10px 0;
+  min-height: 0;
+  color: #727272;
+}
+.alert-dialog-footer--material {
+  display: inline-block;
+  padding: 0 8px 0 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.alert-dialog-button--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+  width: auto;
+  min-width: 70px;
+  float: right;
+  background: none;
+  border-top: none;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  color: #4CAF50
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button--material {
+    background: none;
+  }
+  }
+.alert-dialog-button--material:active {
+  background-color: transparent;
+  background-color: initial;
+}
+.alert-dialog-button--rowfooter--material,
+.alert-dialog-button--rowfooter--material:first-child {
+  border: 0
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button--rowfooter--material,
+.alert-dialog-button--rowfooter--material:first-child {
+    background: none;
+  }
+  }
+.alert-dialog-button--primal--material {
+  font-weight: 500
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .alert-dialog-button--primal--material {
+    background: none;
+  }
+  }
+.alert-dialog-mask--material {
+  background-color: rgba(0, 0, 0, .3);
+}
+/*~
+  name: Modal
+  category: Modal
+  elements: ons-modal
+  markup: |
+    <div class="modal">
+      <div class="modal__content">
+        Message Text
+      </div>
+    </div>
+*/
+.modal {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  white-space: nowrap;
+  overflow: hidden;
+  word-spacing: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  z-index: 2147483647;
+}
+.modal__content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+  white-space: nowrap;
+  overflow: hidden;
+  word-spacing: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  white-space: normal;
+}
+/*~
+  name: Action Sheet
+  category: Action Sheet
+  markup: |
+    <div class="action-sheet-mask"></div>
+    <div class="action-sheet">
+      <div class="action-sheet-title">Title</div>
+      <button class="action-sheet-button">Label</button>
+      <button class="action-sheet-button">Cancel</button>
+    </div>
+*/
+/*~
+  name: Action Sheet with Delete Label
+  category: Action Sheet
+  markup: |
+    <div class="action-sheet-mask"></div>
+    <div class="action-sheet">
+      <button class="action-sheet-button">Label</button>
+      <button class="action-sheet-button action-sheet-button--destructive">Delete Label</button>
+      <button class="action-sheet-button">Cancel</button>
+    </div>
+*/
+.action-sheet {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: default;
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  bottom: 7px;
+  z-index: 2;
+}
+.action-sheet-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 56px;
+  font-size: 20px;
+  text-align: center;
+  color: rgba(24, 103, 194, .81);
+  background-color: rgba(255, 255, 255, .9);
+  border-radius: 0;
+  line-height: 56px;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, .1)));
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 100%)
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .action-sheet-button {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .1)), color-stop(50%, rgba(0, 0, 0, .1)), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 50%, transparent 50%);
+  }
+  }
+.action-sheet-button:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.action-sheet-button:active {
+  background-color: #e9e9e9;
+  background-image: none;
+}
+.action-sheet-button:focus {
+  outline: none;
+}
+.action-sheet-button:nth-last-of-type(2) {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-image: none;
+}
+.action-sheet-button:last-of-type {
+  border-radius: 12px;
+  margin: 7px 0 0 0;
+  background-color: #fff;
+  background-image: none;
+  font-weight: 600;
+}
+.action-sheet-button:last-of-type:active {
+  background-color: #e9e9e9;
+}
+.action-sheet-button--destructive {
+  color: #fe3824;
+}
+.action-sheet-title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 56px;
+  font-size: 13px;
+  color: #2E7D32;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .9);
+  line-height: 56px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, .1)));
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 100%)
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .action-sheet-title {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .1)), color-stop(50%, rgba(0, 0, 0, .1)), color-stop(50%, transparent));
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 50%, transparent 50%);
+  }
+  }
+.action-sheet-title:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.action-sheet-icon {
+  display: none;
+}
+.action-sheet-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .1);
+  z-index: 1;
+}
+/*~
+  name: Material Action Sheet
+  category: Action Sheet
+  markup: |
+    <div class="action-sheet-mask action-sheet-mask--material"></div>
+    <div class="action-sheet action-sheet--material">
+      <button class="action-sheet-button action-sheet-button--material"><i class="ion-android-checkbox-blank action-sheet-icon--material"></i>Label</button>
+      <button class="action-sheet-button action-sheet-button--material"><i class="ion-android-checkbox-blank action-sheet-icon--material"></i>Label</button>
+      <button class="action-sheet-button action-sheet-button--material"><i class="ion-android-close action-sheet-icon--material"></i>Cancel</button>
+    </div>
+*/
+/*~
+  name: Material Action Sheet with Title
+  category: Action Sheet
+  markup: |
+    <div class="action-sheet-mask action-sheet-mask--material"></div>
+    <div class="action-sheet action-sheet--material">
+      <div class="action-sheet-title action-sheet-title--material">Title</div>
+      <button class="action-sheet-button action-sheet-button--material"><i class="ion-android-checkbox-blank action-sheet-icon--material"></i>Label</button>
+      <button class="action-sheet-button action-sheet-button--material"><i class="ion-android-close action-sheet-icon--material"></i>Cancel</button>
+    </div>
+*/
+.action-sheet--material {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+      0 6px 30px 5px rgba(0, 0, 0, .12),
+      0 8px 10px -5px rgba(0, 0, 0, .4);
+}
+.action-sheet-title--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  border-radius: 0;
+  background-image: none;
+  text-align: left;
+  height: 56px;
+  line-height: 56px;
+  font-size: 16px;
+  padding: 0 0 0 16px;
+  color: #2E7D32;
+  background-color: white;
+  font-weight: 400;
+}
+.action-sheet-title--material:first-child {
+  border-radius: 0;
+}
+.action-sheet-button--material {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  border-radius: 0;
+  background-image: none;
+  height: 13%;
+  text-align: left;
+  font-size: 16px;
+  padding: 0 16px 0 16px;
+  color: #686868;
+  font-weight: 400;
+  background-color: white;
+}
+.action-sheet-button--material:first-child {
+  border-radius: 0;
+}
+.action-sheet-button--material:nth-last-of-type(2) {
+  border-radius: 0;
+}
+.action-sheet-button--material:last-of-type {
+  margin: 0;
+  border-radius: 0;
+  font-weight: 400;
+  background-color: white;
+}
+.action-sheet-icon--material {
+  display: inline-block;
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  margin-right: 32px;
+  font-size: 26px;
+  width: 0.8em;
+  text-align: center;
+}
+.action-sheet-mask--material {
+  background-color: rgba(0, 0, 0, .2);
+}
+/*~
+  name: Card
+  category: Card
+  markup: |
+    <div style="background-color: #eee; height: 200px; padding: 1px 0 0 0;">
+      <div class="card">
+        <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+    </div>
+*/
+.card {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  border-radius: 8px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  margin: 8px 0;
+  padding: 16px;
+  text-align: left;
+}
+.card__content {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #030303;
+}
+/*~
+  name: Card with Title
+  category: Card
+  markup: |
+    <div style="background-color: #eee; height: 200px; padding: 1px 0 0 0;">
+      <div class="card">
+        <h2 class="card__title">Card Title</h2>
+        <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+    </div>
+*/
+.card__title {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 4px 0 8px 0;
+  padding: 0;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*~
+  name: Material Card
+  category: Card
+  markup: |
+    <div style="background-color: #eee; height: 200px; padding: 1px 0 0 0;">
+      <div class="card card--material">
+        <div class="card__content card--material__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+    </div>
+*/
+.card--material {
+  background-color: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+      0 1px 5px 0 rgba(0, 0, 0, .12),
+      0 3px 1px -2px rgba(0, 0, 0, .2);
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+.card--material__content {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #2E7D32;
+}
+/*~
+  name: Material Card with Title
+  category: Card
+  markup: |
+    <div style="background-color: #eee; height: 200px; padding: 1px 0 0 0;">
+      <div class="card card--material">
+        <div class="card__title card--material__title">Card Title</div>
+        <div class="card__content card--material__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+    </div>
+*/
+.card--material__title {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  font-size: 22px;
+  margin: 8px 12px 12px 12px;
+  color: #2E7D32;
+}
+/*~
+  name: Toast
+  category: Toast
+  markup: |
+    <div class="toast">
+      <div class="toast__message">Message Message Message Message Message Message</div>
+      <button class="toast__button">ACTION</button>
+    </div>
+*/
+.toast {
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  position: absolute;
+  z-index: 2;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  margin: 8px 0;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, .8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 16px;
+}
+.toast__message {
+  font-size: 14px;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: left;
+  margin: 0 16px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.toast__button {
+  font-size: 14px;
+  color: white;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  text-transform: uppercase;
+}
+.toast__button:focus {
+  outline: none;
+}
+.toast__button:active {
+  opacity: 0.4;
+}
+/*~
+  name: Material Toast
+  category: Toast
+  markup: |
+    <div class="toast toast--material">
+      <div class="toast__message toast--material__message">Message Message Message Message Message Message</div>
+      <button class="toast__button toast--material__button">ACTION</button>
+    </div>
+*/
+.toast--material {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 0;
+  padding: 0 6px 0 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.toast--material__message {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  margin: 0 24px 0 0;
+}
+.toast--material__button {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
