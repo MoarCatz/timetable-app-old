@@ -115,9 +115,6 @@ function jumpToCarouselPage() {
   this.carousel.setActiveIndex(getNodeIndex(this));
 }
 
-// Set the default page to open
-document.getElementById('navi').setAttribute('page', window.page);
-
 document.addEventListener('show', function(event) {
   // Pages: Classes, Compare, Settings
   // Set up dropdowns with header text replacement or chip addition

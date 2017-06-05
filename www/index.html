@@ -19,7 +19,9 @@
   <script>
     ons.platform.select('android');
   </script>
+  <script src="cordova.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/intro.js"></script>
 </head>
 
 <body>
@@ -30,8 +32,8 @@
         <ons-list>
           <ons-list-item class="sidenav-top">
             <div class="center">
-              <div class="list-item__title">Лев Челядинов</div>
-              <div class="list-item__subtitle">10Е</div>
+              <div class="list-item__title" id="menu-user-name"></div>
+              <div class="list-item__subtitle" id="menu-user-class"></div>
             </div>
           </ons-list-item>
           <ons-list-item onclick="fn.load('home.html')">
@@ -116,8 +118,8 @@
         <ons-carousel-item>
           <div class="row">
             <ons-card id="intro-input">
-              <ons-input placeholder="Имя и фамилия"></ons-input>
-              <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+              <ons-input placeholder="Имя и фамилия" input-id="intro-name"></ons-input>
+              <ons-button class="dropdown-act" modifier="large" id="intro-class">Выберите класс</ons-button>
               <ul class="collapsible dropdown-content set-text">
                 <li>
                   <div class="collapsible-header">8</div>
@@ -193,7 +195,7 @@
         </ons-carousel-item>
 
         <div>
-          <ons-button onclick="fn.load('home.html')">Приступить</ons-button>
+          <ons-button onclick="checkIntroFields()">Приступить</ons-button>
         </div>
         <div class="dots">
           <i class="material-icons current">lens</i>
@@ -1722,6 +1724,7 @@
 <script src="js/CSSPlugin.min.js"></script>
 <script src="js/awesomplete.min.js"></script>
 <script src="js/collapsible.js"></script>
+<script src="js/db.js"></script>
 <script src="js/index.js"></script>
 
 </html>
