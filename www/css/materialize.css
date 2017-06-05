@@ -360,16 +360,11 @@ a {
 .valign-wrapper {
   display: -ms-flexbox;
   display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   -ms-flex-align: center;
       -webkit-box-align: center;
           align-items: center;
-}
-
-.divider {
-  height: 1px;
-  overflow: hidden;
-  background-color: #e0e0e0;
 }
 
 blockquote {
@@ -847,15 +842,11 @@ em {
 }
 
 .dropdown-content {
-  background-color: #fff;
-  margin: 0;
-  display: none;
   max-height: 650px;
   overflow-y: auto;
   opacity: 0;
   position: absolute;
   z-index: 999;
-  will-change: width, height;
 }
 
 .dropdown-content li {
@@ -869,7 +860,7 @@ em {
   text-transform: none;
 }
 
-.dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
+.dropdown-content li {
   background-color: #fff;
 }
 
@@ -922,11 +913,9 @@ em {
 }
 
 .collapsible-body {
-  display: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0 solid #ddd;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 2rem;
 }
 
 .chip {
