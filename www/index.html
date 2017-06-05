@@ -28,38 +28,36 @@
 
   <ons-splitter>
     <ons-splitter-side id="menu" side="left" width="300px" collapse="" swipeable open-threshold=0.1>
-      <ons-page>
-        <ons-list>
-          <ons-list-item class="sidenav-top">
-            <div class="center">
-              <div class="list-item__title" id="menu-user-name"></div>
-              <div class="list-item__subtitle" id="menu-user-class"></div>
-            </div>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('home.html')">
-            <button class="button--material--flat"><i class="material-icons">home</i>Главная</button>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('changes.html')">
-            <button class="button--material--flat"><i class="material-icons">new_releases</i>Изменения</button>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('classes.html')">
-            <button class="button--material--flat"><i class="material-icons">people</i>Классы</button>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('teachers.html')">
-            <button class="button--material--flat"><i class="material-icons">school</i>Преподаватели</button>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('rooms.html')">
-            <button class="button--material--flat"><i class="material-icons">beenhere</i>Свободные кабинеты</button>
-          </ons-list-item>
-          <div class="divider"></div>
-          <ons-list-item onclick="fn.load('settings.html')">
-            <button class="button--material--flat"><i class="material-icons">settings</i>Настройки</button>
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('help.html')">
-            <button class="button--material--flat"><i class="material-icons">info</i>Справка</button>
-          </ons-list-item>
-        </ons-list>
-      </ons-page>
+      <ons-list>
+        <ons-list-item class="sidenav-top">
+          <div class="center">
+            <div class="list-item__title" id="menu-user-name"></div>
+            <div class="list-item__subtitle" id="menu-user-class"></div>
+          </div>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('home.html')">
+          <button class="button--material--flat"><i class="material-icons">home</i>Главная</button>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('changes.html')">
+          <button class="button--material--flat"><i class="material-icons">new_releases</i>Изменения</button>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('classes.html')">
+          <button class="button--material--flat"><i class="material-icons">people</i>Классы</button>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('teachers.html')">
+          <button class="button--material--flat"><i class="material-icons">school</i>Преподаватели</button>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('rooms.html')">
+          <button class="button--material--flat"><i class="material-icons">beenhere</i>Свободные кабинеты</button>
+        </ons-list-item>
+        <div class="divider"></div>
+        <ons-list-item onclick="fn.load('settings.html')">
+          <button class="button--material--flat"><i class="material-icons">settings</i>Настройки</button>
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('help.html')">
+          <button class="button--material--flat"><i class="material-icons">info</i>Справка</button>
+        </ons-list-item>
+      </ons-list>
     </ons-splitter-side>
     <ons-splitter-content>
       <ons-navigator id="navi"></ons-navigator>
@@ -219,51 +217,45 @@
           Расписание
         </div>
       </ons-toolbar>
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Сегодня, чт 27.02</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Завтра, пт 28.02 <i class="material-icons right activator">notifications</i></span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-            </ons-card>
-        </div>
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Сегодня, чт 27.02</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
+        <ons-card>
+          <span class="title">Завтра, пт 28.02 <i class="material-icons right activator">notifications</i></span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
         <ons-action-sheet cancelable id="sheet">
           <div class="action-sheet-title action-sheet-title--material valign-wrapper"><i class="material-icons">notifications</i> Напомнить мне</div>
           <ons-action-sheet-button>Сегодня вечером <ons-switch></ons-switch></ons-action-sheet-button>
           <ons-action-sheet-button>Завтра утром <ons-switch></ons-switch></ons-action-sheet-button>
           <ons-action-sheet-button class="close-btn"><i class="material-icons">close</i> Закрыть</ons-action-sheet-button>
         </ons-action-sheet>
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Изменения</span>
-            <div class="content card-offset">
-              <ul>
-                <b>На 04.09</b>
-                <li>
-                  6, 7 уроков не будет
-                </li>
-              </ul>
-              <p class="grey-text">Изменений нет</p>
-            </div>
-          </ons-card>
-        </div>
+        <ons-card>
+          <span class="title">Изменения</span>
+          <div class="content card-offset">
+            <ul>
+              <b>На 04.09</b>
+              <li>
+                6, 7 уроков не будет
+              </li>
+            </ul>
+            <p class="grey-text">Изменений нет</p>
+          </div>
+        </ons-card>
       </div>
       <ons-toast>
         <ul>
@@ -287,24 +279,22 @@
           Изменения
         </div>
       </ons-toolbar>
-      <div class="row green-text text-darken-3">
-        <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list modifier="inset" id="changes-list">
           <ons-list-header>Суббота, 03.05</ons-list-header>
           <ons-list-item>
             <ons-list>
-              <ons-list-header>8А</ons-list-header>
+              <ons-list-header class="inner">8А</ons-list-header>
               <ons-list-item>5, 6 уроков нет</ons-list-item>
               <ons-list-item>1 урок - обязательная встреча с администрацией</ons-list-item>
             </ons-list>
           </ons-list-item>
           <ons-list-item>
             <ons-list>
-              <ons-list-header>9А</ons-list-header>
+              <ons-list-header class="inner">9А</ons-list-header>
               <ons-list-item>Уроков нет</ons-list-item>
             </ons-list>
           </ons-list-item>
         </ons-list>
-      </div>
     </ons-page>
   </ons-template>
 
@@ -325,157 +315,141 @@
           </ons-toolbar-button>
         </div>
       </ons-toolbar>
-      <div class="row">
-        <div class="col s12 m12">
-          <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
-          <ul class="collapsible dropdown-content set-text">
-            <li>
-              <div class="collapsible-header">8</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">9</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">10</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">11</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+      <ul class="collapsible dropdown-content set-text">
+        <li>
+          <div class="collapsible-header">8</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">8А</ons-button></li>
+              <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">8С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">9</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">9А</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">9В</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">9С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">10</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">10А</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">10В</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">10З</ons-button></li>
+              <li><ons-button modifier="large--quiet">10К</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">10М</ons-button></li>
+              <li><ons-button modifier="large--quiet">10С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">11</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">11А</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">11В</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">11З</ons-button></li>
+              <li><ons-button modifier="large--quiet">11К</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">11М</ons-button></li>
+              <li><ons-button modifier="large--quiet">11С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Понедельник</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item class="double-lesson" modifier="longdivider">
+                <div class="group">
+                  Физика <span class="new badge"><b>204</b></span>
+                </div>
+                <div class="divider"></div>
+                <div class="group">
+                  Химия <span class="new badge"><b>301</b></span>
+                </div>
+              </ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
+
+        <ons-card>
+          <span class="title">Вторник</span>
+          <div class="content">
+            <p class="grey-text centered">Уроков нет</p>
+          </div>
+        </ons-card>
       </div>
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Среда</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
 
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Понедельник</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item class="double-lesson" modifier="longdivider">
-                  <div class="group">
-                    Физика <span class="new badge"><b>204</b></span>
-                  </div>
-                  <div class="divider"></div>
-                  <div class="group">
-                    Химия <span class="new badge"><b>301</b></span>
-                  </div>
-                </ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Вторник</span>
-            <div class="content">
-              <p class="grey-text centered">Уроков нет</p>
-            </div>
-          </ons-card>
-        </div>
+        <ons-card>
+          <span class="title">Четверг</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
       </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Среда</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Пятница</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
 
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Четверг</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Пятница</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Суббота</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
+        <ons-card>
+          <span class="title">Суббота</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
       </div>
       <ons-toast>
         <ul>
@@ -504,129 +478,117 @@
           </ons-toolbar-button>
         </div>
       </ons-toolbar>
-      <div class="row">
-        <div class="col s12 m12">
-          <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
-          <ul class="collapsible dropdown-content">
-            <li>
-              <div class="collapsible-header">8</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">8А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">8Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">8С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">9</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">9А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">9С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">10</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">10А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Г</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Д</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10З</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10К</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10М</ons-button></li>
-                  <li><ons-button modifier="large--quiet">10С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">11</div>
-              <div class="collapsible-body">
-                <ul>
-                  <li><ons-button modifier="large--quiet">11А</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Б</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11В</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Г</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Д</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Е</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11З</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11К</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11Л</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11М</ons-button></li>
-                  <li><ons-button modifier="large--quiet">11С</ons-button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <div id="selected-classes"></div>
-          <ons-button class="dropdown-act" modifier="large">Выберите день недели</ons-button>
-          <ul class="collapsible dropdown-content set-text">
-            <li><ons-button modifier="large--quiet">Понедельник</ons-button></li>
-            <li><ons-button modifier="large--quiet">Вторник</ons-button></li>
-            <li><ons-button modifier="large--quiet">Среда</ons-button></li>
-            <li><ons-button modifier="large--quiet">Четверг</ons-button></li>
-            <li><ons-button modifier="large--quiet">Пятница</ons-button></li>
-            <li><ons-button modifier="large--quiet">Суббота</ons-button></li>
-          </ul>
-        </div>
-      </div>
+      <ons-button class="dropdown-act" modifier="large">Выберите класс</ons-button>
+      <ul class="collapsible dropdown-content">
+        <li>
+          <div class="collapsible-header">8</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">8А</ons-button></li>
+              <li><ons-button modifier="large--quiet">8Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">8С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">9</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">9А</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">9В</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">9Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">9С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">10</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">10А</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">10В</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Г</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Д</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">10З</ons-button></li>
+              <li><ons-button modifier="large--quiet">10К</ons-button></li>
+              <li><ons-button modifier="large--quiet">10Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">10М</ons-button></li>
+              <li><ons-button modifier="large--quiet">10С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">11</div>
+          <div class="collapsible-body">
+            <ul>
+              <li><ons-button modifier="large--quiet">11А</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Б</ons-button></li>
+              <li><ons-button modifier="large--quiet">11В</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Г</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Д</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Е</ons-button></li>
+              <li><ons-button modifier="large--quiet">11З</ons-button></li>
+              <li><ons-button modifier="large--quiet">11К</ons-button></li>
+              <li><ons-button modifier="large--quiet">11Л</ons-button></li>
+              <li><ons-button modifier="large--quiet">11М</ons-button></li>
+              <li><ons-button modifier="large--quiet">11С</ons-button></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div id="selected-classes"></div>
+      <ons-button class="dropdown-act" modifier="large">Выберите день недели</ons-button>
+      <ul class="collapsible dropdown-content set-text">
+        <li><ons-button modifier="large--quiet">Понедельник</ons-button></li>
+        <li><ons-button modifier="large--quiet">Вторник</ons-button></li>
+        <li><ons-button modifier="large--quiet">Среда</ons-button></li>
+        <li><ons-button modifier="large--quiet">Четверг</ons-button></li>
+        <li><ons-button modifier="large--quiet">Пятница</ons-button></li>
+        <li><ons-button modifier="large--quiet">Суббота</ons-button></li>
+      </ul>
 
-      <div class="row empty">
-        <div class="col s12 m12">
-          <ons-card>
-            <div class="content">
-              <h6 class="grey-text centered">Выберите классы для сравнения<br />(не больше пяти)</h6>
-            </div>
-          </ons-card>
+      <ons-card class="empty">
+        <div class="content">
+          <h6 class="grey-text centered">Выберите классы для сравнения<br />(не больше пяти)</h6>
         </div>
-      </div>
+      </ons-card>
 
-      <div class="row hide" id="comparison-table">
-        <div class="col s12 m12">
-          <ons-card>
-            <table class="responsive-table centered">
-              <thead>
-                <tr>
-                  <th>№</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1 <small>(9:00 - 9:40)</small></td>
-                </tr>
-                <tr>
-                  <td>2 <small>(9:50 - 10:30)</small></td>
-                </tr>
-                <tr>
-                  <td>3 <small>(10:45 - 11:25)</small></td>
-                </tr>
-                <tr>
-                  <td>4 <small>(11:40 - 12:20)</small></td>
-                </tr>
-                <tr>
-                  <td>5 <small>(12:35 - 13:15)</small></td>
-                </tr>
-                <tr>
-                  <td>6 <small>(13:35 - 14:15)</small></td>
-                </tr>
-                <tr>
-                  <td>7 <small>(14:35 - 15:15)</small></td>
-                </tr>
-              </tbody>
-            </table>
-          </ons-card>
-        </div>
-      </div>
+      <ons-card class="hide" id="comparison-table">
+        <table class="responsive-table centered">
+          <thead>
+            <tr>
+              <th>№</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 <small>(9:00 - 9:40)</small></td>
+            </tr>
+            <tr>
+              <td>2 <small>(9:50 - 10:30)</small></td>
+            </tr>
+            <tr>
+              <td>3 <small>(10:45 - 11:25)</small></td>
+            </tr>
+            <tr>
+              <td>4 <small>(11:40 - 12:20)</small></td>
+            </tr>
+            <tr>
+              <td>5 <small>(12:35 - 13:15)</small></td>
+            </tr>
+            <tr>
+              <td>6 <small>(13:35 - 14:15)</small></td>
+            </tr>
+            <tr>
+              <td>7 <small>(14:35 - 15:15)</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </ons-card>
     </ons-page>
   </ons-template>
 
@@ -642,102 +604,86 @@
           Преподаватели
         </div>
       </ons-toolbar>
-      <div class="row">
-        <div class="col s12 m12">
-          <ons-card>
-            <span class="title">Преподаватель</span>
-            <div class="content icon-input">
-              <i class="material-icons">school</i>
-              <ons-input id="auto"></ons-input>
-            </div>
-          </ons-card>
+      <ons-card>
+        <span class="title">Преподаватель</span>
+        <div class="content icon-input">
+          <i class="material-icons">school</i>
+          <ons-input id="auto"></ons-input>
         </div>
+      </ons-card>
+
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Понедельник</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item class="double-lesson" modifier="longdivider">
+                <div class="group">
+                  Физика <span class="new badge"><b>204</b></span>
+                </div>
+                <div class="divider"></div>
+                <div class="group">
+                  Химия <span class="new badge"><b>301</b></span>
+                </div>
+              </ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
+
+        <ons-card>
+          <span class="title">Вторник</span>
+          <div class="content">
+            <p class="grey-text centered">Уроков нет</p>
+          </div>
+        </ons-card>
       </div>
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Среда</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
 
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Понедельник</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item class="double-lesson" modifier="longdivider">
-                  <div class="group">
-                    Физика <span class="new badge"><b>204</b></span>
-                  </div>
-                  <div class="divider"></div>
-                  <div class="group">
-                    Химия <span class="new badge"><b>301</b></span>
-                  </div>
-                </ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Вторник</span>
-            <div class="content">
-              <p class="grey-text centered">Уроков нет</p>
-            </div>
-          </ons-card>
-        </div>
+        <ons-card>
+          <span class="title">Четверг</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
       </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Среда</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
+      <div class="card-row">
+        <ons-card>
+          <span class="title">Пятница</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
 
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Четверг</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Пятница</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
-
-        <div class="col s12 m6">
-          <ons-card>
-            <span class="title">Суббота</span>
-            <div class="content">
-              <ons-list modifier="inset">
-                <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
-                <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
-              </ons-list>
-            </div>
-          </ons-card>
-        </div>
+        <ons-card>
+          <span class="title">Суббота</span>
+          <div class="content">
+            <ons-list modifier="inset">
+              <ons-list-item modifier="longdivider">Информатика <span class="new badge"><b>206</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физика <span class="new badge"><b>204</b></span></ons-list-item>
+              <ons-list-item modifier="longdivider">Физкультура</ons-list-item>
+            </ons-list>
+          </div>
+        </ons-card>
       </div>
       <ons-toast>
         <ul>
@@ -761,302 +707,296 @@
           Свободные кабинеты
         </div>
       </ons-toolbar>
-      <div class="row">
-        <ons-alert-dialog id="occupied">
-          <div class="alert-dialog-title">
+      <ons-alert-dialog id="occupied">
+        <div class="alert-dialog-title">
+          <h5></h5>
+          <h6></h6>
+        </div>
+        <div class="alert-dialog-content">
+          <label>Занят:</label>
+          <p class="grey-text text-darken-2" id="until"></p>
+          <label>Причина:</label>
+          <p class="grey-text text-darken-2" id="reason"></p>
+        </div>
+        <div class="alert-dialog-footer">
+          <ons-button onclick="closeDialog('occupied')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+        </div>
+      </ons-alert-dialog>
+
+      <ons-alert-dialog id="occupy">
+        <div class="alert-dialog-title">
+          <div class="valign-wrapper">
             <h5></h5>
-            <h6></h6>
-          </div>
-          <div class="alert-dialog-content">
-            <label>Занят:</label>
-            <p class="grey-text text-darken-2" id="until"></p>
-            <label>Причина:</label>
-            <p class="grey-text text-darken-2" id="reason"></p>
-          </div>
-          <div class="alert-dialog-footer">
-            <ons-button onclick="closeDialog('occupied')" modifier="quiet" class="dark-text">Закрыть</ons-button>
-          </div>
-        </ons-alert-dialog>
-
-        <ons-alert-dialog id="occupy">
-          <div class="alert-dialog-title">
-            <div class="valign-wrapper">
-              <h5></h5>
-              <h6>Свободно</h6>
-            </div>
-          </div>
-
-          <div class="alert-dialog-content">
-            <div class="input-field">
-              <textarea id="write-reason" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
-              <label for="write-reason">Укажите причину занятия</label>
-            </div>
-            <div>
-              <label class="block">До какого урока (включительно)?</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>1</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>2</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>3</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>4</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>5</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>6</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>7</label>
-              <ons-input name="lesson" type="radio" checked></ons-input>
-              <label>Позже</label>
-              <br />
-              <ons-input type="checkbox"></ons-input>
-              <label>Занимать еженедельно?</label>
-            </div>
-          </div>
-          <div class="alert-dialog-footer">
-            <ons-button onclick="closeDialog('occupy')" modifier="quiet">Сохранить</ons-button>
-            <ons-button onclick="closeDialog('occupy')" modifier="quiet" class="dark-text">Закрыть</ons-button>
-          </div>
-        </ons-alert-dialog>
-        <div class="col s12 m12">
-          <p class="title">Выберите урок</p>
-          <div class="segment segment--material">
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b" checked>
-              <button class="segment__button segment--material__button">0</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">1</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">2</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">3</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">4</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">5</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">6</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">7</button>
-            </div>
-            <div class="segment__item segment--material__item">
-              <input type="radio" class="segment__input segment--material__input" name="segment-b">
-              <button class="segment__button segment--material__button">+</button>
-            </div>
+            <h6>Свободно</h6>
           </div>
         </div>
-        <div class="col s12 m12">
-          <ons-card>
-            <div class="lesson-rooms selected" id="lesson0">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson1">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson2">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson3">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson4">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson5">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson6">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">202</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson7">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">203</div>
-                <div class="chip taken">204</div>
-                <div class="chip">205</div>
-                <div class="chip taken">206</div>
-                <div class="chip taken">207</div>
-                <div class="chip">208</div>
-                <div class="chip">209</div>
-              </div>
-            </div>
-            <div class="lesson-rooms" id="lesson+">
-              <div class="content rooms">
-                <h6>1 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">102</div>
-                <div class="chip">103</div>
-                <div class="chip taken">104</div>
-                <div class="chip">105</div>
-                <div class="chip">106</div>
-                <div class="chip taken">107</div>
-                <h6>2 этаж</h6>
-                <div class="divider"></div>
-                <div class="chip">201</div>
-                <div class="chip">202</div>
-              </div>
-            </div>
-          </ons-card>
+
+        <div class="alert-dialog-content">
+          <div class="input-field">
+            <textarea id="write-reason" class="materialize-textarea" data-length="80" maxlength="80"></textarea>
+            <label for="write-reason">Укажите причину занятия</label>
+          </div>
+          <div>
+            <label class="block">До какого урока (включительно)?</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>1</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>2</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>3</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>4</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>5</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>6</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>7</label>
+            <ons-input name="lesson" type="radio" checked></ons-input>
+            <label>Позже</label>
+            <br />
+            <ons-input type="checkbox"></ons-input>
+            <label>Занимать еженедельно?</label>
+          </div>
+        </div>
+        <div class="alert-dialog-footer">
+          <ons-button onclick="closeDialog('occupy')" modifier="quiet">Сохранить</ons-button>
+          <ons-button onclick="closeDialog('occupy')" modifier="quiet" class="dark-text">Закрыть</ons-button>
+        </div>
+      </ons-alert-dialog>
+      <p class="title">Выберите урок</p>
+      <div class="segment segment--material" id="segment">
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b" checked>
+          <button class="segment__button segment--material__button">0</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">1</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">2</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">3</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">4</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">5</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">6</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">7</button>
+        </div>
+        <div class="segment__item segment--material__item">
+          <input type="radio" class="segment__input segment--material__input" name="segment-b">
+          <button class="segment__button segment--material__button">+</button>
         </div>
       </div>
+      <ons-card>
+        <div class="lesson-rooms selected" id="lesson0">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson1">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson2">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson3">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson4">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson5">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson6">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">202</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson7">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">203</div>
+            <div class="chip taken">204</div>
+            <div class="chip">205</div>
+            <div class="chip taken">206</div>
+            <div class="chip taken">207</div>
+            <div class="chip">208</div>
+            <div class="chip">209</div>
+          </div>
+        </div>
+        <div class="lesson-rooms" id="lesson+">
+          <div class="content rooms">
+            <h6>1 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">102</div>
+            <div class="chip">103</div>
+            <div class="chip taken">104</div>
+            <div class="chip">105</div>
+            <div class="chip">106</div>
+            <div class="chip taken">107</div>
+            <h6>2 этаж</h6>
+            <div class="divider"></div>
+            <div class="chip">201</div>
+            <div class="chip">202</div>
+          </div>
+        </div>
+      </ons-card>
     </ons-page>
   </ons-template>
 

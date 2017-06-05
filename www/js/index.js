@@ -2,6 +2,7 @@
 var chipThreshold = 5;
 // Array of selected chips' tags
 var usedTags = [];
+var lastToastTimer, lastReasonToastTimer, lastUndoToastTimer;
 
 function genSubjects(cls) {
   /**
@@ -166,19 +167,21 @@ document.addEventListener('show', function(event) {
         }
 
         // If there's a chip, show the table
+        var tableCard = document.getElementById('comparison-table');
+        var emptyCard = document.querySelector('.empty');
         if (usedTags.length === 1) {
-          document.getElementById('comparison-table').classList.remove('hide');
-          document.getElementsByClassName('empty')[0].classList.add('hide');
+          tableCard.classList.remove('hide');
+          emptyCard.classList.add('hide');
         }
 
         // Add the class to the table
-        var tableHeader = document.querySelector('#comparison-table thead tr');
+        var tableHeader = tableCard.querySelector('thead tr');
         var newHeading = document.createElement('th');
         newHeading.innerHTML = newChip.tag;
         tableHeader.appendChild(newHeading);
 
         var subjects = genSubjects(newChip.tag);
-        var tableRows = document.querySelectorAll('#comparison-table tbody tr');
+        var tableRows = tableCard.querySelectorAll('tbody tr');
         for (var i = 0; i < tableRows.length; ++i) {
           var tableCell = document.createElement('td');
           tableCell.innerHTML = subjects[i];
@@ -315,12 +318,14 @@ document.addEventListener('show', function(event) {
       var btns = lists[i].getElementsByTagName('ons-list-item');
       for (var j = 0; j < btns.length; ++j) {
         btns[j].onmousedown = function() {
+          clearTimeout(lastToastTimer);
           toast.show().then(function() {
             toast.timer = setTimeout(function() {
               if (toast.visible) {
                 toast.hide();
               }
             }, 2000);
+            lastToastTimer = toast.timer;
           });
         };
       }
@@ -492,7 +497,7 @@ document.addEventListener('show', function(event) {
 
   // Page: Vacant Rooms
   // Switch cards with a segmented control
-  var segment = document.querySelector('.segment');
+  var segment = document.getElementById('segment');
   if (segment != null) {
     var segmBtns = segment.getElementsByClassName('segment__item');
     var lessonCards = document.getElementsByClassName('lesson-rooms');
@@ -521,12 +526,14 @@ document.addEventListener('show', function(event) {
     };
 
     function showReason() {
+      clearTimeout(lastReasonToastTimer);
       reasonToast.show().then(function() {
         reasonToast.timer = setTimeout(function() {
           if (reasonToast.visible) {
             reasonToast.hide();
           }
         }, 2000);
+        lastReasonToastTimer = reasonToast.timer;
       });
     }
 
@@ -535,6 +542,7 @@ document.addEventListener('show', function(event) {
       undoToast.listItem = listItem;
 
       listItem.style.display = 'none';  // Temporarily hide the list item
+      clearTimeout(lastUndoToastTimer);
       undoToast.show().then(function() {
         undoToast.timer = setTimeout(function() {
           if (undoToast.visible) {
@@ -546,7 +554,9 @@ document.addEventListener('show', function(event) {
             listItem.parentElement.removeChild(listItem);
           }
         }, 2000);
+        lastUndoToastTimer = undoToast.timer;
       });
+
     }
 
     var reasonToggles = document.getElementsByClassName('show-reason');
