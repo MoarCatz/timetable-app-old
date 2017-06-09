@@ -1,13 +1,24 @@
 function checkIntroFields() {
   var carousel = document.querySelector('ons-carousel');
 
-  var introName = document.getElementById('#intro-name').value;
-  var introClass = document.getElementById('#intro-class').textContent;
+  var introName = document.getElementById('intro-name').value;
+  var introClass = document.getElementById('intro-class').textContent;
+  var introToast = document.getElementById('intro-toast');
+
+  function showIntroToast() {
+      introToast.show().then(function() {
+        setTimeout(function() {
+          if (introToast.visible) {
+            introToast.hide();
+          }
+        }, 2000);
+      });
+    }
 
   if (introClass == 'Выберите класс') {
     // If the class field is empty, switch to the last slide and show an alert
-    ons.notification.toast('Пожалуйста, выберите свой класс', {timeout: 1500});
     carousel.setActiveIndex(3);
+    showIntroToast();
   }
   else {
     // If the name field is empty, set it to default value
@@ -25,8 +36,8 @@ function checkIntroFields() {
     });
 
     // Update the menu information
-    document.getElementById('#menu-user-name').textContent = introName;
-    document.getElementById('#menu-user-class').textContent = introClass;
+    document.getElementById('menu-user-name').textContent = introName;
+    document.getElementById('menu-user-class').textContent = introClass;
 
     // Register in OneSignal
     window.plugins.OneSignal.registerForPushNotifications();
