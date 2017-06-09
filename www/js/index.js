@@ -50,9 +50,8 @@ function removeChip() {
   // If there's no more chips, hide the table
   if (!usedTags.length) {
     document.getElementById('comparison-table').classList.add('hide');
-    document.querySelector('div.row.empty').classList.remove('hide');
+    document.querySelector('ons-card.empty').classList.remove('hide');
   }
-
 }
 
 function showOccupy() {
@@ -66,9 +65,9 @@ function showOccupied() {
   // Show the modal about an occupied room
   var modal = document.getElementById('occupied');
   modal.querySelector('h5').innerHTML = this.innerHTML;
-  modal.getElementsByTagName('h6')[0].innerHTML = 'Лев Челядинов, 10Е';
-  modal.querySelector('#until').innerHTML = 'С 6 по 7 урок';
-  modal.querySelector('#reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
+  modal.querySelector('h6').innerHTML = 'Лев Челядинов, 10Е';
+  modal.getElementById('until').innerHTML = 'С 6 по 7 урок';
+  modal.getElementById('reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
   modal.show();
 }
 
@@ -116,6 +115,69 @@ function jumpToCarouselPage() {
   this.carousel.setActiveIndex(getNodeIndex(this));
 }
 
+function hasClass(elem, cls) {
+  /**
+   * Tests if the element has a class
+   * @param  {Element} elem   Element to check;
+   * @param  {String} cls     Class to look for.
+   */
+  return (' ' + elem.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+function dropSetText() {
+  // Simply replace the button's text with the selected item's
+  this.dropdownButton.textContent = this.textContent;
+  this.dropdownButton.classList.toggle('active');
+}
+
+function dropAddChip() {
+  // Add a chip
+  var chips = document.getElementById('selected-classes');
+
+  var newChip = document.createElement('div');
+  // Save the following objects:
+  newChip.selectButton = this;  // the button that was used to select the chip
+  newChip.tag = this.textContent;  // the chip's tag
+  newChip.dropdownButton = this.dropdownButton;  // the button that triggers the dropdown
+
+  // Set up the chip node
+  newChip.classList.add('chip');
+  newChip.innerHTML = newChip.tag + '<i class="material-icons close">close</i>';
+  newChip.onmousedown = removeChip;
+
+  chips.appendChild(newChip);
+  usedTags.push(newChip.tag);
+
+  this.dropdownButton.classList.toggle('active');
+  this.setAttribute('disabled', 'true');
+
+  if (usedTags.length === chipThreshold) {
+    this.dropdownButton.setAttribute('disabled', 'true');
+  }
+
+  // If there's a chip, show the table
+  var tableCard = document.getElementById('comparison-table');
+  var emptyCard = document.querySelector('.empty');
+  if (usedTags.length === 1) {
+    tableCard.classList.remove('hide');
+    emptyCard.classList.add('hide');
+  }
+
+  // Add the class to the table
+  var tableHeader = tableCard.querySelector('thead tr');
+  var newHeading = document.createElement('th');
+  newHeading.innerHTML = newChip.tag;
+  tableHeader.appendChild(newHeading);
+
+  var subjects = genSubjects(newChip.tag);
+  var tableRows = tableCard.querySelectorAll('tbody tr');
+  for (var i = 0; i < tableRows.length; ++i) {
+    var tableCell = document.createElement('td');
+    tableCell.innerHTML = subjects[i];
+    tableRows[i].appendChild(tableCell);
+  }
+}
+
 document.addEventListener('show', function(event) {
   // Pages: Classes, Compare, Settings
   // Set up dropdowns with header text replacement or chip addition
@@ -133,67 +195,19 @@ document.addEventListener('show', function(event) {
 
     // Decide on the dropdown button's action
     var bts = drop[i].getElementsByTagName('ons-button');
-    if (drop[i].matches('.set-text')) {
-      function dropAction() {
-        // Simply replace the button's text with the selected item's
-        this.dropdownButton.textContent = this.textContent;
-        this.dropdownButton.classList.toggle('active');
+    if (hasClass(drop[i], 'set-text')) {
+      for (var j = 0; j < bts.length; ++j) {
+        bts[j].dropdownButton = drop[i].previousElementSibling;
+        bts[j].onmousedown = dropSetText;
+        stripInnerTags(bts[j]);
       }
     }
     else {
-      function dropAction() {
-        // Add a chip
-        var chips = document.getElementById('selected-classes');
-
-        var newChip = document.createElement('div');
-        // Save the following objects:
-        newChip.selectButton = this;  // the button that was used to select the chip
-        newChip.tag = this.textContent;  // the chip's tag
-        newChip.dropdownButton = this.dropdownButton;  // the button that triggers the dropdown
-
-        // Set up the chip node
-        newChip.classList.add('chip');
-        newChip.innerHTML = newChip.tag + '<i class="material-icons close">close</i>';
-        newChip.onmousedown = removeChip;
-
-        chips.appendChild(newChip);
-        usedTags.push(newChip.tag);
-
-        this.dropdownButton.classList.toggle('active');
-        this.setAttribute('disabled', 'true');
-
-        if (usedTags.length === chipThreshold) {
-          this.dropdownButton.setAttribute('disabled', 'true');
-        }
-
-        // If there's a chip, show the table
-        var tableCard = document.getElementById('comparison-table');
-        var emptyCard = document.querySelector('.empty');
-        if (usedTags.length === 1) {
-          tableCard.classList.remove('hide');
-          emptyCard.classList.add('hide');
-        }
-
-        // Add the class to the table
-        var tableHeader = tableCard.querySelector('thead tr');
-        var newHeading = document.createElement('th');
-        newHeading.innerHTML = newChip.tag;
-        tableHeader.appendChild(newHeading);
-
-        var subjects = genSubjects(newChip.tag);
-        var tableRows = tableCard.querySelectorAll('tbody tr');
-        for (var i = 0; i < tableRows.length; ++i) {
-          var tableCell = document.createElement('td');
-          tableCell.innerHTML = subjects[i];
-          tableRows[i].appendChild(tableCell);
-        }
+      for (var j = 0; j < bts.length; ++j) {
+        bts[j].dropdownButton = drop[i].previousElementSibling;
+        bts[j].onmousedown = dropAddChip;
+        stripInnerTags(bts[j]);
       }
-    }
-
-    for (var j = 0; j < bts.length; ++j) {
-      bts[j].dropdownButton = drop[i].previousElementSibling;
-      bts[j].onmousedown = dropAction;
-      stripInnerTags(bts[j]);
     }
   }
 
@@ -308,7 +322,7 @@ document.addEventListener('show', function(event) {
   // Set up toasts with lesson info
   var lists = document.querySelectorAll('ons-card ons-list');
   var toast = document.querySelector('ons-toast');
-  if (toast != null && lists != null) {
+  if (toast != null && lists != null && toast.id !== 'intro-toast') {
     toast.querySelector('button').onmousedown = function() {
       clearTimeout(toast.timer);
       toast.hide();
