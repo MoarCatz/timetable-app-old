@@ -604,3 +604,14 @@ document.addEventListener('show', function(event) {
     }
   }
 });
+
+// Snippet to alert all exceptions
+window.addEventListener('error', handleError, true);
+
+function handleError(event) {
+  if (event.message) {
+    window.alert('error: ' + event.message + ' at linenumber: ' + event.lineno + ' of file: ' + event.filename);
+  } else {
+    window.alert('error: ' + event.type + ' from element: ' + (event.srcElement || event.target));
+  }
+}
