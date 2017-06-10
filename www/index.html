@@ -609,7 +609,7 @@
         <span class="title">Преподаватель</span>
         <div class="content icon-input">
           <i class="material-icons">school</i>
-          <ons-input id="auto"></ons-input>
+          <ons-input id="auto" placeholder="Начните писать фамилию" float></ons-input>
         </div>
       </ons-card>
 
@@ -1017,7 +1017,7 @@
         <ons-list-header>Основные</ons-list-header>
         <ons-list-item modifier="longdivider" class="row">
           <span class="col s3">Имя</span>
-          <ons-input class="col s9"></ons-input>
+          <ons-input class="col s9" placeholder="Имя и фамилия" float></ons-input>
         </ons-list-item>
         <ons-list-item modifier="longdivider" class="row">
           <span class="col s9">Класс</span>
@@ -1085,10 +1085,6 @@
           </ul>
         </ons-list-item>
         <ons-list-item modifier="longdivider" class="row">
-          <span class="col s9">Clear local storage</span>
-          <ons-button class="col s3 dropdown-act" id="clear-storage">Clear</ons-button>
-        </ons-list-item>
-        <ons-list-item modifier="longdivider" class="row">
           <div class="center">
             <span class="col s12">Изменения наверх</span>
           </div>
@@ -1108,11 +1104,11 @@
         </ons-list-item>
         <ons-list-item modifier="longdivider" class="row">
           <span class="col s9">Что считать вечером?</span>
-          <ons-button disable-auto-styling modifier="material" class="col s3">21:00</ons-button>
+          <ons-button disable-auto-styling modifier="material" class="col s3" id="evening-time">21:00</ons-button>
         </ons-list-item>
         <ons-list-item modifier="longdivider" class="row">
           <span class="col s9">Что считать утром?</span>
-          <ons-button disable-auto-styling modifier="material" class="col s3">07:00</ons-button>
+          <ons-button disable-auto-styling modifier="material" class="col s3" id="morning-time">07:00</ons-button>
         </ons-list-item>
         <ons-list-item modifier="longdivider" class="row">
           <div class="center">

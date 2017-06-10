@@ -401,6 +401,10 @@ ons-list-item.row {
   color: #66bb6a;
 }
 
+ons-input.s9 ._helper.text-input__label {
+  left: .75rem;
+}
+
 /* --- Help --- */
 .help-text {
   margin-left: 10px;

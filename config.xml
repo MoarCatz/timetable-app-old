@@ -23,4 +23,5 @@
     <engine name="android" spec="~6.1.2" />
     <plugin name="onesignal-cordova-plugin" spec="~2.1.1" />
     <plugin name="es6-promise-plugin" spec="~4.1.0" />
+    <plugin name="cordova-plugin-datetimepicker" spec="~1.0.0" />
 </widget>
