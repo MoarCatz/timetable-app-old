@@ -66,8 +66,8 @@ function showOccupied() {
   var modal = document.getElementById('occupied');
   modal.querySelector('h5').innerHTML = this.innerHTML;
   modal.querySelector('h6').innerHTML = 'Лев Челядинов, 10Е';
-  modal.getElementById('until').innerHTML = 'С 6 по 7 урок';
-  modal.getElementById('reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
+  document.getElementById('until').innerHTML = 'С 6 по 7 урок';
+  document.getElementById('reason').innerHTML = 'Спецкурс по математике с Масленниковой М. И.';
   modal.show();
 }
 
