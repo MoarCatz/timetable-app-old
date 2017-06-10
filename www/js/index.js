@@ -178,6 +178,15 @@ function dropAddChip() {
   }
 }
 
+function padTime(time) {
+  /**
+   * Pads the given number to two digits
+   * @param  {Number} time   Time value to pad.
+   * @return {String}        Padded time string.
+   */
+  return (time < 10 ? '0' + time : '' + time);
+}
+
 document.addEventListener('show', function(event) {
   // Pages: Classes, Compare, Settings
   // Set up dropdowns with header text replacement or chip addition
@@ -506,6 +515,10 @@ document.addEventListener('show', function(event) {
   	  minChars: 1
     });
     autoInput.nextElementSibling.classList.add('dropdown-content', 'autocomplete-content');
+
+    autoInput.addEventListener('awesomplete-select', function() {
+      this.blur();
+    })
   }
 
 
@@ -579,9 +592,19 @@ document.addEventListener('show', function(event) {
       reasonToggles[i].parentElement.nextElementSibling.onmousedown = removeRule;
     }
 
-    document.getElementById('clear-storage').onmousedown = function() {
-      window.localStorage.clear();
+    var evngBtn = document.getElementById('evening-time');
+    var mornBtn = document.getElementById('morning-time');
+    function pickTime() {
+      var timeString = this.innerHTML;
+      var currBtn = this;
+      window.DateTimePicker.pick({type: 'time'}, function(timestamp) {
+        var time = new Date(timestamp);
+        timeString = padTime(time.getHours()) + ':' + padTime(time.getMinutes());
+        currBtn.innerHTML = timeString;
+      });
     }
+    evngBtn.onmousedown = pickTime;
+    mornBtn.onmousedown = pickTime;
   }
 
 
