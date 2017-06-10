@@ -512,20 +512,15 @@ td, th {
 
 span.badge {
   min-width: 3rem;
-  padding: 0 6px;
-  margin-left: 14px;
-  text-align: center;
-  font-size: 1rem;
-  line-height: 22px;
   height: 22px;
-  color: #2E7D32;
-  float: right;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 span.badge.new {
-  font-weight: 300;
   font-size: 0.8rem;
   color: #fff;
   background-color: #2E7D32;
@@ -919,12 +914,13 @@ em {
 }
 
 .chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 32px;
   font-size: 13px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
-  line-height: 32px;
   padding: 0 12px;
   border-radius: 16px;
   background-color: #e4e4e4;
