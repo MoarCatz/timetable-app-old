@@ -27,6 +27,12 @@ function checkIntroFields() {
     db.transaction(function (tx) {
       tx.executeSql('INSERT INTO settings VALUES ("name", ?)', [introName]);
       tx.executeSql('INSERT INTO settings VALUES ("class", ?)', [introClass]);
+      tx.executeSql('INSERT INTO settings VALUES ("changes-top", "0")', []);
+      tx.executeSql('INSERT INTO settings VALUES ("receive-push", "1")', []);
+      tx.executeSql('INSERT INTO settings VALUES ("receive-morning-push", "0")', []);
+      tx.executeSql('INSERT INTO settings VALUES ("receive-evening-push", "0")', []);
+      tx.executeSql('INSERT INTO settings VALUES ("morning-time", "07:00")', []);
+      tx.executeSql('INSERT INTO settings VALUES ("evening-time", "21:00")', []);
     });
 
     // Update the menu information
